@@ -27,6 +27,16 @@
     div.row:hover {
       background-color: #EEE;
     }
+    span.muted {
+      color: #AAA;
+    }
+    span.genre-tag {
+      font-size: 12px;
+      border: 1px solid #AAA;
+      color: #AAA;
+      padding: 2px 5px;
+      margin-right: 2px;
+    }
   </style>
 </head>
 <body>
@@ -43,9 +53,13 @@
   function printRow(m){
     document.querySelector('#list').innerHTML += `
       <div class="row">
-        <a class="imdb" target="_blank" href="${m[6]}">IMDb</a> #${m[0]} <strong>${m[5]}</strong> (${m[10]}) <span class="added">Añadida: ${m[2].split('-').reverse().join('.')}</span>
+        <a class="imdb" target="_blank" href="${m[6]}">IMDb</a> #${m[0]} <strong>${m[5]}</strong> (${m[10]}) <span class="added">Añadida: ${m[2].split('-').reverse().join('.')}</span> [Nota IMDb: ${m[8]} | Mi nota: ${m[15] || '<span class="muted">Sin nota</span>'}] ${getGenreTags(m[11])}
       </div>
     `
+  }
+
+  function getGenreTags(genresTxt){
+    return genresTxt.split(',').map(t => `<span class="genre-tag">${t.trim()}</span>`).join('')
   }
     function csvToArray( strData, strDelimiter ){
         // Check to see if the delimiter is defined. If not,
