@@ -56,14 +56,14 @@
   </style>
 </head>
 <body>
-  <div class="fecha-actualizado">Actualizado a día 22.01.2025</div>
+  <div class="fecha-actualizado">Actualizado a día 12.02.2025</div>
   <div id="list"></div>
-  <div class="fecha-actualizado">Actualizado a día 22.01.2025</div>
+  <div class="fecha-actualizado">Actualizado a día 12.02.2025</div>
 </body>
 <script>
 
   (async function() {
-    let res = await fetch('tbr.csv')
+    let res = await fetch('data.csv')
     res = await res.text()
     csvToArray(res)
   })()
