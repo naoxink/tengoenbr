@@ -115,7 +115,7 @@
   }
 
   function getGenreTags(genresTxt){
-    return genresTxt.split(',').map(t => `<span class="genre-tag">${t.trim()}</span>`).join('')
+    return (genresTxt || '').split(',').map(t => `<span class="genre-tag">${t.trim()}</span>`).join('')
   }
     function csvToArray( strData, strDelimiter ){
         // Check to see if the delimiter is defined. If not,
