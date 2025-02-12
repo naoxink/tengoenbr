@@ -212,6 +212,7 @@
           const meta = 300
           document.querySelector('.progress-bar').innerText = arrData.length
           const percent = (arrData.length / meta) * 100
+          console.log(percent + '%', arrData.length, document.querySelector('.progress-bar'))
           document.querySelector('.progress-bar').style.width = percent.toFixed(2) + '%'
           document.querySelector('.progress-text').innerText = `${arrData} de ${meta}`
         }
