@@ -70,12 +70,6 @@
       font-size: 14px;
       line-height: 20px;
     }
-
-    .progress-text {
-      text-align: center;
-      margin-top: 5px;
-      font-size: 14px;
-    }
   </style>
 </head>
 <body>
@@ -83,7 +77,6 @@
   <div class="progress-container">
     <div class="progress-bar"></div>
   </div>
-  <div class="progress-text"></div>
   <div id="list"></div>
   <div class="fecha-actualizado">Actualizado a día 12.02.2025</div>
 </body>
@@ -210,11 +203,10 @@
           arrData.forEach(printRow)
           // Textos y barra de progreso
           const meta = 300
-          document.querySelector('.progress-bar').innerText = arrData.length
+          document.querySelector('.progress-bar').innerText = `${arrData.length} de ${meta}`
           const percent = (arrData.length / meta) * 100
           console.log(percent + '%', arrData.length, document.querySelector('.progress-bar'))
           document.querySelector('.progress-bar').style.width = percent.toFixed(2) + '%'
-          document.querySelector('.progress-text').innerText = `${arrData} de ${meta}`
         }
     }
 </script>
