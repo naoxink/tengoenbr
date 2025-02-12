@@ -102,7 +102,7 @@
           <a class="imdb" target="_blank" href="${m[7]}">IMDb</a> #${m[0]} <strong>${m[5]}</strong> (${m[6]})
         </span>
         <span class="break">
-          <span class="added">Añadida: ${m[2].split('-').reverse().join('.')}</span>
+          <span class="added">Añadida: ${(m[2] || '').split('-').reverse().join('.')}</span>
         </span>
         <span class="break">
           [Nota IMDb: ${m[9]} | Mi nota: ${m[16] || '<span class="muted">Sin nota</span>'}${m[4] ? ' | ' + m[4] : ''}]
