@@ -104,12 +104,18 @@
   })()
 
   function filterResults(e) {
-    const text = this.value.trim().toLowerCase()
-    if (!text) {
-      return printList(window.fullList)
+    if (window.filterTimeout) {
+      clearTimeout(window.filterTimeout)
     }
-    const filteredList = window.fullList.filter(item => item[5].toLowerCase().includes(text) || item[6].toLowerCase().includes(text))
-    printList(filteredList)
+    window.filterTimeout = setTimeout(() => {
+      const text = this.value.trim().toLowerCase()
+      if (!text) {
+        return printList(window.fullList)
+      }
+      const filteredList = window.fullList.filter(item => item[5].toLowerCase().includes(text) || item[6].toLowerCase().includes(text))
+      printList(filteredList)
+    }, 1000)
+    
   }
 
   function printRow(m){
