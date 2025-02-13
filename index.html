@@ -99,6 +99,7 @@
     let res = await fetch('data.csv')
     res = await res.text()
     window.fullList = csvToArray(res)
+    printList()
     calculateMeta()
   })()
 
@@ -131,6 +132,9 @@
   }
 
   function printList(list) {
+    if (!list && window.fullList) {
+      list = window.fullList
+    }
     if(window.location.search.substr(1) === 'json'){
         document.body.innerHTML = JSON.stringify(arrData)
       }else{
