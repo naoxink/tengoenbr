@@ -104,10 +104,13 @@
   })()
 
   function filterResults(e) {
+    console.log('filterResults')
     if (window.filterTimeout) {
+      console.log('limpiar timeout')
       clearTimeout(window.filterTimeout)
     }
     window.filterTimeout = setTimeout(() => {
+      console.log('filtrar!')
       const text = this.value.trim().toLowerCase()
       if (!text) {
         return printList(window.fullList)
@@ -153,7 +156,6 @@
     const meta = Math.ceil(list.length / 50) * 50;
     document.querySelector('.progress-bar').innerText = `${list.length} de ${meta}`
     const percent = (list.length / meta) * 100
-    console.log(percent + '%', list.length, document.querySelector('.progress-bar'))
     document.querySelector('.progress-bar').style.width = percent.toFixed(2) + '%'
   }
 
