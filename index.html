@@ -142,6 +142,7 @@
   }
 
   function printList(list) {
+    document.querySelector('#list').innerHTML = ''
     if (!list && window.fullList) {
       list = window.fullList
     }
