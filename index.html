@@ -116,6 +116,7 @@
         return printList(window.fullList)
       }
       const filteredList = window.fullList.filter(item => item[5].toLowerCase().includes(text) || item[6].toLowerCase().includes(text))
+      console.log(filteredList)
       printList(filteredList)
     }, 1000)
     
@@ -145,7 +146,7 @@
       list = window.fullList
     }
     if(window.location.search.substr(1) === 'json'){
-        document.body.innerHTML = JSON.stringify(arrData)
+        document.body.innerHTML = JSON.stringify(list)
       }else{
         list.forEach(printRow)
       }
