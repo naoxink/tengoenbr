@@ -70,12 +70,25 @@
       font-size: 14px;
       line-height: 20px;
     }
+
+    input#title-filter {
+      margin: .5em 0;
+      width: 99%;
+      padding: .3em;
+      border: 0;
+      background-color: black;
+      color: white;
+      font-family: monospace;
+    }
   </style>
 </head>
 <body>
   <div class="fecha-actualizado">Actualizado a día 12.02.2025</div>
   <div class="progress-container">
     <div class="progress-bar"></div>
+  </div>
+  <div class="filter">
+    <input type="text" id="title-filter">
   </div>
   <div id="list"></div>
   <div class="fecha-actualizado">Actualizado a día 12.02.2025</div>
@@ -85,8 +98,18 @@
   (async function() {
     let res = await fetch('data.csv')
     res = await res.text()
-    csvToArray(res)
+    window.fullList = csvToArray(res)
+    calculateMeta()
   })()
+
+  function filterResults(e) {
+    const text = this.value.trim().toLowerCase()
+    if (!text) {
+      return printList(window.fullList)
+    }
+    const filteredList = window.fullList.filter(item => item[5].toLowerCase().includes(text) || item[6].toLowerCase().includes(text))
+    printList(filteredList)
+  }
 
   function printRow(m){
     document.querySelector('#list').innerHTML += `
@@ -107,109 +130,117 @@
     `
   }
 
+  function printList(list) {
+    if(window.location.search.substr(1) === 'json'){
+        document.body.innerHTML = JSON.stringify(arrData)
+      }else{
+        list.forEach(printRow)
+      }
+  }
+
+  function calculateMeta() {
+    const list = window.fullList || []
+    const meta = Math.ceil(list.length / 50) * 50;
+    document.querySelector('.progress-bar').innerText = `${list.length} de ${meta}`
+    const percent = (list.length / meta) * 100
+    console.log(percent + '%', list.length, document.querySelector('.progress-bar'))
+    document.querySelector('.progress-bar').style.width = percent.toFixed(2) + '%'
+  }
+
   function getGenreTags(genresTxt){
     return (genresTxt || '').split(',').map(t => `<span class="genre-tag">${t.trim()}</span>`).join('')
   }
-    function csvToArray( strData, strDelimiter ){
-        // Check to see if the delimiter is defined. If not,
-        // then default to comma.
-        strDelimiter = (strDelimiter || ",");
 
-        // Create a regular expression to parse the CSV values.
-        var objPattern = new RegExp(
-            (
-                // Delimiters.
-                "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
+  function csvToArray( strData, strDelimiter ){
+      // Check to see if the delimiter is defined. If not,
+      // then default to comma.
+      strDelimiter = (strDelimiter || ",");
 
-                // Quoted fields.
-                "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
+      // Create a regular expression to parse the CSV values.
+      var objPattern = new RegExp(
+          (
+              // Delimiters.
+              "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
 
-                // Standard fields.
-                "([^\"\\" + strDelimiter + "\\r\\n]*))"
-            ),
-            "gi"
-            );
+              // Quoted fields.
+              "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
 
-
-        // Create an array to hold our data. Give the array
-        // a default empty first row.
-        var arrData = [[]];
-
-        // Create an array to hold our individual pattern
-        // matching groups.
-        var arrMatches = null;
+              // Standard fields.
+              "([^\"\\" + strDelimiter + "\\r\\n]*))"
+          ),
+          "gi"
+          );
 
 
-        // Keep looping over the regular expression matches
-        // until we can no longer find a match.
-        while (arrMatches = objPattern.exec( strData )){
+      // Create an array to hold our data. Give the array
+      // a default empty first row.
+      var arrData = [[]];
 
-            // Get the delimiter that was found.
-            var strMatchedDelimiter = arrMatches[ 1 ];
-
-            // Check to see if the given delimiter has a length
-            // (is not the start of string) and if it matches
-            // field delimiter. If id does not, then we know
-            // that this delimiter is a row delimiter.
-            if (
-                strMatchedDelimiter.length &&
-                strMatchedDelimiter !== strDelimiter
-                ){
-
-                // Since we have reached a new row of data,
-                // add an empty row to our data array.
-                arrData.push( [] );
-
-            }
-
-            var strMatchedValue;
-
-            // Now that we have our delimiter out of the way,
-            // let's check to see which kind of value we
-            // captured (quoted or unquoted).
-            if (arrMatches[ 2 ]){
-
-                // We found a quoted value. When we capture
-                // this value, unescape any double quotes.
-                strMatchedValue = arrMatches[ 2 ].replace(
-                    new RegExp( "\"\"", "g" ),
-                    "\""
-                    );
-
-            } else {
-
-                // We found a non-quoted value.
-                strMatchedValue = arrMatches[ 3 ];
-
-            }
+      // Create an array to hold our individual pattern
+      // matching groups.
+      var arrMatches = null;
 
 
-            // Now that we have our value string, let's add
-            // it to the data array.
-            arrData[ arrData.length - 1 ].push( strMatchedValue );
-        }
+      // Keep looping over the regular expression matches
+      // until we can no longer find a match.
+      while (arrMatches = objPattern.exec( strData )){
 
-        arrData.shift()
+          // Get the delimiter that was found.
+          var strMatchedDelimiter = arrMatches[ 1 ];
 
-        arrData = arrData.filter(item => !!item[0])
+          // Check to see if the given delimiter has a length
+          // (is not the start of string) and if it matches
+          // field delimiter. If id does not, then we know
+          // that this delimiter is a row delimiter.
+          if (
+              strMatchedDelimiter.length &&
+              strMatchedDelimiter !== strDelimiter
+              ){
 
-        arrData.sort((a, b) => {
-          if(+a[0] > +b[0]) return -1
-          if(+a[0] < +b[0]) return 1
-          else return 0
-        })
+              // Since we have reached a new row of data,
+              // add an empty row to our data array.
+              arrData.push( [] );
 
-        if(window.location.search.substr(1) === 'json'){
-          document.body.innerHTML = JSON.stringify(arrData)
-        }else{
-          arrData.forEach(printRow)
-          // Textos y barra de progreso
-          const meta = Math.ceil(arrData.length / 50) * 50;
-          document.querySelector('.progress-bar').innerText = `${arrData.length} de ${meta}`
-          const percent = (arrData.length / meta) * 100
-          console.log(percent + '%', arrData.length, document.querySelector('.progress-bar'))
-          document.querySelector('.progress-bar').style.width = percent.toFixed(2) + '%'
-        }
-    }
+          }
+
+          var strMatchedValue;
+
+          // Now that we have our delimiter out of the way,
+          // let's check to see which kind of value we
+          // captured (quoted or unquoted).
+          if (arrMatches[ 2 ]){
+
+              // We found a quoted value. When we capture
+              // this value, unescape any double quotes.
+              strMatchedValue = arrMatches[ 2 ].replace(
+                  new RegExp( "\"\"", "g" ),
+                  "\""
+                  );
+
+          } else {
+
+              // We found a non-quoted value.
+              strMatchedValue = arrMatches[ 3 ];
+
+          }
+
+
+          // Now that we have our value string, let's add
+          // it to the data array.
+          arrData[ arrData.length - 1 ].push( strMatchedValue );
+      }
+
+      arrData.shift()
+
+      arrData = arrData.filter(item => !!item[0])
+
+      arrData.sort((a, b) => {
+        if(+a[0] > +b[0]) return -1
+        if(+a[0] < +b[0]) return 1
+        else return 0
+      })
+
+      return arrData
+  }
 </script>
 </html>
