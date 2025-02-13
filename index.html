@@ -191,6 +191,8 @@
 
         arrData.shift()
 
+        arrData = arrData.filter(item => !!item[0])
+
         arrData.sort((a, b) => {
           if(+a[0] > +b[0]) return -1
           if(+a[0] < +b[0]) return 1
@@ -202,7 +204,7 @@
         }else{
           arrData.forEach(printRow)
           // Textos y barra de progreso
-          const meta = 300
+          const meta = Math.ceil(arrData.length / 50) * 50;
           document.querySelector('.progress-bar').innerText = `${arrData.length} de ${meta}`
           const percent = (arrData.length / meta) * 100
           console.log(percent + '%', arrData.length, document.querySelector('.progress-bar'))
