@@ -104,19 +104,19 @@
   })()
 
   function filterResults(e) {
-    console.log('filterResults')
     if (window.filterTimeout) {
-      console.log('limpiar timeout')
       clearTimeout(window.filterTimeout)
     }
     window.filterTimeout = setTimeout(() => {
-      console.log('filtrar!')
       const text = this.value.trim().toLowerCase()
+      if (window.lastSearchText === text) {
+        return false
+      }
+      window.lastSearchText = text
       if (!text) {
         return printList(window.fullList)
       }
       const filteredList = window.fullList.filter(item => item[5].toLowerCase().includes(text) || item[6].toLowerCase().includes(text))
-      console.log(filteredList)
       printList(filteredList)
     }, 1000)
     
