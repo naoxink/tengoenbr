@@ -79,6 +79,7 @@
       background-color: black;
       color: white;
       font-family: monospace;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -153,25 +154,28 @@
     }
     // Fechas
     // Obtener la fecha de última modificación de data.csv
-    let formatted = '';
+    let formatted = ''
     try {
-      const res = await fetch('data.csv', { method: 'HEAD' });
-      const lastModified = res.headers.get('Last-Modified');
+      const res = await fetch('data.csv', { method: 'HEAD' })
+      const lastModified = res.headers.get('Last-Modified')
       if (lastModified) {
-      const date = new Date(lastModified);
-        formatted = date.toLocaleDateString('es-ES');
+      const date = new Date(lastModified)
+        formatted = date.toLocaleDateString('es-ES')
       } else {
-        formatted = 'desconocida';
+        formatted = 'desconocida'
       }
     } catch (e) {
-      formatted = 'desconocida';
+      formatted = 'desconocida'
     }
     ([...document.querySelectorAll('.fecha-actualizado .fecha')]).forEach(node => node.textContent = formatted)
   }
 
   function calculateMeta() {
     const list = window.fullList || []
-    const meta = Math.ceil(list.length / 50) * 50;
+    let meta = Math.ceil(list.length / 50) * 50
+    if (list.length === meta) {
+      meta += 50
+    }
     document.querySelector('.progress-bar').innerText = `${list.length} de ${meta}`
     const percent = (list.length / meta) * 100
     document.querySelector('.progress-bar').style.width = percent.toFixed(2) + '%'
