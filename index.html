@@ -83,7 +83,7 @@
   </style>
 </head>
 <body>
-  <div class="fecha-actualizado">Actualizado a día 11.06.2025</div>
+  <div class="fecha-actualizado">Actualizado a día <span class="fecha"></span></div>
   <div class="progress-container">
     <div class="progress-bar"></div>
   </div>
@@ -91,7 +91,7 @@
     <input type="text" id="title-filter">
   </div>
   <div id="list"></div>
-  <div class="fecha-actualizado">Actualizado a día 11.06.2025</div>
+  <div class="fecha-actualizado">Actualizado a día <span class="fecha"></span></div>
 </body>
 <script>
 
@@ -141,16 +141,32 @@
     `
   }
 
-  function printList(list) {
+  async function printList(list) {
     document.querySelector('#list').innerHTML = ''
     if (!list && window.fullList) {
       list = window.fullList
     }
     if(window.location.search.substr(1) === 'json'){
         document.body.innerHTML = JSON.stringify(list)
-      }else{
-        list.forEach(printRow)
+    }else{
+      list.forEach(printRow)
+    }
+    // Fechas
+    // Obtener la fecha de última modificación de data.csv
+    let formatted = '';
+    try {
+      const res = await fetch('data.csv', { method: 'HEAD' });
+      const lastModified = res.headers.get('Last-Modified');
+      if (lastModified) {
+      const date = new Date(lastModified);
+        formatted = date.toLocaleDateString('es-ES');
+      } else {
+        formatted = 'desconocida';
       }
+    } catch (e) {
+      formatted = 'desconocida';
+    }
+    ([...document.querySelectorAll('.fecha-actualizado .fecha')]).forEach(node => node.textContent = formatted)
   }
 
   function calculateMeta() {
