@@ -13,6 +13,10 @@
     .fecha-actualizado {
       margin: 10px;
     }
+    span.separator {
+      content: '|';
+      color: yellowgreen;
+    }
     a.imdb {
       background-color: goldenrod;
       color: black;
@@ -25,11 +29,8 @@
     }
     span.added {
       font-size: 12px;
-      background-color: rgba(154, 205, 50, 0.37);
+      background-color: rgb(114, 151, 39);
       padding: 2px 5px;
-    }
-    div.row {
-      padding: 5px;
     }
     div.row:hover {
       background-color: #555;
@@ -46,50 +47,64 @@
       display: inline-block;
       margin-top: 2px;
     }
+    #list {
+      display: table;
+    }
+    .row {
+      display: table-row;
+    }
+    .col-imdb, .col-title, .col-added, .col-notes, .col-genres {
+      display: table-cell;
+      padding: 5px;
+      white-space: nowrap;
+    }
+    .col-title, .col-notes, .col-genres {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
     @media (max-width: 900px) {
-      .break {
+      html, body {
+        overflow-x: hidden;
+        max-width: 100vw;
+      }
+      #list {
         display: block;
-        margin-top: 5px;
-        margin-bottom: 5px;
+        max-width: 100%;
+      }
+      .row {
+        display: block;
+        padding: 5px;
+        margin-bottom: 10px;
+        max-width: 100%;
+        box-sizing: border-box;
+        background-color: #444;
+      }
+      .col-imdb, .col-title, .col-added, .col-notes, .col-genres {
+        display: block;
+        margin-bottom: 8px;
+        white-space: normal;
+        overflow: visible;
+        word-break: break-word;
+        max-width: 100%;
+        box-sizing: border-box;
       }
     }
-    .progress-container {
-      width: 99%;
-      background-color: #e0e0e0;
-      border-radius: 5px;
-      padding: 5px;
-    }
-
-    .progress-bar {
-      width: 0;
-      background-color: #4caf50;
-      height: 20px;
-      border-radius: 5px;
-      text-align: center;
-      color: white;
-      font-size: 14px;
-      line-height: 20px;
-    }
-
     input#title-filter {
       margin: .5em 0;
       width: 99%;
       padding: .3em;
       border: 0;
-      background-color: black;
+      background-color: #333;
       color: white;
+      border-bottom: 2px solid #AAA;
       font-family: monospace;
-      border-radius: 5px;
     }
   </style>
 </head>
 <body>
   <div class="fecha-actualizado">Actualizado a día <span class="fecha"></span></div>
-  <div class="progress-container">
-    <div class="progress-bar"></div>
-  </div>
   <div class="filter">
-    <input type="text" id="title-filter">
+    <input type="text" id="title-filter" placeholder="Buscar por título">
   </div>
   <div id="list"></div>
   <div class="fecha-actualizado">Actualizado a día <span class="fecha"></span></div>
@@ -101,7 +116,6 @@
     res = await res.text()
     window.fullList = csvToArray(res)
     printList()
-    calculateMeta()
   })()
 
   function filterResults(e) {
@@ -126,20 +140,23 @@
   function printRow(m){
     document.querySelector('#list').innerHTML += `
       <div class="row">
-        <span class="break">
-          <a class="imdb" target="_blank" href="${m[7]}">IMDb</a> #${m[0]} <strong>${m[5]}</strong> (${m[6]})
-        </span>
-        <span class="break">
+        <div class="col-imdb">
+          <a class="imdb" target="_blank" href="${m[7]}">IMDb</a> #${m[0]}
+        </div>
+        <div class="col-title">
+          <strong>${m[5]}</strong> (${m[6]})
+        </div>
+        <div class="col-added">
           <span class="added">Añadida: ${(m[2] || '').split('-').reverse().join('.')}</span>
-        </span>
-        <span class="break">
-          [Nota IMDb: ${m[9]} | Mi nota: ${m[16] || '<span class="muted">Sin nota</span>'}${m[4] ? ' | ' + m[4] : ''}]
-        </span>
-        <span class="break">
+        </div>
+        <div class="col-notes">
+          Nota IMDb: ${m[9]} | Mi nota: ${m[16] || '<span class="muted">Sin nota</span>'}${m[4] ? ' | ' + m[4] : ''}
+        </div>
+        <div class="col-genres">
           ${getGenreTags(m[12])}
-        </span>
+        </div>
       </div>
-    `
+    `.replace(/\|/ig, '<span class="separator">|</span>')
   }
 
   async function printList(list) {
@@ -168,17 +185,6 @@
       formatted = 'desconocida'
     }
     ([...document.querySelectorAll('.fecha-actualizado .fecha')]).forEach(node => node.textContent = formatted)
-  }
-
-  function calculateMeta() {
-    const list = window.fullList || []
-    let meta = Math.ceil(list.length / 50) * 50
-    if (list.length === meta) {
-      meta += 50
-    }
-    document.querySelector('.progress-bar').innerText = `${list.length} de ${meta}`
-    const percent = (list.length / meta) * 100
-    document.querySelector('.progress-bar').style.width = percent.toFixed(2) + '%'
   }
 
   function getGenreTags(genresTxt){
