@@ -47,6 +47,29 @@
       display: inline-block;
       margin-top: 2px;
     }
+    span.genre-tag[data-genre] {
+      cursor: pointer;
+    }
+    .all-genres{
+      margin: .5em 0;
+    }
+    .genre-pill{
+      display: inline-block;
+      margin-right: 6px;
+      margin-bottom: 6px;
+      padding: 4px 8px;
+      background: rgba(170,170,170,0.08);
+      color: #DDD;
+      border: 1px solid #DDD;
+      cursor: pointer;
+      font-size: 12px;
+    }
+    .genre-pill.active{
+      background: yellowgreen;
+      color: white;
+      border-color: #333;
+      font-weight: bold;
+    }
     #list {
       display: table;
     }
@@ -106,6 +129,7 @@
   <div class="filter">
     <input type="text" id="title-filter" placeholder="Buscar por título">
   </div>
+  <div id="all-genres" class="all-genres" aria-label="Filtros por género"></div>
   <div id="list"></div>
   <div class="fecha-actualizado">Actualizado a día <span class="fecha"></span></div>
 </body>
@@ -115,6 +139,7 @@
     let res = await fetch('data.csv')
     res = await res.text()
     window.fullList = csvToArray(res)
+    renderAllGenres(window.fullList)
     printList()
   })()
 
@@ -128,11 +153,7 @@
         return false
       }
       window.lastSearchText = text
-      if (!text) {
-        return printList(window.fullList)
-      }
-      const filteredList = window.fullList.filter(item => item[5].toLowerCase().includes(text) || item[6].toLowerCase().includes(text))
-      printList(filteredList)
+      applyFilters()
     }, 1000)
     
   }
@@ -188,7 +209,73 @@
   }
 
   function getGenreTags(genresTxt){
-    return (genresTxt || '').split(',').map(t => `<span class="genre-tag">${t.trim()}</span>`).join('')
+    return (genresTxt || '').split(',').map(t => {
+      const title = t.trim()
+      if(!title) return ''
+      return `<span class="genre-tag" data-genre="${title}">${title}</span>`
+    }).join('')
+  }
+
+  // Tags and filtering
+  window.selectedGenres = new Set();
+
+  function renderAllGenres(list){
+    const set = new Set();
+    (list || []).forEach(m => {
+      (m[12] || '').split(',').forEach(g => {
+        const t = (g||'').trim()
+        if(t) set.add(t)
+      })
+    })
+    const container = document.querySelector('#all-genres')
+    container.innerHTML = ''
+    Array.from(set).sort((a,b)=>a.localeCompare(b)).forEach(g => {
+      const span = document.createElement('span')
+      span.className = 'genre-pill'
+      span.setAttribute('data-genre', g)
+      span.textContent = g
+      container.appendChild(span)
+    })
+    updateActivePills()
+  }
+
+  function updateActivePills(){
+    document.querySelectorAll('[data-genre]').forEach(el => {
+      const g = (el.getAttribute('data-genre')||'').trim().toLowerCase()
+      if(window.selectedGenres.has(g)) el.classList.add('active')
+      else el.classList.remove('active')
+    })
+  }
+
+  function toggleGenre(raw){
+    const g = (raw||'').trim()
+    if(!g) return
+    const key = g.toLowerCase()
+    if(window.selectedGenres.has(key)) window.selectedGenres.delete(key)
+    else window.selectedGenres.add(key)
+    updateActivePills()
+    applyFilters()
+  }
+
+  function computeFilteredList(){
+    let list = window.fullList || []
+    const text = (document.querySelector('input#title-filter').value || '').trim().toLowerCase()
+    if(text){
+      list = list.filter(item => (item[5]||'').toLowerCase().includes(text) || (item[6]||'').toLowerCase().includes(text))
+    }
+    if(window.selectedGenres.size){
+      const sel = Array.from(window.selectedGenres)
+      list = list.filter(item => {
+        const genres = ((item[12]||'').split(',').map(x=>x.trim().toLowerCase()).filter(Boolean))
+        return sel.every(s => genres.includes(s))
+      })
+    }
+    return list
+  }
+
+  function applyFilters(){
+    const filtered = computeFilteredList()
+    printList(filtered)
   }
 
   function csvToArray( strData, strDelimiter ){
@@ -284,5 +371,13 @@
   }
 
   document.querySelector('input#title-filter').addEventListener('keyup', filterResults)
+
+  // Delegated click handling for any element with data-genre (both pills and row tags)
+  document.addEventListener('click', function(e){
+    const el = e.target.closest('[data-genre]')
+    if(!el) return
+    const genre = el.getAttribute('data-genre')
+    toggleGenre(genre)
+  })
 </script>
 </html>
