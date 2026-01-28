@@ -98,6 +98,13 @@ span.genre-tag[data-genre] {
   margin: .5em 0;
 }
 
+.all-genres-in-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  margin: 0;
+}
+
 .genre-pill {
   display: inline-block;
   margin-right: 6px;
@@ -273,4 +280,101 @@ input#title-filter {
   color: var(--text-secondary);
   font-size: 12px;
   margin-left: 0.5em;
+}
+
+/* Panel de filtros */
+.filters-toggle {
+  margin-left: 8px;
+  padding: 0.3em 0.6em;
+  font-size: 12px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 1em;
+}
+
+.filters-panel {
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.4em;
+  background: var(--bg-secondary);
+  padding: 0.5em;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+}
+
+.filters-panel.hidden {
+  display: none;
+}
+
+/* .filters-panel label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  display: flex;
+  flex-direction: column;
+  gap: 0.2em;
+} */
+
+.filters-panel label.inline-label {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.3em;
+  white-space: nowrap;
+}
+
+.filters-panel input,
+.filters-panel select {
+  padding: 0.25em 0.3em;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 3px;
+  font-family: monospace;
+  font-size: 11px;
+}
+
+.filters-panel select {
+  max-width: 120px;
+}
+
+@media (max-width: 600px) {
+  .filters-panel {
+    grid-template-columns: 1fr;
+    gap: 0.3em;
+    padding: 0.4em;
+  }
+
+  .filters-panel label.inline-label {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2em;
+    white-space: normal;
+  }
+
+  .filters-panel select {
+    max-width: 100%;
+  }
+}
+
+.all-genres-in-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4em;
+  grid-column: 1 / -1;
+}
+
+.apply-sort {
+  padding: 0.3em 0.6em;
+  background: var(--accent-color);
+  color: var(--accent-text);
+  border: 1px solid var(--accent-color);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 12px;
+  grid-column: 1 / -1;
 }

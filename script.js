@@ -91,7 +91,7 @@ async function printList(list) {
   if(window.location.search.substr(1) === 'json'){
     document.body.innerHTML = JSON.stringify(list)
   }else{
-    window.filteredList = list
+    window.filteredList = applySort(list)
     window.currentPage = 1
     renderPage()
   }
@@ -145,6 +145,7 @@ function mapRowData(m) {
 window.currentPage = 1
 window.itemsPerPage = 50
 window.filteredList = []
+window.currentSort = { key: 'id', dir: 'desc' }
 
 // Tags and filtering
 window.selectedGenres = new Set();
@@ -207,6 +208,70 @@ function applyFilters(){
   const filtered = computeFilteredList()
   printList(filtered)
 }
+
+function applySort(list){
+  if(!list) return []
+  const key = (window.currentSort && window.currentSort.key) || 'id'
+  const dir = (window.currentSort && window.currentSort.dir) || 'desc'
+  const dirFactor = dir === 'asc' ? 1 : -1
+
+  const getVal = (item) => {
+    if(key === 'id') return Number(item[0]) || 0
+    if(key === 'title') return (item[5] || '').toString().toLowerCase()
+    if(key === 'imdbRating') {
+      const v = parseFloat(((item[9]||'')+'').replace(',', '.'))
+      return isNaN(v) ? (dir === 'asc' ? Infinity : -Infinity) : v
+    }
+    if(key === 'myRating') {
+      const v = parseFloat(((item[16]||'')+'').replace(',', '.'))
+      return isNaN(v) ? (dir === 'asc' ? Infinity : -Infinity) : v
+    }
+    return ''
+  }
+
+  const copy = list.slice()
+  copy.sort((a,b) => {
+    const va = getVal(a)
+    const vb = getVal(b)
+    const ta = typeof va
+    const tb = typeof vb
+    if(ta === 'string' && tb === 'string') return dirFactor * va.localeCompare(vb)
+    if(ta === 'string') return dirFactor * va.localeCompare(String(vb))
+    if(tb === 'string') return dirFactor * String(va).localeCompare(vb)
+    if(va > vb) return dirFactor * 1
+    if(va < vb) return dirFactor * -1
+    return 0
+  })
+  return copy
+}
+
+function toggleFilters(){
+  const panel = document.getElementById('filters-panel')
+  const btn = document.getElementById('filters-toggle')
+  if(!panel || !btn) return false
+  panel.classList.toggle('hidden')
+  if(panel.classList.contains('hidden')){
+    btn.textContent = 'Filtros ▾'
+  } else {
+    btn.textContent = 'Filtros ▴'
+  }
+  return false
+}
+
+// Conectar controles de ordenación
+setTimeout(() => {
+  const applyBtn = document.getElementById('apply-sort')
+  if(applyBtn){
+    applyBtn.addEventListener('click', function(){
+      const key = document.getElementById('sort-key').value
+      const dir = document.getElementById('sort-dir').value
+      window.currentSort = { key, dir }
+      window.currentPage = 1
+      window.filteredList = applySort(window.filteredList)
+      renderPage()
+    })
+  }
+}, 0)
 
 function renderPage() {
   const list = window.filteredList

@@ -10,9 +10,34 @@
   <button class="theme-toggle" onclick="toggleTheme()">🌙 Tema claro</button>
   <div class="fecha-actualizado">Actualizado a día <span class="fecha"></span></div>
   <div class="filter">
-    <input type="text" id="title-filter" placeholder="Buscar por título">
+    <button id="filters-toggle" class="filters-toggle" onclick="toggleFilters()">Filtros ▾</button>
+    <div id="filters-panel" class="filters-panel hidden">
+      <label>
+        Buscar por título:
+        <input type="text" id="title-filter" placeholder="Ej: Matrix">
+      </label>
+      <div id="all-genres" class="all-genres-in-panel" aria-label="Filtros por género"></div>
+      <div>
+        <label class="inline-label">
+          Ordenar por:
+          <select id="sort-key">
+            <option value="id">Número</option>
+            <option value="title">Título</option>
+            <option value="imdbRating">Nota IMDb</option>
+            <option value="myRating">Mi nota</option>
+          </select>
+        </label>
+        <label class="inline-label">
+          Dirección:
+          <select id="sort-dir">
+            <option value="desc">Descendente</option>
+            <option value="asc">Ascendente</option>
+          </select>
+        </label>
+      </div>
+      <button id="apply-sort" class="apply-sort">Aplicar</button>
+    </div>
   </div>
-  <div id="all-genres" class="all-genres" aria-label="Filtros por género"></div>
   <div id="list"></div>
   <div id="pagination" class="pagination"></div>
   <div class="fecha-actualizado">Actualizado a día <span class="fecha"></span></div>
