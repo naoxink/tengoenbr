@@ -63,7 +63,7 @@ function printRow(m){
   const notesSection = row.additionalNotes ? ' | ' + row.additionalNotes : ''
 
   document.querySelector('#list').innerHTML += `
-    <div class="row">
+    <div class="row" data-id="${row.id}">
       <div class="col-imdb">
         <a class="imdb" target="_blank" href="${row.imdbUrl}">IMDb</a> #${row.id}
       </div>
@@ -168,6 +168,18 @@ function renderAllGenres(list){
   updateActivePills()
 }
 
+// Devuelve lista ordenada de géneros disponibles (útil para el selector de sugerencias)
+function getAllGenres(list){
+  const set = new Set();
+  (list || window.fullList || []).forEach(m => {
+    (m[9] || '').split(',').forEach(g => {
+      const t = (g||'').trim()
+      if(t) set.add(t)
+    })
+  })
+  return Array.from(set).sort((a,b)=>a.localeCompare(b))
+}
+
 function updateActivePills(){
   document.querySelectorAll('[data-genre]').forEach(el => {
     const g = (el.getAttribute('data-genre')||'').trim().toLowerCase()
@@ -196,7 +208,7 @@ function computeFilteredList(){
   if(window.selectedGenres.size){
     const sel = Array.from(window.selectedGenres)
     list = list.filter(item => {
-      const genres = ((item[12]||'').split(',').map(x=>x.trim().toLowerCase()).filter(Boolean))
+      const genres = ((item[9]||'').split(',').map(x=>x.trim().toLowerCase()).filter(Boolean))
       return sel.every(s => genres.includes(s))
     })
   }
@@ -436,3 +448,176 @@ document.addEventListener('click', function(e){
   const genre = el.getAttribute('data-genre')
   toggleGenre(genre)
 })
+
+// Suggestion feature: small weighted-random recommender based on age, IMDb note and last rated date
+window.suggestionHistory = []
+
+function daysSince(dateStr){
+  if(!dateStr) return 0
+  const d = new Date(dateStr)
+  if(isNaN(d)) return 0
+  return Math.floor((Date.now() - d.getTime()) / (1000*60*60*24))
+}
+
+function computeSuggestionScore(r){
+  const ageDays = daysSince(r.dateAdded)
+  const ageScore = Math.min(ageDays/365, 10) / 10 // up to 10 years
+  const imdb = parseFloat((r.imdbRating||'').toString().replace(',', '.')) || 0
+  const imdbScore = imdb / 10
+  let dateRatedScore = 0
+  if(!r.dateRated) dateRatedScore = 1
+  else dateRatedScore = Math.min(daysSince(r.dateRated)/365, 5) / 5
+  return ageScore * 0.45 + imdbScore * 0.35 + dateRatedScore * 0.2 + 0.01
+}
+
+function pickSuggestion(filters){
+  let candidates = (window.fullList || []).map(mapRowData).filter(r => r && r.title)
+  // aplicar filtros opcionales
+  if(filters){
+    if(filters.genre && filters.genre !== 'any'){
+      const g = (filters.genre||'').toLowerCase()
+      candidates = candidates.filter(r => (r.genres||'').toLowerCase().split(',').map(x=>x.trim()).includes(g))
+    }
+    if(filters.unrated){
+      candidates = candidates.filter(r => {
+        const v = parseFloat((r.myRating||'').toString().replace(',', '.'))
+        return isNaN(v) || !r.myRating
+      })
+    }
+  }
+  if(candidates.length === 0) return null
+
+  const seen = new Set(window.suggestionHistory || [])
+  let pool = candidates.filter(r => !seen.has(String(r.id)))
+  if(pool.length === 0){
+    window.suggestionHistory = []
+    pool = candidates
+  }
+  const scores = pool.map(r => computeSuggestionScore(r))
+  const total = scores.reduce((a,b)=>a+b, 0)
+  let rnd = Math.random() * total
+  for(let i=0;i<pool.length;i++){
+    rnd -= scores[i]
+    if(rnd <= 0) return pool[i]
+  }
+  return pool[0]
+}
+
+function escapeHtml(s){ return (s||'').toString().replace(/[&<>\"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])) }
+
+function renderSuggestionBoxFor(r){
+  const box = document.getElementById('suggestion-box')
+  box.classList.remove('hidden')
+  // Mantener cualquier control (select/checkbox) y renderizar solo la zona principal
+  let main = box.querySelector('#suggestion-main')
+  if(!main){
+    main = document.createElement('div')
+    main.id = 'suggestion-main'
+    box.appendChild(main)
+  }
+  if(!r){
+    main.innerHTML = '<div class="title">Sin sugerencias</div>'
+    return
+  }
+  main.innerHTML = `<div class="title">${escapeHtml(r.title)}${r.originalTitle && r.title !== r.originalTitle ? ` <small>(${escapeHtml(r.originalTitle)})</small>`: ''}</div>
+    <div class="meta">${escapeHtml(r.genres||'')} · IMDb: ${r.imdbRating||'—'} · Mi nota: ${r.myRating||'—'}</div>
+    <div class="actions">
+      <button class="btn-ghost" id="suggest-skip">Siguiente</button>
+      <button class="btn-ghost" id="suggest-close">Cerrar</button>
+      <button class="btn-primary" id="suggest-open">Ver</button>
+    </div>`
+
+  // attach handlers
+  document.getElementById('suggest-open').onclick = function(){
+    highlightAndShow(r.id)
+    box.classList.add('hidden')
+    window.suggestionHistory.push(String(r.id))
+    if(window.suggestionHistory.length > 30) window.suggestionHistory.shift()
+  }
+  document.getElementById('suggest-skip').onclick = function(){
+    window.suggestionHistory.push(String(r.id))
+    if(window.suggestionHistory.length > 30) window.suggestionHistory.shift()
+    showSuggestion()
+  }
+  document.getElementById('suggest-close').onclick = function(){
+    box.classList.add('hidden')
+  }
+}
+
+function populateSuggestionGenreOptions(){
+  const sel = document.getElementById('suggest-genre')
+  if(!sel) return
+  const genres = getAllGenres()
+  const current = sel.value
+  sel.innerHTML = '<option value="any">Cualquier género</option>' + genres.map(g => `<option value="${escapeHtml(g)}">${escapeHtml(g)}</option>`).join('')
+  if(current) sel.value = current
+}
+
+function showSuggestion(){
+  const box = document.getElementById('suggestion-box')
+  if(!(window.fullList && window.fullList.length)){
+    box.innerHTML = '<div class="title">No hay películas.</div>'
+    box.classList.remove('hidden')
+    return
+  }
+  // Asegurar que los controles de filtro existan y estén poblados
+  if(!document.getElementById('suggest-genre')){
+    const tmp = document.createElement('div')
+    tmp.innerHTML = `<div style="margin-bottom:.5em"><label>Género: <select id="suggest-genre"><option>Cargando...</option></select></label> <label style="margin-left:.5em"><input type="checkbox" id="suggest-unrated"> Sólo sin nota</label></div><div id="suggest-count" style="font-size:12px;color:var(--text-secondary);margin-bottom:.4em"></div>`
+    // Insertar al principio de la caja
+    box.insertBefore(tmp, box.firstChild)
+    populateSuggestionGenreOptions()
+  } else {
+    populateSuggestionGenreOptions()
+  }
+
+  const genre = (document.getElementById('suggest-genre') || {}).value || 'any'
+  const unrated = (document.getElementById('suggest-unrated') || {}).checked || false
+  const s = pickSuggestion({genre, unrated})
+
+  // Contar candidatos para feedback
+  let cnt = (window.fullList||[]).map(mapRowData)
+  if(genre && genre !== 'any') cnt = cnt.filter(r => (r.genres||'').toLowerCase().split(',').map(x=>x.trim()).includes(genre.toLowerCase()))
+  if(unrated) cnt = cnt.filter(r => isNaN(parseFloat((r.myRating||'').toString().replace(',','.'))))
+  const countNode = document.getElementById('suggest-count')
+  if(countNode) countNode.textContent = `${cnt.length} candidato(s)`
+
+  renderSuggestionBoxFor(s)
+
+  // conectar cambios de filtros para actualizar sugerencia al vuelo
+  const sel = document.getElementById('suggest-genre')
+  if(sel) sel.onchange = showSuggestion
+  const chk = document.getElementById('suggest-unrated')
+  if(chk) chk.onchange = showSuggestion
+}
+
+// Toggle behaviour for the suggest button
+const suggestBtn = document.getElementById('suggest-toggle')
+if(suggestBtn){
+  suggestBtn.addEventListener('click', function(){
+    const box = document.getElementById('suggestion-box')
+    if(box.classList.contains('hidden')) showSuggestion()
+    else box.classList.add('hidden')
+  })
+}
+
+function highlightAndShow(id){
+  if(!id) return
+  const selector = `#list .row[data-id="${id}"]`
+  let el = document.querySelector(selector)
+  if(!el){
+    const idx = window.filteredList.findIndex(r => String(r[0]) === String(id))
+    if(idx >= 0){
+      const page = Math.floor(idx / window.itemsPerPage) + 1
+      goToPage(page)
+      setTimeout(()=>{
+        const el2 = document.querySelector(selector)
+        if(el2){ el2.classList.add('highlight'); el2.scrollIntoView({behavior:'smooth', block:'center'}); setTimeout(()=>el2.classList.remove('highlight'), 2500) }
+      }, 300)
+    }
+    return
+  }
+  el.classList.add('highlight')
+  el.scrollIntoView({behavior:'smooth', block:'center'})
+  setTimeout(()=> el.classList.remove('highlight'), 2500)
+}

@@ -8,6 +8,8 @@
 </head>
 <body>
   <button class="theme-toggle" onclick="toggleTheme()">🌙 Tema claro</button>
+  <button id="suggest-toggle" class="suggest-toggle" title="Sugerir película">🎲 Sugerir</button>
+  <div id="suggestion-box" class="suggestion-box hidden" aria-live="polite"></div>
   <div class="filter">
     <button id="filters-toggle" class="filters-toggle" onclick="toggleFilters()">Filtros ▾</button>
     <div id="filters-panel" class="filters-panel hidden">
