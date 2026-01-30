@@ -17,23 +17,26 @@ Propósito: ayudar a agentes AI a ser productivos rápidamente en este repo est�
   - Frontend estático: la lógica principal vive en `script.js` (referenciado desde `index.html`).
   - Flujo de datos: `script.js` hace `fetch('./data.csv')` → `csvToArray()` → `window.fullList` → `renderAllGenres()` → `printList()`.
 
-- Esquema CSV observable (índices usados en el código):
-  - `m[0]` — id numérico (usa para ordenar desc).
-  - `m[2]` — fecha añadida (YYYY-MM-DD esperado).
-  - `m[4]` — texto adicional / notas.
-  - `m[5]` — título (UI y búsqueda).
-  - `m[6]` — año (mostrado junto al título).
-  - `m[7]` — URL IMDb (enlace en la fila).
-  - `m[9]` — nota IMDb (mostrada en la columna de notas).
-  - `m[12]` — géneros (coma-separados; parseado por `getGenreTags()`).
-  - `m[16]` — "mi nota" (puede estar vacío).
+- Esquema CSV observable (índices usados en el código; nuevo esquema tras eliminar columnas):
+  - `m[0]` — id numérico.
+  - `m[1]` — `Const` (ID IMDb, ej: `tt0133093`).
+  - `m[2]` — `Created` (fecha de inclusión, YYYY-MM-DD).
+  - `m[3]` — `Additional Notes`.
+  - `m[4]` — `Title` (título mostrado; usado en búsqueda y ordenación).
+  - `m[5]` — `Original Title`.
+  - `m[6]` — `IMDb URL`.
+  - `m[7]` — `Type` (ej: `Película`).
+  - `m[8]` — `IMDb Rating`.
+  - `m[9]` — `Genres` (coma-separados; parseado por `getGenreTags()`).
+  - `m[10]` — `Your Rating` (nota personal).
+  - `m[11]` — `Date Rated` (fecha adicional, ej: fecha de valoración).
 
 Nota: los índices y campos están normalizados en la función `mapRowData()` — actualizar esa función si se añaden o reordenan columnas.
 
 - Comportamientos importantes a preservar al editar:
   - `csvToArray()` usa una regex para campos citados; cualquier refactor debe conservar compatibilidad o incluir pruebas.
   - Tras parsear, `arrData` se limpia (`.filter(item => !!item[0])`) y se ordena por `id` (índice 0) de forma descendente.
-  - `filterResults()` aplica debounce de 1000 ms y filtra por `title` (índice 5) y `year` (índice 6), comparando en minúsculas.
+  - `filterResults()` aplica debounce de 1000 ms y filtra por `title` (índice 4) solamente — `year` fue eliminado del esquema.
   - `printRow()` y `mapRowData()` son los puntos únicos de verdad para el render; si cambias columnas, actualiza ambos.
 
 - Convenciones del proyecto y patrones observables:
@@ -51,6 +54,7 @@ Nota: los índices y campos están normalizados en la función `mapRowData()` �
 
 - Backups y herramientas auxiliares:
   - `add_movie.py` y `delete_movie.py` crean automáticamente una copia en `backups/` antes de escribir `data.csv`. Pasar `--no-backup` si no quieres la copia (ambos scripts soportan `--dry-run`).
+  - He eliminado columnas 3,10,11,13,14,15 del CSV (migration disponible en `migrate_remove_columns.py`, ya aplicada). El nuevo esquema tiene 12 columnas; updates en `script.js`, `add_movie.py` y `delete_movie.py` fueron aplicados.
   - Usa `manage_backups.py` para revisar backups: `list`, `show <name|index>`, `diff <a> [b]`, `restore <name|index> [--yes] [--backup]`, `delete <name|index>`.
   - Buen flujo: `python manage_backups.py list` → `diff` → `restore` si procede.
   - Ejemplos rápidos:

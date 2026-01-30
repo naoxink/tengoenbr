@@ -7,25 +7,19 @@ Uso:
   python add_movie.py --dry-run  # muestra la fila CSV que se añadiría
   python add_movie.py --backup  # crea copia de seguridad antes de escribir
 
-Mapa de columnas (basado en ejemplo en `data.csv`):
+Mapa de columnas (nuevo, tras eliminar columnas 3,10,11,13,14,15):
  0: id
  1: Const (ID IMDb, ej: tt0133093)
  2: Created (fecha de inclusión)
- 3: Created (duplicada en el ejemplo; se copia la misma fecha)
- 4: Additional Notes
- 5: Title (título mostrado)
- 6: Original Title
- 7: IMDb URL
- 8: Type (ej: Película)
- 9: IMDb Rating
- 10: Runtime (opcional)
- 11: Year
- 12: Genres (coma-separados)
- 13: ImdbVotes / misc (opcional)
- 14: Release Date (opcional)
- 15: Director (opcional)
- 16: Your Rating
- 17: Fecha adicional / marcado (se usará fecha de hoy si no se proporciona)
+ 3: Additional Notes
+ 4: Title (título mostrado)
+ 5: Original Title
+ 6: IMDb URL
+ 7: Type (ej: Película)
+ 8: IMDb Rating
+ 9: Genres (coma-separados)
+ 10: Your Rating
+ 11: Fecha adicional / marcado (se usará fecha de hoy si no se proporciona)
 
 Nota: el script calcula el siguiente id como max(id)+1.
 """
@@ -39,7 +33,7 @@ import re
 
 BASE_DIR = os.path.dirname(__file__)
 CSV_PATH = os.path.join(BASE_DIR, 'data.csv')
-NUM_COLS = 18
+NUM_COLS = 12
 
 parser = argparse.ArgumentParser(description='Añadir película a data.csv')
 parser.add_argument('--dry-run', action='store_true', help='Mostrar la fila CSV sin escribir')
@@ -114,32 +108,25 @@ def main():
     genres = prompt('Géneros (separados por comas) (opcional)', optional=True)
     your_rating = prompt('Puntuación personal (Your Rating) (opcional)', optional=True)
     notes = prompt('Notas adicionales (opcional)', optional=True)
-    year = prompt('Año (opcional)', optional=True)
 
     imdb_url = ''
     if const:
         imdb_url = f'https://www.imdb.com/title/{const}/'
 
-    # construir fila con NUM_COLS elementos (18 columnas según el ejemplo)
+    # construir fila con NUM_COLS elementos (12 columnas tras el recorte)
     row = [''] * NUM_COLS
     row[0] = str(nid)
     row[1] = const
     row[2] = created
-    row[3] = created  # el ejemplo muestra la fecha en ambas columnas
-    row[4] = notes
-    row[5] = title
-    row[6] = original_title
-    row[7] = imdb_url
-    row[8] = 'Película'
-    row[9] = imdb_rating
-    row[10] = ''
-    row[11] = year
-    row[12] = genres
-    row[13] = ''
-    row[14] = ''
-    row[15] = ''
-    row[16] = your_rating
-    row[17] = datetime.date.today().isoformat()
+    row[3] = notes
+    row[4] = title
+    row[5] = original_title
+    row[6] = imdb_url
+    row[7] = 'Película'
+    row[8] = imdb_rating
+    row[9] = genres
+    row[10] = your_rating
+    row[11] = datetime.date.today().isoformat()
 
     if args.dry_run:
         # usar csv.writer para formatear correctamente (comillas, comas en campos)

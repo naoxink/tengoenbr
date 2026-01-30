@@ -68,7 +68,7 @@ function printRow(m){
         <a class="imdb" target="_blank" href="${row.imdbUrl}">IMDb</a> #${row.id}
       </div>
       <div class="col-title">
-        <strong>${row.title}</strong> (${row.year})
+        <strong>${row.title}</strong>${row.originalTitle && row.title !== row.originalTitle ? ` (${row.originalTitle})` : ''}
       </div>
       <div class="col-added">
         <span class="added">Añadida: ${formattedDate}</span>
@@ -121,23 +121,21 @@ function getGenreTags(genresTxt){
   }).join('')
 }
 
-// Helper para mapear índices a propiedades legibles
+// Helper para mapear índices a propiedades legibles (nuevo esquema)
 function mapRowData(m) {
   return {
     id: m[0],
-    // m[1] no usado
+    // m[1] Const
     dateAdded: m[2],
-    // m[3] no usado
-    additionalNotes: m[4],
-    title: m[5],
-    year: m[6],
-    imdbUrl: m[7],
-    // m[8] no usado
-    imdbRating: m[9],
-    // m[10], m[11] no usados
-    genres: m[12],
-    // m[13-15] no usados
-    myRating: m[16]
+    additionalNotes: m[3],
+    title: m[4],
+    originalTitle: m[5],
+    imdbUrl: m[6],
+    // m[7] Type
+    imdbRating: m[8],
+    genres: m[9],
+    myRating: m[10],
+    dateRated: m[11]
   }
 }
 
@@ -153,7 +151,7 @@ window.selectedGenres = new Set();
 function renderAllGenres(list){
   const set = new Set();
   (list || []).forEach(m => {
-    (m[12] || '').split(',').forEach(g => {
+    (m[9] || '').split(',').forEach(g => {
       const t = (g||'').trim()
       if(t) set.add(t)
     })
@@ -192,7 +190,8 @@ function computeFilteredList(){
   let list = window.fullList || []
   const text = (document.querySelector('input#title-filter').value || '').trim().toLowerCase()
   if(text){
-    list = list.filter(item => (item[5]||'').toLowerCase().includes(text) || (item[6]||'').toLowerCase().includes(text))
+    // ahora solo filtramos por título (columna 4 en el nuevo esquema)
+    list = list.filter(item => (item[4]||'').toLowerCase().includes(text))
   }
   if(window.selectedGenres.size){
     const sel = Array.from(window.selectedGenres)
@@ -217,13 +216,13 @@ function applySort(list){
 
   const getVal = (item) => {
     if(key === 'id') return Number(item[0]) || 0
-    if(key === 'title') return (item[5] || '').toString().toLowerCase()
+    if(key === 'title') return (item[4] || '').toString().toLowerCase()
     if(key === 'imdbRating') {
-      const v = parseFloat(((item[9]||'')+'').replace(',', '.'))
+      const v = parseFloat(((item[8]||'')+'').replace(',', '.'))
       return isNaN(v) ? (dir === 'asc' ? Infinity : -Infinity) : v
     }
     if(key === 'myRating') {
-      const v = parseFloat(((item[16]||'')+'').replace(',', '.'))
+      const v = parseFloat(((item[10]||'')+'').replace(',', '.'))
       return isNaN(v) ? (dir === 'asc' ? Infinity : -Infinity) : v
     }
     return ''
