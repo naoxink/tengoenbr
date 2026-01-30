@@ -43,7 +43,8 @@ NUM_COLS = 18
 
 parser = argparse.ArgumentParser(description='Añadir película a data.csv')
 parser.add_argument('--dry-run', action='store_true', help='Mostrar la fila CSV sin escribir')
-parser.add_argument('--backup', action='store_true', help='Crear copia de seguridad antes de escribir')
+parser.add_argument('--backup', action='store_true', help='(obsoleto) Crear copia de seguridad antes de escribir — ahora se crea automáticamente; usar --no-backup para evitar copia')
+parser.add_argument('--no-backup', action='store_true', help='No crear copia de seguridad antes de escribir')
 args = parser.parse_args()
 
 def read_rows(path):
@@ -151,10 +152,13 @@ def main():
         print(line)
         return
 
-    if args.backup:
+    if not args.no_backup:
+        BACKUP_DIR = os.path.join(BASE_DIR, 'backups')
+        os.makedirs(BACKUP_DIR, exist_ok=True)
         bname = f"data.csv.bak.{datetime.datetime.now().strftime('%Y%m%d%H%M%S')}"
-        shutil.copy(CSV_PATH, bname)
-        print(f'Copia de seguridad creada: {bname}')
+        bpath = os.path.join(BACKUP_DIR, bname)
+        shutil.copy(CSV_PATH, bpath)
+        print(f'Copia de seguridad creada: {bpath}')
 
     # append
     with open(CSV_PATH, 'a', newline='', encoding='utf-8') as f:

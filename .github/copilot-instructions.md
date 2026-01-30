@@ -49,6 +49,15 @@ Nota: los índices y campos están normalizados en la función `mapRowData()` �
   - Depuración: abrir DevTools, inspeccionar `window.fullList`, `window.filteredList`, `window.currentSort`.
   - Verificar cabeceras: `curl -I http://localhost:8000/data.csv` para comprobar `Last-Modified`.
 
+- Backups y herramientas auxiliares:
+  - `add_movie.py` y `delete_movie.py` crean automáticamente una copia en `backups/` antes de escribir `data.csv`. Pasar `--no-backup` si no quieres la copia (ambos scripts soportan `--dry-run`).
+  - Usa `manage_backups.py` para revisar backups: `list`, `show <name|index>`, `diff <a> [b]`, `restore <name|index> [--yes] [--backup]`, `delete <name|index>`.
+  - Buen flujo: `python manage_backups.py list` → `diff` → `restore` si procede.
+  - Ejemplos rápidos:
+    - Añadir (dry-run): `python add_movie.py --dry-run` — Escribir y crear backup automático: `python add_movie.py` (usar `--no-backup` para evitar backup).
+    - Eliminar (dry-run): `python delete_movie.py --dry-run 309` — Eliminar: `python delete_movie.py 309` (crea backup automático).
+    - Gestionar backups: `python manage_backups.py list` / `python manage_backups.py diff 1` / `python manage_backups.py restore 1 --backup`
+
 - Sugerencias prácticas para cambios en CSV/renderizado:
   - Si se añaden columnas: actualizar `mapRowData()` y `printRow()`.
   - Si la columna de géneros cambia, actualizar `renderAllGenres()` y `getGenreTags()`.
@@ -66,14 +75,13 @@ Checklist rápido para PRs que toquen CSV o renderizado:
 - Adaptar `printRow()` para nuevas columnas visibles.
 - Verificar `renderAllGenres()` si cambian los géneros.
 - Probar localmente con `python -m http.server 8000` y comprobar `Last-Modified` con `curl -I`.
+- Revisar backups con `manage_backups.py list` y `manage_backups.py diff` si el cambio afecta `data.csv`.
 
 Si quieres, puedo transformar `csvToArray()` en un módulo testable y añadir pruebas unitarias.
 
 Por favor revisa y dime si quieres añadir reglas de commit, plantilla para cambios en `data.csv`, o ejemplos de pruebas unitarias.
 
-```# Instrucciones para agentes AI (Copilot)
 
-Propósito: ayudar a agentes AI a ser productivos rápidamente en este repo estático.
 
 - Resumen rápido:
   - Proyecto minimalista: sitio estático servido desde `index.html` que carga `data.csv` en el cliente.
