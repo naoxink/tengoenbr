@@ -14,7 +14,7 @@ import datetime
 import argparse
 import sys
 
-BASE_DIR = os.path.dirname(__file__)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 CSV_PATH = os.path.join(BASE_DIR, 'data.csv')
 BACKUP_DIR = os.path.join(BASE_DIR, 'backups')
 REMOVE_INDICES = [3,10,11,13,14,15]

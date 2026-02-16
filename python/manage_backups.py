@@ -20,7 +20,7 @@ import shutil
 import difflib
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 BACKUP_DIR = BASE_DIR / 'backups'
 DATA_CSV = BASE_DIR / 'data.csv'
 
@@ -73,15 +73,35 @@ def show_file(p):
             print(ln.rstrip())
 
 
-def diff_files(a, b):
-    a_lines = a.read_text(encoding='utf-8').splitlines()
-    b_lines = b.read_text(encoding='utf-8').splitlines()
-    diff = difflib.unified_diff(a_lines, b_lines, fromfile=str(a), tofile=str(b), lineterm='')
-    out = '\n'.join(diff)
-    if out:
-        print(out)
-    else:
-        print('No hay diferencias.')
+RED = "\033[91m"
+GREEN = "\033[92m"
+CYAN = "\033[96m"
+GRAY = "\033[90m"
+RESET = "\033[0m"
+
+def diff_files(file1, file2):
+    with open(file1) as f1, open(file2) as f2:
+        diff = difflib.unified_diff(
+            f1.readlines(),
+            f2.readlines()
+        )
+
+        for line in diff:
+            if line.startswith("@@"):
+                print(CYAN + line + RESET, end="")
+                print()  # separación visual del bloque
+
+            elif line.startswith("+++ ") or line.startswith("--- "):
+                print(GRAY + line + RESET, end="")
+
+            elif line.startswith("+"):
+                print(GREEN + line + RESET, end="")
+
+            elif line.startswith("-"):
+                print(RED + line + RESET, end="")
+
+            else:
+                print(line, end="")
 
 
 def restore(p, yes=False, do_backup=False):

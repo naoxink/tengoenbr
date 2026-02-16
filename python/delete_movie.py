@@ -20,7 +20,7 @@ import shutil
 import sys
 import datetime
 
-BASE_DIR = os.path.dirname(__file__)
+BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 CSV_PATH = os.path.join(BASE_DIR, 'data.csv')
 
 parser = argparse.ArgumentParser(description='Eliminar registro(s) por id y reindexar siguientes IDs')
