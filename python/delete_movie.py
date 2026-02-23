@@ -1,11 +1,13 @@
 #!/usr/bin/env python3
 """
 delete_movie.py
-Eliminar registro(s) por ID (columna 0) y ajustar los IDs siguientes para evitar saltos.
+Eliminar registro(s) por ID de IMDb (Const) en la columna 0.
 Uso:
-  python delete_movie.py 309         # eliminar id 309 (modifica data.csv)
-  python delete_movie.py 309 --dry-run  # mostrar lo que cambiaría sin escribir
-  python delete_movie.py 309 --backup   # crea copia antes de escribir
+  python delete_movie.py tt0133093         # eliminar todas las filas que contengan ese Const
+  python delete_movie.py tt0133093 --dry-run  # mostrar lo que cambiaría sin escribir
+  python delete_movie.py tt0133093 --backup   # crea copia antes de escribir
+
+Nota: ya no se reindexan filas, simplemente se borran las coincidencias.
 
 Reglas:
 - Si hay N filas con el ID solicitado, se eliminan todas ellas.
@@ -24,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 CSV_PATH = os.path.join(BASE_DIR, 'data.csv')
 
 parser = argparse.ArgumentParser(description='Eliminar registro(s) por id y reindexar siguientes IDs')
-parser.add_argument('id', type=int, nargs='?', help='ID (columna 0) a eliminar')
+parser.add_argument('id', type=str, nargs='?', help='Const/IDIMDb (columna 0) a eliminar')
 parser.add_argument('--dry-run', action='store_true', help='Mostrar los cambios sin escribir')
 parser.add_argument('--backup', action='store_true', help='(obsoleto) Crear copia de seguridad antes de escribir — ahora se crea automáticamente; usar --no-backup para evitar copia')
 parser.add_argument('--no-backup', action='store_true', help='No crear copia de seguridad antes de escribir')
@@ -52,53 +54,28 @@ def write_rows(path, rows):
 def main():
     id_to_remove = args.id
     if id_to_remove is None:
-        try:
-            id_to_remove = int(input('ID a eliminar: ').strip())
-        except Exception:
+        id_to_remove = input('Const (IDIMDb) a eliminar: ').strip()
+        if not id_to_remove:
             print('ID inválido', file=sys.stderr)
             sys.exit(1)
 
     rows = read_rows(CSV_PATH)
 
-    # count rows that match id_to_remove
-    removed_rows = [r for r in rows if len(r) > 0 and r[0].isdigit() and int(r[0]) == id_to_remove]
+    # count rows that match the provided Const
+    removed_rows = [r for r in rows if len(r) > 0 and r[0] == id_to_remove]
     num_removed = len(removed_rows)
 
     if num_removed == 0:
-        print(f'No se encontró ningún registro con id {id_to_remove}. Nada que hacer.')
+        print(f'No se encontró ningún registro con Const {id_to_remove}. Nada que hacer.')
         sys.exit(0)
 
-    # Build new rows: remove matching, decrement ids > id_to_remove by num_removed
-    new_rows = []
-    updated_count = 0
-    for r in rows:
-        if len(r) == 0:
-            new_rows.append(r)
-            continue
-        try:
-            cur_id = int(r[0])
-        except Exception:
-            # If first column is not numeric, leave row as-is
-            new_rows.append(r)
-            continue
-        if cur_id == id_to_remove:
-            # skip (remove)
-            continue
-        if cur_id > id_to_remove:
-            new_id = cur_id - num_removed
-            r_copy = list(r)
-            r_copy[0] = str(new_id)
-            new_rows.append(r_copy)
-            updated_count += 1
-        else:
-            new_rows.append(r)
+    # Build new rows: simply drop any row whose first col equals the value
+    new_rows = [r for r in rows if not (len(r) > 0 and r[0] == id_to_remove)]
+    updated_count = 0  # no renumeración
 
     if args.dry_run:
-        print(f'DRY RUN: {num_removed} fila(s) eliminaría con id={id_to_remove}.')
-        print(f'DRY RUN: {updated_count} fila(s) tendrían su id decrementado en {num_removed}.')
-        # print a preview (first few modified rows)
-        print('\n--- Preview de filas modificadas / agregadas ---')
-        # show top 10 rows of resulting file for quick check
+        print(f'DRY RUN: eliminaría {num_removed} fila(s) con Const={id_to_remove}.')
+        print('\n--- Preview de primeras filas tras eliminación ---')
         from io import StringIO
         buf = StringIO()
         w = csv.writer(buf)
@@ -116,7 +93,7 @@ def main():
         print(f'Copia de seguridad creada: {bpath}')
 
     write_rows(CSV_PATH, new_rows)
-    print(f'Eliminadas {num_removed} fila(s) con id={id_to_remove}. Se actualizaron {updated_count} fila(s).')
+    print(f'Eliminadas {num_removed} fila(s) con Const={id_to_remove}.')
 
 
 if __name__ == '__main__':

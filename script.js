@@ -5,7 +5,13 @@
   
   let res = await fetch('./data.csv')
   res = await res.text()
+  // Full dataset - preserve original CSV order.
   window.fullList = csvToArray(res)
+  // annotate each row with its original CSV line number (1‑based). Esto evita
+  // lógica adicional: el '#' mostrado en cada fila será simplemente esta línea.
+  window.fullList.forEach((r,i)=>{ r._csvLine = i+1 })
+  // invertir para que las últimas filas del CSV aparezcan primero en el listado
+  window.fullList = window.fullList.slice().reverse()
   renderAllGenres(window.fullList)
   printList()
 })()
@@ -48,6 +54,8 @@ function filterResults(e) {
 function printRow(m){
   const row = mapRowData(m)
   const formattedDate = (row.dateAdded || '').split('-').reverse().join('.')
+  // line number from original CSV (1-based); present always
+  const rank = m._csvLine || ''
   const ratingClass = v => {
     const n = parseFloat((v||'').toString().replace(',', '.'))
     if (isNaN(n)) return 'muted'
@@ -56,25 +64,27 @@ function printRow(m){
     return 'bad'
   }
 
-  const imdbCls = ratingClass(row.imdbRating)
   const myCls = ratingClass(row.myRating)
-  const imdbDisplay = row.imdbRating ? `<span class="rating ${imdbCls}">${row.imdbRating}</span>` : `<span class="rating muted">—</span>`
-  const myDisplay = row.myRating ? `<span class="rating ${myCls}">${row.myRating}</span>` : `<span class="rating muted">Sin nota</span>`
+  const myDisplay = row.myRating ? `<span class="rating ${myCls}">${row.myRating}</span>` : `<span class="rating muted">?</span>`
   const notesSection = row.additionalNotes ? ' | ' + row.additionalNotes : ''
 
+  // Show a hash label reflecting the original CSV line. This maps directly
+  // to the row's position in the file and avoids any extra logic; 'rank'
+  // (above) holds this value.
   document.querySelector('#list').innerHTML += `
     <div class="row" data-id="${row.id}">
       <div class="col-imdb">
-        <a class="imdb" target="_blank" href="${row.imdbUrl}">IMDb</a> #${row.id}
+        <a class="imdb" target="_blank" href="${row.imdbUrl}">IMDb</a> #${rank}
+        ${row.format ? `<img class="format" src="assets/${row.format}.png">` : ''}
       </div>
       <div class="col-title">
         <strong>${row.title}</strong>${row.originalTitle && row.title !== row.originalTitle ? ` (${row.originalTitle})` : ''}
       </div>
       <div class="col-added">
-        <span class="added">Añadida: ${formattedDate}</span>
+        <span class="added" title="Añadida el ${formattedDate}">${formattedDate}</span>
       </div>
       <div class="col-notes">
-        Nota IMDb: ${imdbDisplay} | Mi nota: ${myDisplay}${notesSection}
+        Nota: ${myDisplay}${notesSection}
       </div>
       <div class="col-genres">
         ${getGenreTags(row.genres)}
@@ -91,7 +101,12 @@ async function printList(list) {
   if(window.location.search.substr(1) === 'json'){
     document.body.innerHTML = JSON.stringify(list)
   }else{
-    window.filteredList = applySort(list)
+    // no ordenar si es la lista completa cargada por defecto
+    if(list === window.fullList){
+      window.filteredList = list
+    } else {
+      window.filteredList = applySort(list)
+    }
     window.currentPage = 1
     renderPage()
   }
@@ -121,21 +136,22 @@ function getGenreTags(genresTxt){
   }).join('')
 }
 
-// Helper para mapear índices a propiedades legibles (nuevo esquema)
+// Helper para mapear índices a propiedades legibles
+// después de eliminar la columna "Position" del CSV.
+// ahora m[0] contiene el Const (ID de IMDb) y los demás índices se desplazan.
 function mapRowData(m) {
   return {
-    id: m[0],
-    // m[1] Const
-    dateAdded: m[2],
-    additionalNotes: m[3],
-    title: m[4],
-    originalTitle: m[5],
-    imdbUrl: m[6],
-    // m[7] Type
-    imdbRating: m[8],
-    genres: m[9],
-    myRating: m[10],
-    dateRated: m[11]
+    id: m[0],               // se mantiene como identificador interno (ahora Const)
+    dateAdded: m[1],        // Created
+    additionalNotes: m[2],  // Description
+    title: m[3],            // Title
+    originalTitle: m[4],    // Original Title
+    imdbUrl: m[5],          // URL
+    // m[6] Title Type (ignored)
+    genres: m[7],
+    myRating: m[8],
+    dateRated: m[9],
+    format: m[10]
   }
 }
 
@@ -143,15 +159,20 @@ function mapRowData(m) {
 window.currentPage = 1
 window.itemsPerPage = 50
 window.filteredList = []
-window.currentSort = { key: 'id', dir: 'desc' }
+// tras eliminar la columna "Position" no tiene sentido ordenar por número
+// por defecto nos decantamos por el título en orden ascendente.
+// el orden por defecto es el inverso del CSV (las últimas filas aparecen arriba)
+window.currentSort = { key: 'dateAdded', dir: 'desc' }
 
 // Tags and filtering
 window.selectedGenres = new Set();
 
+// la numeración basada en fecha ya no es necesaria; usamos la línea CSV
+
 function renderAllGenres(list){
   const set = new Set();
   (list || []).forEach(m => {
-    (m[9] || '').split(',').forEach(g => {
+    (m[7] || '').split(',').forEach(g => {
       const t = (g||'').trim()
       if(t) set.add(t)
     })
@@ -172,7 +193,7 @@ function renderAllGenres(list){
 function getAllGenres(list){
   const set = new Set();
   (list || window.fullList || []).forEach(m => {
-    (m[9] || '').split(',').forEach(g => {
+    (m[7] || '').split(',').forEach(g => {
       const t = (g||'').trim()
       if(t) set.add(t)
     })
@@ -202,13 +223,13 @@ function computeFilteredList(){
   let list = window.fullList || []
   const text = (document.querySelector('input#title-filter').value || '').trim().toLowerCase()
   if(text){
-    // ahora solo filtramos por título (columna 4 en el nuevo esquema)
-    list = list.filter(item => (item[4]||'').toLowerCase().includes(text))
+    // título ahora está en la columna 3 del array
+    list = list.filter(item => (item[3]||'').toLowerCase().includes(text))
   }
   if(window.selectedGenres.size){
     const sel = Array.from(window.selectedGenres)
     list = list.filter(item => {
-      const genres = ((item[9]||'').split(',').map(x=>x.trim().toLowerCase()).filter(Boolean))
+      const genres = ((item[7]||'').split(',').map(x=>x.trim().toLowerCase()).filter(Boolean))
       return sel.every(s => genres.includes(s))
     })
   }
@@ -222,19 +243,16 @@ function applyFilters(){
 
 function applySort(list){
   if(!list) return []
-  const key = (window.currentSort && window.currentSort.key) || 'id'
+  const key = (window.currentSort && window.currentSort.key) || 'title'
   const dir = (window.currentSort && window.currentSort.dir) || 'desc'
   const dirFactor = dir === 'asc' ? 1 : -1
 
   const getVal = (item) => {
-    if(key === 'id') return Number(item[0]) || 0
-    if(key === 'title') return (item[4] || '').toString().toLowerCase()
-    if(key === 'imdbRating') {
-      const v = parseFloat(((item[8]||'')+'').replace(',', '.'))
-      return isNaN(v) ? (dir === 'asc' ? Infinity : -Infinity) : v
-    }
+    if(key === 'id') return (item[0] || '').toString().toLowerCase()
+    if(key === 'title') return (item[3] || '').toString().toLowerCase()
+    if(key === 'dateAdded') return (item[1] || '')
     if(key === 'myRating') {
-      const v = parseFloat(((item[10]||'')+'').replace(',', '.'))
+      const v = parseFloat(((item[8]||'')+'').replace(',', '.'))
       return isNaN(v) ? (dir === 'asc' ? Infinity : -Infinity) : v
     }
     return ''
@@ -430,12 +448,9 @@ function csvToArray( strData, strDelimiter ){
 
   arrData = arrData.filter(item => !!item[0])
 
-  arrData.sort((a, b) => {
-    if(+a[0] > +b[0]) return -1
-    if(+a[0] < +b[0]) return 1
-    else return 0
-  })
-
+  // El orden de las filas ahora se respeta exactamente como vienen en el CSV.
+  // No aplicamos ninguna ordenación aquí; el llamador puede invertir la lista
+  // si quiere mostrar las últimas filas del archivo primero.
   return arrData
 }
 
@@ -449,7 +464,7 @@ document.addEventListener('click', function(e){
   toggleGenre(genre)
 })
 
-// Suggestion feature: small weighted-random recommender based on age, IMDb note and last rated date
+// Suggestion feature: small weighted-random recommender based on age and last rated date
 window.suggestionHistory = []
 
 function daysSince(dateStr){
@@ -462,12 +477,10 @@ function daysSince(dateStr){
 function computeSuggestionScore(r){
   const ageDays = daysSince(r.dateAdded)
   const ageScore = Math.min(ageDays/365, 10) / 10 // up to 10 years
-  const imdb = parseFloat((r.imdbRating||'').toString().replace(',', '.')) || 0
-  const imdbScore = imdb / 10
   let dateRatedScore = 0
   if(!r.dateRated) dateRatedScore = 1
   else dateRatedScore = Math.min(daysSince(r.dateRated)/365, 5) / 5
-  return ageScore * 0.45 + imdbScore * 0.35 + dateRatedScore * 0.2 + 0.01
+  return ageScore * 0.45 + dateRatedScore * 0.2 + 0.01
 }
 
 function pickSuggestion(filters){
@@ -520,7 +533,7 @@ function renderSuggestionBoxFor(r){
     return
   }
   main.innerHTML = `<div class="title">${escapeHtml(r.title)}${r.originalTitle && r.title !== r.originalTitle ? ` <small>(${escapeHtml(r.originalTitle)})</small>`: ''}</div>
-    <div class="meta">${escapeHtml(r.genres||'')} · IMDb: ${r.imdbRating||'—'} · Mi nota: ${r.myRating||'—'}</div>
+    <div class="meta">${escapeHtml(r.genres||'')} · Mi nota: ${r.myRating||'—'}</div>
     <div class="actions">
       <button class="btn-ghost" id="suggest-skip">Siguiente</button>
       <button class="btn-ghost" id="suggest-close">Cerrar</button>

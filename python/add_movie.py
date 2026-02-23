@@ -7,21 +7,21 @@ Uso:
   python add_movie.py --dry-run  # muestra la fila CSV que se añadiría
   python add_movie.py --backup  # crea copia de seguridad antes de escribir
 
-Mapa de columnas (nuevo, tras eliminar columnas 3,10,11,13,14,15):
- 0: id
- 1: Const (ID IMDb, ej: tt0133093)
- 2: Created (fecha de inclusión)
- 3: Additional Notes
- 4: Title (título mostrado)
- 5: Original Title
- 6: IMDb URL
- 7: Type (ej: Película)
- 8: IMDb Rating
- 9: Genres (coma-separados)
- 10: Your Rating
- 11: Fecha adicional / marcado (se usará fecha de hoy si no se proporciona)
+Mapa de columnas (nuevo, tras eliminar la columna "Position" y otras anteriores):
+ 0: Const (ID IMDb, ej: tt0133093)
+ 1: Created (fecha de inclusión)
+ 2: Additional Notes
+ 3: Title (título mostrado)
+ 4: Original Title
+ 5: IMDb URL
+ 6: Type (ej: Película)
+ 7: Genres (coma-separados)
+ 8: Your Rating
+ 9: Date Rated (se usará fecha de hoy si no se proporciona)
+ 10: Formato
 
-Nota: el script calcula el siguiente id como max(id)+1.
+Nota: el script ya no genera ni mantiene un ID numérico; simplemente
+construye la fila en el orden de columnas arriba.
 """
 
 import argparse
@@ -33,7 +33,7 @@ import re
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 CSV_PATH = os.path.join(BASE_DIR, 'data.csv')
-NUM_COLS = 12
+NUM_COLS = 11
 
 parser = argparse.ArgumentParser(description='Añadir película a data.csv')
 parser.add_argument('--dry-run', action='store_true', help='Mostrar la fila CSV sin escribir')
@@ -51,18 +51,9 @@ def read_rows(path):
             rows.append(r)
     return rows
 
-def next_id(rows):
-    max_id = 0
-    for r in rows:
-        if len(r) == 0:
-            continue
-        try:
-            v = int(r[0])
-            if v > max_id:
-                max_id = v
-        except Exception:
-            continue
-    return max_id + 1
+# la columna de identificador numérico ya no existe en el CSV, así que
+# esta función quedaba obsoleta y se conserva solo por compatibilidad
+# histórica (no se utiliza).
 
 def prompt(prompt_text, default=None, validator=None, optional=False):
     while True:
@@ -96,37 +87,36 @@ def valid_const(s):
 
 def main():
     rows = read_rows(CSV_PATH)
-    nid = next_id(rows)
-    print(f'Nuevo id asignado: {nid}')
+    # no se asigna id numérico; la primera columna es el Const proporcionado
 
     title = prompt('Título (Title)', optional=False)
     created_def = datetime.date.today().isoformat()
     created = prompt('Fecha de inclusión (Created) formato YYYY-MM-DD', default=created_def, validator=valid_date)
-    const = prompt('IDIMDb (Const) — ej: tt0133093 (dejar vacío si no aplica)', optional=True, validator=valid_const)
+    const = prompt('IDIMDb (Const) — ej: tt0133093 (opcional)', optional=True, validator=valid_const)
     original_title = prompt('Título original (Original Title) (opcional)', optional=True)
-    imdb_rating = prompt('Puntuación IMDB (IMDb Rating) (opcional, ej: 7.3)', optional=True)
+    type = prompt('Tipo (Película o Serie) (Película por defecto)', optional=True) or 'Película'
     genres = prompt('Géneros (separados por comas) (opcional)', optional=True)
     your_rating = prompt('Puntuación personal (Your Rating) (opcional)', optional=True)
     notes = prompt('Notas adicionales (opcional)', optional=True)
+    formato = prompt('Formato (br o dvd)', optional=True)
 
     imdb_url = ''
     if const:
         imdb_url = f'https://www.imdb.com/title/{const}/'
 
-    # construir fila con NUM_COLS elementos (12 columnas tras el recorte)
+    # construir fila con NUM_COLS elementos (11 columnas tras eliminar la columna "Position")
     row = [''] * NUM_COLS
-    row[0] = str(nid)
-    row[1] = const
-    row[2] = created
-    row[3] = notes
-    row[4] = title
-    row[5] = original_title
-    row[6] = imdb_url
-    row[7] = 'Película'
-    row[8] = imdb_rating
-    row[9] = genres
-    row[10] = your_rating
-    row[11] = datetime.date.today().isoformat()
+    row[0] = const
+    row[1] = created
+    row[2] = notes
+    row[3] = title
+    row[4] = original_title
+    row[5] = imdb_url
+    row[6] = type
+    row[7] = genres
+    row[8] = your_rating
+    row[9] = datetime.date.today().isoformat()
+    row[10] = formato
 
     if args.dry_run:
         # usar csv.writer para formatear correctamente (comillas, comas en campos)
@@ -147,7 +137,7 @@ def main():
         shutil.copy(CSV_PATH, bpath)
         print(f'Copia de seguridad creada: {bpath}')
 
-    # append
+    # append (constante primero)
     with open(CSV_PATH, 'a', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(row)

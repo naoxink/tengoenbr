@@ -35,7 +35,7 @@ Nota: los índices y campos están normalizados en la función `mapRowData()` �
 
 - Comportamientos importantes a preservar al editar:
   - `csvToArray()` usa una regex para campos citados; cualquier refactor debe conservar compatibilidad o incluir pruebas.
-  - Tras parsear, `arrData` se limpia (`.filter(item => !!item[0])`) y se ordena por `id` (índice 0) de forma descendente.
+  - Tras parsear, `arrData` se limpia (`.filter(item => !!item[0])`). La primera columna ahora es el `Const` de IMDb. `csvToArray` **no ordena** los resultados; el orden de lectura del CSV se conserva, y al cargar la lista principal se invierte para mostrar las últimas filas del archivo primero.
   - `filterResults()` aplica debounce de 1000 ms y filtra por `title` (índice 4) solamente — `year` fue eliminado del esquema.
   - `printRow()` y `mapRowData()` son los puntos únicos de verdad para el render; si cambias columnas, actualiza ambos.
 
@@ -114,7 +114,7 @@ Por favor revisa y dime si quieres añadir reglas de commit, plantilla para camb
 
 - Comportamientos importantes a preservar al editar:
   - El parser `csvToArray()` usa una regex robusta para campos citados; mantener su lógica salvo refactor con tests.
-  - Se filtra `arrData` para quitar filas sin `item[0]` y se ordena por `+a[0]` desc.
+  - Se filtra `arrData` para quitar filas sin `item[0]` y ahora se ordena por la columna de fecha (`item[1]`) desc, ya que el índice 0 dejó de ser un número de posición.
   - El filtrado en `filterResults()` compara `m[5]` y `m[6]` en minúsculas.
   - `printRow()` usa campos específicos (ver "Esquema CSV"). Si cambias columnas, actualiza todas las referencias.
 
@@ -132,8 +132,11 @@ Por favor revisa y dime si quieres añadir reglas de commit, plantilla para camb
   - Para verificar la cabecera `Last-Modified`, usar `curl -I http://localhost:8000/data.csv`.
 
 - Sugerencias para modificaciones por agentes AI:
-  - Si agregas nuevas columnas al CSV: actualizar `printRow()`, `filterResults()` y la lista de índices del encabezado en este archivo.
-  - Evitar romper la salida `?json` (útil para scripts). Si cambias su formato, documentarlo.
+  - Si agregas nuevas columnas al CSV: actualizar `printRow()`, `filterResults()` y la lista de índices del encabezado en este archivo. Ten en cuenta que el listado
+    incluye un prefijo "#" que corresponde a la línea original del CSV (1‑based).
+    No se realiza ningún cálculo complejo: el número coincide con la posición en el
+    archivo y se mantiene fijo aun cuando apliques filtros u ordenaciones.  
+    - Evitar romper la salida `?json` (útil para scripts). Si cambias su formato, documentarlo.
   - Mantener la ordenación por `m[0]` salvo que el equipo decida otro criterio; agregar una configuración explícita si se requiere.
 
 - Limitaciones detectadas / notas prácticas:

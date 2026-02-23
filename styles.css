@@ -64,9 +64,8 @@ a.imdb {
 }
 
 span.added {
-  color: var(--accent-text);
+  color: var(--accent-color);
   font-size: 12px;
-  background-color: rgb(114, 151, 39);
   padding: 2px 5px;
 }
 
@@ -479,4 +478,9 @@ body.light-theme .suggestion-box select {
   font-family: monospace;
   font-size: 12px;
   grid-column: 1 / -1;
+}
+
+img.format {
+  max-height: 25px;
+  vertical-align: middle;
 }

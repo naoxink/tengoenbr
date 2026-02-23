@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
 migrate_remove_columns.py
-Migración del CSV eliminando las columnas (por índice): 3, 10, 11, 13, 14, 15
+Migración del CSV eliminando columnas por índice. **Esta herramienta ya no se usa
+en condiciones normales** porque la columna "Position" fue eliminada en una
+migración anterior. El array REMOVE_INDICES permanece por si se requiere otra
+eliminación en el futuro, pero está vacío para evitar borrados accidentales.
 - Crea un backup en backups/ (timestamped)
 - Soporta --dry-run para mostrar sample sin escribir
 - No requiere dependencias externas
@@ -17,7 +20,10 @@ import sys
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 CSV_PATH = os.path.join(BASE_DIR, 'data.csv')
 BACKUP_DIR = os.path.join(BASE_DIR, 'backups')
-REMOVE_INDICES = [3,10,11,13,14,15]
+# índices de columnas a eliminar; normalmente ya no se usa porque el CSV
+# ya no contiene la columna "Position". Si alguna vez necesitas ejecutar la
+# migración manualmente, añade los índices deseados aquí.
+REMOVE_INDICES = []  # dejar vacío para evitar borrados accidentales
 
 parser = argparse.ArgumentParser(description='Eliminar columnas específicas de data.csv (migration)')
 parser.add_argument('--dry-run', action='store_true', help='No escribir, solo mostrar resumen')

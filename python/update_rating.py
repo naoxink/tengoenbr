@@ -11,7 +11,7 @@ Uso:
 
 Comportamiento:
 - Actualiza todas las filas cuyo campo `id` (columna 0) coincide con el id solicitado.
-- Escribe la nueva `Your Rating` en la columna 10 y `dateRated` en la columna 11.
+- Escribe la nueva `Your Rating` en la columna 9 y `dateRated` en la columna 10.
 - Por defecto `dateRated` se pone a la fecha actual (YYYY-MM-DD). Se puede pasar `--date` para fijar otra.
 - Crea una copia de seguridad en `backups/` salvo si se pasa `--no-backup`.
 """
@@ -28,7 +28,7 @@ CSV_PATH = os.path.join(BASE_DIR, 'data.csv')
 NUM_COLS = 12
 
 parser = argparse.ArgumentParser(description='Actualizar nota personal (Your Rating) y dateRated por id')
-parser.add_argument('id', type=int, nargs='?', help='ID a modificar')
+parser.add_argument('id', nargs='?', help='Const/IDIMDb a modificar')
 parser.add_argument('rating', nargs='?', help='Nueva nota (ej: 7.5). Use --clear para borrar.')
 parser.add_argument('--date', help='Fecha para dateRated (YYYY-MM-DD). Default: today')
 parser.add_argument('--clear', action='store_true', help='Borrar la nota personal y la fechaRated')
@@ -98,15 +98,14 @@ def parse_rating(s):
 def main():
     id_val = args.id
     if id_val is None:
-        try:
-            id_val = int(input('ID a modificar: ').strip())
-        except Exception:
-            print('ID inválido', file=sys.stderr)
-            sys.exit(1)
+        id_val = input('Const/IDIMDb a modificar: ').strip()
+    if not id_val:
+        print('ID inválido', file=sys.stderr)
+        sys.exit(1)
 
     # Leer filas y preparar vista previa para confirmar título y nota actual
     rows_preview = read_rows(CSV_PATH)
-    matches_preview = [r for r in rows_preview if len(r) > 0 and str(r[0]) == str(id_val)]
+    matches_preview = [r for r in rows_preview if len(r) > 0 and r[0] == str(id_val)]
     if len(matches_preview) == 0:
         print(f'No se encontró ningún registro con id {id_val}. Nada que hacer.')
         sys.exit(0)
@@ -117,15 +116,15 @@ def main():
         if args.rating is None:
             # Mostrar título(s) y nota(s) actual(es) para confirmar
             if len(matches_preview) == 1:
-                t = matches_preview[0][4] if len(matches_preview[0]) > 4 else ''
-                cur = matches_preview[0][10] if len(matches_preview[0]) > 10 and matches_preview[0][10] != '' else 'Sin nota'
+                t = matches_preview[0][3] if len(matches_preview[0]) > 3 else ''  # título ahora en col 3
+                cur = matches_preview[0][8] if len(matches_preview[0]) > 8 and matches_preview[0][8] != '' else 'Sin nota'
                 prompt_text = f'Nueva nota personal para "{t}" (actual: {cur}) (ej: 7.5) (vacío para borrar)'
             else:
                 # mostrar hasta 3 ejemplos si hay duplicados
                 examples = []
                 for m in matches_preview[:3]:
-                    tt = m[4] if len(m) > 4 else ''
-                    cr = m[10] if len(m) > 10 and m[10] != '' else 'Sin nota'
+                    tt = m[3] if len(m) > 3 else ''
+                    cr = m[8] if len(m) > 8 and m[8] != '' else 'Sin nota'
                     examples.append(f'"{tt}" ({cr})')
                 prompt_text = f'{len(matches_preview)} coincidencias. Ej: ' + '; '.join(examples) + ' — Nueva nota (ej: 7.5) (vacío para borrar)'
 
@@ -171,8 +170,10 @@ def main():
             # ensure length
             if len(r_copy) < NUM_COLS:
                 r_copy += [''] * (NUM_COLS - len(r_copy))
-            r_copy[10] = new_rating
-            r_copy[11] = new_date
+            # columnas ajustadas al nuevo esquema:
+            # 8 = Your Rating, 9 = Date Rated
+            r_copy[8] = new_rating
+            r_copy[9] = new_date
             new_rows.append(r_copy)
             matched.append((r, r_copy))
         else:
