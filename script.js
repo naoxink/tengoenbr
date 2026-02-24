@@ -13,6 +13,7 @@
   // invertir para que las últimas filas del CSV aparezcan primero en el listado
   window.fullList = window.fullList.slice().reverse()
   renderAllGenres(window.fullList)
+  renderAllTypes(window.fullList)
   printList()
 })()
 
@@ -78,7 +79,7 @@ function printRow(m){
         ${row.format ? `<img class="format" src="assets/${row.format}.png">` : ''}
       </div>
       <div class="col-title">
-        <strong>${row.title}</strong>${row.originalTitle && row.title !== row.originalTitle ? ` (${row.originalTitle})` : ''}
+        <strong>${row.title}</strong>${row.type ? `<span class="type">${row.type}</span>` : ''}${row.originalTitle && row.title !== row.originalTitle ? ` (${row.originalTitle})` : ''}
       </div>
       <div class="col-added">
         <span class="added" title="${row.dateAdded ? 'Añadida el '+formattedDate : 'Fecha de inclusión desconocida'}">${formattedDate}</span>
@@ -147,7 +148,7 @@ function mapRowData(m) {
     title: m[3],            // Title
     originalTitle: m[4],    // Original Title
     imdbUrl: m[5],          // URL
-    // m[6] Title Type (ignored)
+    type: m[6],              // Title Type ("Película", "Serie", etc.)
     genres: m[7],
     myRating: m[8],
     dateRated: m[9],
@@ -167,6 +168,7 @@ window.currentSort = { key: 'csv', dir: 'desc' }
 
 // Tags and filtering
 window.selectedGenres = new Set();
+window.selectedType = ''  // single-value filter for title type
 
 // la numeración basada en fecha ya no es necesaria; usamos la línea CSV
 
@@ -210,6 +212,27 @@ function updateActivePills(){
   })
 }
 
+function renderAllTypes(list){
+  const set = new Set();
+  (list || []).forEach(m => {
+    const t = (m[6]||'').trim()
+    if(t) set.add(t)
+  })
+  const sel = document.getElementById('type-filter')
+  if(!sel) return
+  sel.innerHTML = '<option value="">Todos</option>'
+  Array.from(set).sort((a,b)=>a.localeCompare(b)).forEach(t => {
+    const opt = document.createElement('option')
+    opt.value = t
+    opt.textContent = t
+    sel.appendChild(opt)
+  })
+  sel.addEventListener('change', () => {
+    window.selectedType = sel.value
+    applyFilters()
+  })
+}
+
 function toggleGenre(raw){
   const g = (raw||'').trim()
   if(!g) return
@@ -233,6 +256,10 @@ function computeFilteredList(){
       const genres = ((item[7]||'').split(',').map(x=>x.trim().toLowerCase()).filter(Boolean))
       return sel.every(s => genres.includes(s))
     })
+  }
+  if(window.selectedType){
+    const wanted = window.selectedType.toLowerCase()
+    list = list.filter(item => ((item[6]||'').toLowerCase() === wanted))
   }
   return list
 }

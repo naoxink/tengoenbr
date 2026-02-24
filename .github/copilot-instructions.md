@@ -18,25 +18,25 @@ Propósito: ayudar a agentes AI a ser productivos rápidamente en este repo est�
   - Flujo de datos: `script.js` hace `fetch('./data.csv')` → `csvToArray()` → `window.fullList` → `renderAllGenres()` → `printList()`.
 
 - Esquema CSV observable (índices usados en el código; nuevo esquema tras eliminar columnas):
-  - `m[0]` — id numérico.
-  - `m[1]` — `Const` (ID IMDb, ej: `tt0133093`).
-  - `m[2]` — `Created` (fecha de inclusión, YYYY-MM-DD).
-  - `m[3]` — `Additional Notes`.
-  - `m[4]` — `Title` (título mostrado; usado en búsqueda y ordenación).
-  - `m[5]` — `Original Title`.
-  - `m[6]` — `IMDb URL`.
-  - `m[7]` — `Type` (ej: `Película`).
-  - `m[8]` — `IMDb Rating`.
-  - `m[9]` — `Genres` (coma-separados; parseado por `getGenreTags()`).
-  - `m[10]` — `Your Rating` (nota personal).
-  - `m[11]` — `Date Rated` (fecha adicional, ej: fecha de valoración).
+  - `m[0]` — Const / ID de IMDb (cadena única usada como identificador).
+  - `m[1]` — fecha de inclusión (`Created`, `YYYY-MM-DD`); opcional, renderiza `?` si está vacía.
+  - `m[2]` — notas adicionales (`Additional Notes`).
+  - `m[3]` — título mostrado (`Title`).
+  - `m[4]` — título original (`Original Title`).
+  - `m[5]` — URL de IMDb.
+  - `m[6]` — tipo de título (`Type`, p.ej. `Película`, `Serie`) – aparece como una pequeña etiqueta junto al título.
+  - `m[7]` — puntuación IMDb.
+  - `m[8]` — géneros (coma-separados; parseado por `getGenreTags()`).
+  - `m[9]` — tu puntuación personal (`Your Rating`).
+  - `m[10]` — fecha en la que valoraste (`Date Rated`).
+  - `m[11]` — formato físico/digital (`format`, ej. `bluray`, `dvd`).
 
 Nota: los índices y campos están normalizados en la función `mapRowData()` — actualizar esa función si se añaden o reordenan columnas.
 
 - Comportamientos importantes a preservar al editar:
   - `csvToArray()` usa una regex para campos citados; cualquier refactor debe conservar compatibilidad o incluir pruebas.
   - Tras parsear, `arrData` se limpia (`.filter(item => !!item[0])`). La primera columna ahora es el `Const` de IMDb. `csvToArray` **no ordena** los resultados; el orden de lectura del CSV se conserva, y al cargar la lista principal se invierte para mostrar las últimas filas del archivo primero.
-  - `filterResults()` aplica debounce de 1000 ms y filtra por `title` (índice 4) solamente — `year` fue eliminado del esquema.
+  - `filterResults()` aplica debounce de 1000 ms y filtra por `title` (índice 4) solamente — `year` fue eliminado del esquema. Además, el filtro de tipo se gestiona con `window.selectedType` y se compara con `m[6]` (Title Type).
   - `printRow()` y `mapRowData()` son los puntos únicos de verdad para el render; si cambias columnas, actualiza ambos.
 
 - Convenciones del proyecto y patrones observables:
@@ -102,15 +102,18 @@ Por favor revisa y dime si quieres añadir reglas de commit, plantilla para camb
   - Visualización: `printList()` / `printRow()` renderizan filas en `#list`.
 
 - Esquema CSV observable (índices usados en el código):
-  - `m[0]` — id numérico (se usa para ordenar desc).
-  - `m[2]` — fecha añadida (formato YYYY-MM-DD esperado).
-  - `m[4]` — texto adicional / notas (opcional).
-  - `m[5]` — título (usa en UI y en búsqueda).
-  - `m[6]` — año (se muestra junto al título, también buscado).
-  - `m[7]` — URL IMDb (enlace en la columna imdb).
-  - `m[9]` — nota IMDb (mostrada en `col-notes`).
-  - `m[12]` — géneros (coma-separados; `getGenreTags()` los parsea).
-  - `m[16]` — "mi nota" (puede estar vacío).
+  - `m[0]` — Const / ID de IMDb (cadena que sirve como identificador único).
+  - `m[1]` — fecha de inclusión (`YYYY-MM-DD`); opcional, `?` si viene vacía.
+  - `m[2]` — notas adicionales / description.
+  - `m[3]` — título mostrado.
+  - `m[4]` — título original.
+  - `m[5]` — URL de IMDb.
+  - `m[6]` — tipo de título (`Película`, `Serie`, etc.); se muestra como etiqueta junto al nombre.
+  - `m[7]` — puntuación IMDb.
+  - `m[8]` — géneros (coma-separados; parseado por `getGenreTags()`).
+  - `m[9]` — tu nota personal.
+  - `m[10]` — fecha de valoración.
+  - `m[11]` — formato (ej. `bluray`, `dvd`, ...).
 
 - Comportamientos importantes a preservar al editar:
   - El parser `csvToArray()` usa una regex robusta para campos citados; mantener su lógica salvo refactor con tests.

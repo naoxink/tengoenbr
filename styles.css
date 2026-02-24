@@ -93,6 +93,16 @@ span.genre-tag[data-genre] {
   cursor: pointer;
 }
 
+/* small badge indicating movie/series type shown next to the title */
+span.type {
+  font-size: 11px;
+  margin-left: 0.4em;
+  color: var(--text-secondary);
+  background: var(--bg-secondary);
+  padding: 1px 4px;
+  border-radius: 3px;
+}
+
 .all-genres {
   margin: .5em 0;
 }
