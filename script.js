@@ -53,7 +53,7 @@ function filterResults(e) {
 
 function printRow(m){
   const row = mapRowData(m)
-  const formattedDate = (row.dateAdded || '').split('-').reverse().join('.')
+  const formattedDate = row.dateAdded ? (row.dateAdded.split('-').reverse().join('.')) : '?'
   // line number from original CSV (1-based); present always
   const rank = m._csvLine || ''
   const ratingClass = v => {
@@ -81,7 +81,7 @@ function printRow(m){
         <strong>${row.title}</strong>${row.originalTitle && row.title !== row.originalTitle ? ` (${row.originalTitle})` : ''}
       </div>
       <div class="col-added">
-        <span class="added" title="Añadida el ${formattedDate}">${formattedDate}</span>
+        <span class="added" title="${row.dateAdded ? 'Añadida el '+formattedDate : 'Fecha de inclusión desconocida'}">${formattedDate}</span>
       </div>
       <div class="col-notes">
         Nota: ${myDisplay}${notesSection}
@@ -162,7 +162,8 @@ window.filteredList = []
 // tras eliminar la columna "Position" no tiene sentido ordenar por número
 // por defecto nos decantamos por el título en orden ascendente.
 // el orden por defecto es el inverso del CSV (las últimas filas aparecen arriba)
-window.currentSort = { key: 'dateAdded', dir: 'desc' }
+// default order: CSV reversed (same as initial load)
+window.currentSort = { key: 'csv', dir: 'desc' }
 
 // Tags and filtering
 window.selectedGenres = new Set();
@@ -248,6 +249,12 @@ function applySort(list){
   const dirFactor = dir === 'asc' ? 1 : -1
 
   const getVal = (item) => {
+    if(key === 'csv') {
+      // sort by original CSV line number; the list may have been reversed.
+      // descending order reproduces the "initial" display order.
+      const n = Number(item._csvLine || 0)
+      return isNaN(n) ? 0 : n
+    }
     if(key === 'id') return (item[0] || '').toString().toLowerCase()
     if(key === 'title') return (item[3] || '').toString().toLowerCase()
     if(key === 'dateAdded') return (item[1] || '')

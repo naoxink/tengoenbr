@@ -6,4 +6,7 @@ CSV donde aparece el registro (1 = primera fila). Así evitamos lógica adiciona
 para calcular posiciones; la numeración se mantiene constante incluso si filtras
 o reordenas. La tabla se carga inicialmente en el orden inverso del CSV, de
 modo que las últimas filas del archivo aparecen primero; puedes cambiar el orden
-mediante los controles si lo deseas.
+mediante los controles si lo deseas (la opción "Orden CSV" restaura esa secuencia).
+
+La fecha de inclusión es opcional: si falta, el listado muestra un `?` en lugar de
+la fecha.

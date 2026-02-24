@@ -136,6 +136,9 @@ Por favor revisa y dime si quieres añadir reglas de commit, plantilla para camb
     incluye un prefijo "#" que corresponde a la línea original del CSV (1‑based).
     No se realiza ningún cálculo complejo: el número coincide con la posición en el
     archivo y se mantiene fijo aun cuando apliques filtros u ordenaciones.  
+    - La fecha de inclusión es opcional; cuando falta, el render muestra un `?`.
+    - El selector de ordenación de la UI ahora ofrece "Orden CSV", que reproduce
+      el orden inverso del archivo (es el orden inicial aplicado al cargar).
     - Evitar romper la salida `?json` (útil para scripts). Si cambias su formato, documentarlo.
   - Mantener la ordenación por `m[0]` salvo que el equipo decida otro criterio; agregar una configuración explícita si se requiere.
 

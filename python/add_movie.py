@@ -90,8 +90,9 @@ def main():
     # no se asigna id numérico; la primera columna es el Const proporcionado
 
     title = prompt('Título (Title)', optional=False)
-    created_def = datetime.date.today().isoformat()
-    created = prompt('Fecha de inclusión (Created) formato YYYY-MM-DD', default=created_def, validator=valid_date)
+    created_def = ''
+    # la fecha de inclusión ahora es opcional; aceptar línea vacía
+    created = prompt('Fecha de inclusión (Created) formato YYYY-MM-DD (opcional)', default=created_def, validator=lambda s: valid_date(s) or s=='')
     const = prompt('IDIMDb (Const) — ej: tt0133093 (opcional)', optional=True, validator=valid_const)
     original_title = prompt('Título original (Original Title) (opcional)', optional=True)
     type = prompt('Tipo (Película o Serie) (Película por defecto)', optional=True) or 'Película'
