@@ -79,7 +79,8 @@ function printRow(m){
         ${row.format ? `<img class="format" src="assets/${row.format}.png">` : ''}
       </div>
       <div class="col-title">
-        <strong>${row.title}</strong>${row.type ? `<span class="type">${row.type}</span>` : ''}${row.originalTitle && row.title !== row.originalTitle ? ` (${row.originalTitle})` : ''}
+        ${row.type ? `<span class="type">${row.type}</span>` : ''}<strong>${row.title}</strong>
+        ${row.originalTitle && row.title !== row.originalTitle ? `<span class="original">${row.originalTitle}</span>` : ''}
       </div>
       <div class="col-added">
         <span class="added" title="${row.dateAdded ? 'Añadida el '+formattedDate : 'Fecha de inclusión desconocida'}">${formattedDate}</span>
