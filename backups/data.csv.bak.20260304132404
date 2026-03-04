@@ -11,8 +11,8 @@ tt0298203,,,8 Millas,8 Mile,https://www.imdb.com/title/tt0298203/,Película,"Dra
 tt0407658,,,Las Crónicas de Riddick: Dark Fury,The Chronicles of Riddick: Dark Fury,https://www.imdb.com/title/tt0407658/,Película,"Animación,Ciencia Ficción,Acción",7,2026-03-04,dvd,
 tt0328832,,,Animatrix,The Animatrix,https://www.imdb.com/title/tt0328832/,Película,"Animación,Cyberpunk,Acción,Ciencia Ficción",6.5,2026-03-04,dvd,
 tt0375679,,,Crash (Colisión),Crash,https://www.imdb.com/title/tt0375679/,Película,"Drama,Tragedia,Crimen,Thriller",9,2026-02-22,dvd
-tt0213149,,,Pearl Harbor,,https://www.imdb.com/title/tt0213149/,Película,"Acción,Dramaa,Bélica,Épica,Guerra",6,2026-03-04,dvd,
-tt0455275,,,Prison Break,Prison Break,https://www.imdb.com/title/tt0455275/,Serie,"Drama,Thriller,Acción,Crimen",7,2026-03-04,dvd,
+tt0213149,,,Pearl Harbor,,https://www.imdb.com/title/tt0213149/,Película,"Acción,Dramaa,Bélica,Épica,Guerra",,2026-02-22,dvd
+tt0455275,,,Prison Break,Prison Break,https://www.imdb.com/title/tt0455275/,Serie,"Drama,Thriller,Acción,Crimen",,2026-02-22,dvd
 tt1119646,,,Resacón en Las Vegas,The Hangover,https://www.imdb.com/title/tt1119646/,Película,Comedia,8,2026-02-22,dvd
 tt1411697,,,Resacón 2: ¡Ahora en Tailandia!,The Hangover Part II,https://www.imdb.com/title/tt1411697/,Película,Comedia,8,2026-02-22,dvd
 tt1951261,,,R3sacón,The Hangover Part III,https://www.imdb.com/title/tt1951261/,Película,Comedia,8,2026-02-22,dvd
@@ -269,7 +269,7 @@ tt0142241,2022-11-24,,Dragon Ball Z: Los 3 grandes Supersayanos,Doragon bôru Z:
 tt0142242,2022-11-24,,Dragon Ball Z: Estalla el Duelo,Dragon Ball Z: Moetsukiro!! Nessen Ressen Chô-Gekisen,https://www.imdb.com/title/tt0142242/,Película,"Animación,Acción,Superhéroes",8,2026-02-23,dvd
 tt0142238,2022-11-24,,Dragon Ball Z: Los guerreros de plata,Dragon Ball Z: Ginga Giri-Giri!! Butchigiri no Sugoi Yatsu,https://www.imdb.com/title/tt0142238/,Película,"Animación,Acción,Superhéroes",8,2026-02-23,dvd
 tt0142239,2022-11-24,,Dragon Ball Z: El regreso de Broly,Dragon Ball Z: Kiken na Futari! Super Senshi wa Nemurenai,https://www.imdb.com/title/tt0142239/,Película,"Animación,Acción,Superhéroes",,2026-02-23,dvd
-tt0142234,2022-11-24,,Dragon Ball Z: El combate definitivo,Dragon Ball Z: Super Senshi Gekiha!! Katsu No wa Ore da,https://www.imdb.com/title/tt0142234/,Película,"Animación,Acción,Superhéroes",7,2026-03-04,dvd,
+tt0142234,2022-11-24,,Dragon Ball Z: El combate definitivo,Dragon Ball Z: Super Senshi Gekiha!! Katsu No wa Ore da,https://www.imdb.com/title/tt0142234/,Película,"Animación,Acción,Superhéroes",,2026-02-23,dvd
 tt0142236,2022-11-24,,Dragon Ball Z: Fusión,Dragon Ball Z: Fukkatsu no Fusion!! Gokuu to Vegeta,https://www.imdb.com/title/tt0142236/,Película,"Animación,Acción,Superhéroes",8,2026-02-23,dvd
 tt0142243,2022-11-24,,Dragon Ball Z: El ataque del dragón,Doragon Bôru Zetto Ryû-Ken Bakuhatsu!! Gokû ga Yaraneba Dare ga Yaru,https://www.imdb.com/title/tt0142243/,Película,"Animación,Acción,Superhéroes",8,2026-02-23,dvd
 tt0142250,2022-11-24,,Dragon Ball: El camino hacia el más fuerte,Doragon bôru: Saikyô e no michi,https://www.imdb.com/title/tt0142250/,Película,"Animación,Acción,Aventuras,Comedia,Fantasía",,2026-02-23,dvd
@@ -277,8 +277,8 @@ tt2263944,2022-11-24,,Dragon Ball Z: La batalla de los dioses,Doragon Bôru Zett
 tt3819668,2022-11-24,,Dragon Ball Z: La resurrección de F,Doragon Bôru Zetto Fukkatsu no 'Efu',https://www.imdb.com/title/tt3819668/,Película,"Animación,Acción,Superhéroes,Aventuras",,2026-02-23,dvd
 tt7961060,2022-11-24,,Dragon Ball Super: Broly,Doragon Bôru Sûpâ Burorî,https://www.imdb.com/title/tt7961060/,Película,"Animación,Acción,Aventuras,Superhéroes",8,2026-02-23,dvd
 tt0142245,2022-11-24,,Dragon Ball Z: El último combate,Doragon Bôru Zetto Tatta Hitori no Saishû Kessen,https://www.imdb.com/title/tt0142245/,Película,"Animación,Acción,Drama,Fantasía",,2026-02-23,dvd
-tt0142247,2022-11-24,,Dragon Ball Z: Un futuro diferente - Gohan y Trunks,Doragon Bôru Zetto Zetsubô e no Hankô!! Nokosareta Chô-Senshi Gohan to Torankusu,https://www.imdb.com/title/tt0142247/,Película,"Animación,Acción,Superhéroes,Aventuras",6,2026-03-04,dvd,
-tt0142232,2022-11-24,,Dragon Ball GT: 100 años después,Gokû Gaiden! Yûki no Akashi wa Sûshinchû,https://www.imdb.com/title/tt0142232/,Película,"Animación,Acción,Superhéroes,Comedia,Aventuras,Drama,Familia,Fantasía",7,2026-03-04,dvd,
+tt0142247,2022-11-24,,Dragon Ball Z: Un futuro diferente - Gohan y Trunks,Doragon Bôru Zetto Zetsubô e no Hankô!! Nokosareta Chô-Senshi Gohan to Torankusu,https://www.imdb.com/title/tt0142247/,Película,"Animación,Acción,Superhéroes,Aventuras",,2026-02-23,dvd
+tt0142232,2022-11-24,,Dragon Ball GT: 100 años después,Gokû Gaiden! Yûki no Akashi wa Sûshinchû,https://www.imdb.com/title/tt0142232/,Película,"Animación,Acción,Superhéroes,Comedia,Aventuras,Drama,Familia,Fantasía",,2026-02-23,dvd
 tt10838180,2022-11-27,,Matrix Resurrections,The Matrix Resurrections,https://www.imdb.com/title/tt10838180/,Película,"Acción, Ciencia ficción",7,2021-12-28,br
 tt7888964,2022-11-27,,Nadie,Nobody,https://www.imdb.com/title/tt7888964/,Película,"Acción, Crimen, Drama, Suspense",8,2022-12-03,br
 tt6139732,2022-11-27,,Aladdín,Aladdin,https://www.imdb.com/title/tt6139732/,Película,"Aventura, Comedia, Familiar, Fantasía, Musical, Romance",7,2019-08-23,br
