@@ -170,6 +170,7 @@ window.currentSort = { key: 'csv', dir: 'desc' }
 // Tags and filtering
 window.selectedGenres = new Set();
 window.selectedType = ''  // single-value filter for title type
+window.showOnlyUnrated = false  // filter for unrated (unwatched) items
 
 // la numeración basada en fecha ya no es necesaria; usamos la línea CSV
 
@@ -262,6 +263,10 @@ function computeFilteredList(){
     const wanted = window.selectedType.toLowerCase()
     list = list.filter(item => ((item[6]||'').toLowerCase() === wanted))
   }
+  if(window.showOnlyUnrated){
+    // myRating is at index 8; filter for empty/falsy values
+    list = list.filter(item => !item[8] || (item[8]||'').toString().trim() === '')
+  }
   return list
 }
 
@@ -322,7 +327,7 @@ function toggleFilters(){
   return false
 }
 
-// Conectar controles de ordenación
+// Conectar controles de ordenación y filtros
 setTimeout(() => {
   const applyBtn = document.getElementById('apply-sort')
   if(applyBtn){
@@ -333,6 +338,14 @@ setTimeout(() => {
       window.currentPage = 1
       window.filteredList = applySort(window.filteredList)
       renderPage()
+    })
+  }
+  const unratedCheck = document.getElementById('unrated-filter')
+  if(unratedCheck){
+    unratedCheck.addEventListener('change', function(){
+      window.showOnlyUnrated = this.checked
+      window.currentPage = 1
+      applyFilters()
     })
   }
 }, 0)
