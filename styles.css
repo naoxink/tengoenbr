@@ -336,16 +336,19 @@ body.light-theme .suggestion-box select {
   background-color: var(--rating-good);
   color: var(--rating-text-dark);
   border: 1px solid var(--rating-good);
+  cursor: help;
 }
 .rating.mid {
   background-color: var(--rating-mid);
   color: var(--rating-text-dark);
   border: 1px solid var(--rating-mid);
+  cursor: help;
 }
 .rating.bad {
   background-color: var(--rating-bad);
   color: var(--rating-text-dark);
   border: 1px solid var(--rating-bad);
+  cursor: help;
 }
 .rating.muted {
   background: transparent;

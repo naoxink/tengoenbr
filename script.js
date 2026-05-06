@@ -52,9 +52,13 @@ function filterResults(e) {
   }, 1000)
 }
 
+function formatDate(date) {
+  return date.split('-').reverse().join('.')
+}
+
 function printRow(m){
   const row = mapRowData(m)
-  const formattedDate = row.dateAdded ? (row.dateAdded.split('-').reverse().join('.')) : '?'
+  const formattedDate = row.dateAdded ? formatDate(row.dateAdded) : '?'
   // line number from original CSV (1-based); present always
   const rank = m._csvLine || ''
   const ratingClass = v => {
@@ -66,8 +70,8 @@ function printRow(m){
   }
 
   const myCls = ratingClass(row.myRating)
-  const myDisplay = row.myRating ? `<span class="rating ${myCls}">${row.myRating}</span>` : `<span class="rating muted">?</span>`
-  const notesSection = row.additionalNotes ? ' | ' + row.additionalNotes : ''
+  const myDisplay = row.myRating ? `<span title="Valorada el ${formatDate(row.dateRated)}" class="rating ${myCls}">${row.myRating}</span>` : `<span class="rating muted">?</span>`
+  const notesSection = row.additionalNotes ? row.additionalNotes : ''
 
   // Show a hash label reflecting the original CSV line. This maps directly
   // to the row's position in the file and avoids any extra logic; 'rank'
@@ -86,7 +90,7 @@ function printRow(m){
         <span class="added" title="${row.dateAdded ? 'Añadida el '+formattedDate : 'Fecha de inclusión desconocida'}">${formattedDate}</span>
       </div>
       <div class="col-notes">
-        Nota: ${myDisplay}${notesSection}
+        Nota: ${myDisplay} ${notesSection}
       </div>
       <div class="col-genres">
         ${getGenreTags(row.genres)}
