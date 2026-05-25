@@ -12,7 +12,6 @@
   window.fullList.forEach((r,i)=>{ r._csvLine = i+1 })
   // invertir para que las últimas filas del CSV aparezcan primero en el listado
   window.fullList = window.fullList.slice().reverse()
-  renderAllGenres(window.fullList)
   renderAllTypes(window.fullList)
   printList()
 })()
