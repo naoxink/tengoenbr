@@ -3,15 +3,16 @@
   const savedTheme = localStorage.getItem('theme') || 'dark'
   applyTheme(savedTheme)
   
-  let res = await fetch('./data.csv')
-  res = await res.text()
-  // Full dataset - preserve original CSV order.
-  window.fullList = csvToArray(res)
-  // annotate each row with its original CSV line number (1‑based). Esto evita
-  // lógica adicional: el '#' mostrado en cada fila será simplemente esta línea.
-  window.fullList.forEach((r,i)=>{ r._csvLine = i+1 })
-  // invertir para que las últimas filas del CSV aparezcan primero en el listado
-  window.fullList = window.fullList.slice().reverse()
+  let res = await fetch('./data.json')
+  window.fullList = await res.json()
+
+  // Mantener numeración para mostrar el orden original
+  window.fullList.forEach((r, i) => {
+      r._csvLine = i + 1
+  })
+
+  // Mostrar las últimas incorporaciones primero
+  window.fullList.reverse()
   renderAllTypes(window.fullList)
   printList()
 })()
@@ -70,7 +71,17 @@ function printRow(m){
 
   const myCls = ratingClass(row.myRating)
   const myDisplay = row.myRating ? `<span title="Valorada el ${formatDate(row.dateRated)}" class="rating ${myCls}">${row.myRating}</span>` : `<span class="rating muted">?</span>`
-  const notesSection = row.additionalNotes ? row.additionalNotes : ''
+  let notesSection = ''
+
+  if (row.gift) {
+    notesSection = ' · 🎁 Regalo'
+  } else if (row.store) {
+    notesSection = ` · ${row.store}`
+
+    if (row.price != null) {
+      notesSection += ` (${row.price}€)`
+    }
+  }
 
   // Show a hash label reflecting the original CSV line. This maps directly
   // to the row's position in the file and avoids any extra logic; 'rank'
@@ -133,12 +144,18 @@ async function printList(list) {
   ([...document.querySelectorAll('.fecha-actualizado .fecha')]).forEach(node => node.textContent = formatted)
 }
 
-function getGenreTags(genresTxt){
-  return (genresTxt || '').split(',').map(t => {
-    const title = t.trim()
-    if(!title) return ''
-    return `<span class="genre-tag" data-genre="${title}">${title}</span>`
-  }).join('')
+function getGenreTags(genres) {
+  return '<div class="genres-scroll">' + genres
+    .split(',')
+    .map(g => g.trim())
+    .filter(Boolean)
+    .map(g => {
+      const key = g.toLowerCase()
+      const active = window.selectedGenres.has(key) ? ' active' : ''
+
+      return `<span class="genre-pill${active}" data-genre="${key}">${g}</span>`
+    })
+    .join('') + '</div>'
 }
 
 // Helper para mapear índices a propiedades legibles
@@ -146,17 +163,19 @@ function getGenreTags(genresTxt){
 // ahora m[0] contiene el Const (ID de IMDb) y los demás índices se desplazan.
 function mapRowData(m) {
   return {
-    id: m[0],               // se mantiene como identificador interno (ahora Const)
-    dateAdded: m[1],        // Created
-    additionalNotes: m[2],  // Description
-    title: m[3],            // Title
-    originalTitle: m[4],    // Original Title
-    imdbUrl: m[5],          // URL
-    type: m[6],              // Title Type ("Película", "Serie", etc.)
-    genres: m[7],
-    myRating: m[8],
-    dateRated: m[9],
-    format: m[10]
+    id: m.id,
+    dateAdded: m.created,
+    store: m.store,
+    price: m.price,
+    gift: m.gift,
+    title: m.title,
+    originalTitle: m.original_title,
+    imdbUrl: m.url,
+    type: m.type,
+    genres: Array.isArray(m.genres) ? m.genres.join(', ') : '',
+    myRating: m.rating,
+    dateRated: m.date_rated,
+    format: m.format
   }
 }
 
@@ -180,9 +199,9 @@ window.showOnlyUnrated = false  // filter for unrated (unwatched) items
 function renderAllGenres(list){
   const set = new Set();
   (list || []).forEach(m => {
-    (m[7] || '').split(',').forEach(g => {
-      const t = (g||'').trim()
-      if(t) set.add(t)
+    (m.genres || []).forEach(g => {
+      g = g.trim()
+      if (g) set.add(g)
     })
   })
   const container = document.querySelector('#all-genres')
@@ -201,7 +220,7 @@ function renderAllGenres(list){
 function getAllGenres(list){
   const set = new Set();
   (list || window.fullList || []).forEach(m => {
-    (m[7] || '').split(',').forEach(g => {
+    (m.genres || []).forEach(g => {
       const t = (g||'').trim()
       if(t) set.add(t)
     })
@@ -211,7 +230,7 @@ function getAllGenres(list){
 
 function updateActivePills(){
   document.querySelectorAll('[data-genre]').forEach(el => {
-    const g = (el.getAttribute('data-genre')||'').trim().toLowerCase()
+    const g = (el.getAttribute('data-genre')||'').trim().toLowerCase()  
     if(window.selectedGenres.has(g)) el.classList.add('active')
     else el.classList.remove('active')
   })
@@ -253,22 +272,24 @@ function computeFilteredList(){
   const text = (document.querySelector('input#title-filter').value || '').trim().toLowerCase()
   if(text){
     // título ahora está en la columna 3 del array
-    list = list.filter(item => (item[3]||'').toLowerCase().includes(text))
+    list = list.filter(item => (item.title||'').toLowerCase().includes(text))
   }
-  if(window.selectedGenres.size){
+  if (window.selectedGenres.size) {
     const sel = Array.from(window.selectedGenres)
+
     list = list.filter(item => {
-      const genres = ((item[7]||'').split(',').map(x=>x.trim().toLowerCase()).filter(Boolean))
+      const genres = (item.genres || []).map(g => g.toLowerCase())
       return sel.every(s => genres.includes(s))
     })
   }
-  if(window.selectedType){
+
+  if (window.selectedType) {
     const wanted = window.selectedType.toLowerCase()
-    list = list.filter(item => ((item[6]||'').toLowerCase() === wanted))
+    list = list.filter(item => (item.type || '').toLowerCase() === wanted)
   }
   if(window.showOnlyUnrated){
     // myRating is at index 8; filter for empty/falsy values
-    list = list.filter(item => !item[8] || (item[8]||'').toString().trim() === '')
+    list = list.filter(item => !item.rating || (item.rating||'').toString().trim() === '')
   }
   return list
 }
@@ -291,11 +312,11 @@ function applySort(list){
       const n = Number(item._csvLine || 0)
       return isNaN(n) ? 0 : n
     }
-    if(key === 'id') return (item[0] || '').toString().toLowerCase()
-    if(key === 'title') return (item[3] || '').toString().toLowerCase()
-    if(key === 'dateAdded') return (item[1] || '')
+    if(key === 'id') return (item.id || '').toString().toLowerCase()
+    if(key === 'title') return (item.title || '').toString().toLowerCase()
+    if(key === 'dateAdded') return (item.dateAdded || '')
     if(key === 'myRating') {
-      const v = parseFloat(((item[8]||'')+'').replace(',', '.'))
+      const v = parseFloat(((item.rating||'')+'').replace(',', '.'))
       return isNaN(v) ? (dir === 'asc' ? Infinity : -Infinity) : v
     }
     return ''
@@ -419,92 +440,6 @@ function goToPage(page) {
   window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
-function csvToArray( strData, strDelimiter ){
-  // Check to see if the delimiter is defined. If not,
-  // then default to comma.
-  strDelimiter = (strDelimiter || ",");
-
-  // Create a regular expression to parse the CSV values.
-  var objPattern = new RegExp(
-    (
-      // Delimiters.
-      "(\\" + strDelimiter + "|\\r?\\n|\\r|^)" +
-
-      // Quoted fields.
-      "(?:\"([^\"]*(?:\"\"[^\"]*)*)\"|" +
-
-      // Standard fields.
-      "([^\"\\" + strDelimiter + "\\r\\n]*))"
-    ),
-    "gi"
-  );
-
-  // Create an array to hold our data. Give the array
-  // a default empty first row.
-  var arrData = [[]];
-
-  // Create an array to hold our individual pattern
-  // matching groups.
-  var arrMatches = null;
-
-  // Keep looping over the regular expression matches
-  // until we can no longer find a match.
-  while (arrMatches = objPattern.exec( strData )){
-
-    // Get the delimiter that was found.
-    var strMatchedDelimiter = arrMatches[ 1 ];
-
-    // Check to see if the given delimiter has a length
-    // (is not the start of string) and if it matches
-    // field delimiter. If id does not, then we know
-    // that this delimiter is a row delimiter.
-    if (
-      strMatchedDelimiter.length &&
-      strMatchedDelimiter !== strDelimiter
-    ){
-
-      // Since we have reached a new row of data,
-      // add an empty row to our data array.
-      arrData.push( [] );
-
-    }
-
-    var strMatchedValue;
-
-    // Now that we have our delimiter out of the way,
-    // let's check to see which kind of value we
-    // captured (quoted or unquoted).
-    if (arrMatches[ 2 ]){
-
-      // We found a quoted value. When we capture
-      // this value, unescape any double quotes.
-      strMatchedValue = arrMatches[ 2 ].replace(
-        new RegExp( "\"\"", "g" ),
-        "\""
-      );
-
-    } else {
-
-      // We found a non-quoted value.
-      strMatchedValue = arrMatches[ 3 ];
-
-    }
-
-    // Now that we have our value string, let's add
-    // it to the data array.
-    arrData[ arrData.length - 1 ].push( strMatchedValue );
-  }
-
-  arrData.shift()
-
-  arrData = arrData.filter(item => !!item[0])
-
-  // El orden de las filas ahora se respeta exactamente como vienen en el CSV.
-  // No aplicamos ninguna ordenación aquí; el llamador puede invertir la lista
-  // si quiere mostrar las últimas filas del archivo primero.
-  return arrData
-}
-
 document.querySelector('input#title-filter').addEventListener('keyup', filterResults)
 
 // Delegated click handling for any element with data-genre (both pills and row tags)
@@ -540,7 +475,12 @@ function pickSuggestion(filters){
   if(filters){
     if(filters.genre && filters.genre !== 'any'){
       const g = (filters.genre||'').toLowerCase()
-      candidates = candidates.filter(r => (r.genres||'').toLowerCase().split(',').map(x=>x.trim()).includes(g))
+      candidates = candidates.filter(r =>
+        (r.genres || '')
+          .split(',')
+          .map(x => x.trim().toLowerCase())
+          .includes(g)
+      )
     }
     if(filters.unrated){
       candidates = candidates.filter(r => {
@@ -641,7 +581,12 @@ function showSuggestion(){
 
   // Contar candidatos para feedback
   let cnt = (window.fullList||[]).map(mapRowData)
-  if(genre && genre !== 'any') cnt = cnt.filter(r => (r.genres||'').toLowerCase().split(',').map(x=>x.trim()).includes(genre.toLowerCase()))
+  if(genre && genre !== 'any') cnt = cnt.filter(r =>
+    (r.genres || '')
+      .split(',')
+      .map(x => x.trim().toLowerCase())
+      .includes(genre.toLowerCase())
+  )
   if(unrated) cnt = cnt.filter(r => isNaN(parseFloat((r.myRating||'').toString().replace(',','.'))))
   const countNode = document.getElementById('suggest-count')
   if(countNode) countNode.textContent = `${cnt.length} candidato(s)`

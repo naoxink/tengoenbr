@@ -1,0 +1,6916 @@
+[
+    {
+        "id": "tt0128442",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Rounders",
+        "original_title": null,
+        "url": "https://www.imdb.com/title/tt0128442/",
+        "type": "Película",
+        "genres": [
+            "Atracos",
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt1258197",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Exam",
+        "original_title": null,
+        "url": "https://www.imdb.com/title/tt1258197/",
+        "type": "Película",
+        "genres": [
+            "Thriller",
+            "Thriller psicológico",
+            "Crimen",
+            "Misterio"
+        ],
+        "rating": 7,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0074285",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Carrie",
+        "original_title": null,
+        "url": "https://www.imdb.com/title/tt0074285/",
+        "type": "Película",
+        "genres": [
+            "Drama psicológico",
+            "Horror",
+            "Terror",
+            "Sobrenatural"
+        ],
+        "rating": 7,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0315327",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Como Dios",
+        "original_title": "Bruce Almighty",
+        "url": "https://www.imdb.com/title/tt0315327/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Fantasía"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0317248",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ciudad de Dios",
+        "original_title": "Cidade de Deus",
+        "url": "https://www.imdb.com/title/tt0317248/",
+        "type": "Película",
+        "genres": [
+            "Portugués",
+            "Drama",
+            "Gángster"
+        ],
+        "rating": 9,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0175142",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Scary Movie",
+        "original_title": null,
+        "url": "https://www.imdb.com/title/tt0175142/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Parodia"
+        ],
+        "rating": 6,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0284837",
+        "created": "2023-09-15",
+        "store": "ECI",
+        "price": 15.98,
+        "gift": false,
+        "title": "Ali G",
+        "original_title": "Ali G Indahouse",
+        "url": "https://www.imdb.com/title/tt0284837/",
+        "type": "Película",
+        "genres": [
+            "Comedia"
+        ],
+        "rating": 7,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0081505",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El resplandor",
+        "original_title": "The Shining",
+        "url": "https://www.imdb.com/title/tt0081505/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Horror",
+            "Horror psicológico",
+            "Terror",
+            "Sobrenatural"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0298203",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "8 Millas",
+        "original_title": "8 Mile",
+        "url": "https://www.imdb.com/title/tt0298203/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Música"
+        ],
+        "rating": 7,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0407658",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Las Crónicas de Riddick: Dark Fury",
+        "original_title": "The Chronicles of Riddick: Dark Fury",
+        "url": "https://www.imdb.com/title/tt0407658/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Ciencia ficción",
+            "Acción"
+        ],
+        "rating": 7,
+        "date_rated": "2026-03-04",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0328832",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Animatrix",
+        "original_title": "The Animatrix",
+        "url": "https://www.imdb.com/title/tt0328832/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Cyberpunk",
+            "Acción",
+            "Ciencia ficción"
+        ],
+        "rating": 6.5,
+        "date_rated": "2026-03-04",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0375679",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Crash (Colisión)",
+        "original_title": "Crash",
+        "url": "https://www.imdb.com/title/tt0375679/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Tragedia",
+            "Crimen",
+            "Thriller"
+        ],
+        "rating": 9,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0213149",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Pearl Harbor",
+        "original_title": null,
+        "url": "https://www.imdb.com/title/tt0213149/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Dramaa",
+            "Bélica",
+            "Épica",
+            "Guerra"
+        ],
+        "rating": 6,
+        "date_rated": "2026-03-04",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0455275",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Prison Break",
+        "original_title": "Prison Break",
+        "url": "https://www.imdb.com/title/tt0455275/",
+        "type": "Serie",
+        "genres": [
+            "Drama",
+            "Thriller",
+            "Acción",
+            "Crimen"
+        ],
+        "rating": 7,
+        "date_rated": "2026-03-04",
+        "format": "dvd"
+    },
+    {
+        "id": "tt1119646",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Resacón en Las Vegas",
+        "original_title": "The Hangover",
+        "url": "https://www.imdb.com/title/tt1119646/",
+        "type": "Película",
+        "genres": [
+            "Comedia"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt1411697",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Resacón 2: ¡Ahora en Tailandia!",
+        "original_title": "The Hangover Part II",
+        "url": "https://www.imdb.com/title/tt1411697/",
+        "type": "Película",
+        "genres": [
+            "Comedia"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt1951261",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "R3sacón",
+        "original_title": "The Hangover Part III",
+        "url": "https://www.imdb.com/title/tt1951261/",
+        "type": "Película",
+        "genres": [
+            "Comedia"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt1119644",
+        "created": null,
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Fringe (Al límite)",
+        "original_title": "Fringe",
+        "url": "https://www.imdb.com/title/tt1119644/",
+        "type": "Serie",
+        "genres": [
+            "Misterio",
+            "Ciencia ficción",
+            "Drama",
+            "Thriller"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0185906",
+        "created": "2010-02-22",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Hermanos de sangre",
+        "original_title": "Band of Brothers",
+        "url": "https://www.imdb.com/title/tt0185906/",
+        "type": "Serie",
+        "genres": [
+            "Drama",
+            "Épica",
+            "Bélica",
+            "Tragedia",
+            "Guerra",
+            "Acción",
+            "Historia"
+        ],
+        "rating": 9,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0480249",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Soy leyenda",
+        "original_title": "I Am Legend",
+        "url": "https://www.imdb.com/title/tt0480249/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0479884",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Crank: Veneno en la sangre",
+        "original_title": "Crank",
+        "url": "https://www.imdb.com/title/tt0479884/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2014-11-30",
+        "format": "br"
+    },
+    {
+        "id": "tt0133093",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Matrix",
+        "original_title": "The Matrix",
+        "url": "https://www.imdb.com/title/tt0133093/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Ciencia ficción"
+        ],
+        "rating": 9,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0234215",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Matrix Reloaded",
+        "original_title": "The Matrix Reloaded",
+        "url": "https://www.imdb.com/title/tt0234215/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0242653",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Matrix Revolutions",
+        "original_title": "The Matrix Revolutions",
+        "url": "https://www.imdb.com/title/tt0242653/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0936501",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Venganza",
+        "original_title": "Taken",
+        "url": "https://www.imdb.com/title/tt0936501/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1397280",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Venganza: Conexión Estambul",
+        "original_title": "Taken 2",
+        "url": "https://www.imdb.com/title/tt1397280/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2014-04-29",
+        "format": "br"
+    },
+    {
+        "id": "tt2446042",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "V3nganza",
+        "original_title": "Taken 3",
+        "url": "https://www.imdb.com/title/tt2446042/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2015-12-17",
+        "format": "br"
+    },
+    {
+        "id": "tt1320253",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Los mercenarios",
+        "original_title": "The Expendables",
+        "url": "https://www.imdb.com/title/tt1320253/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1764651",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Los mercenarios 2",
+        "original_title": "The Expendables 2",
+        "url": "https://www.imdb.com/title/tt1764651/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0110912",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Pulp Fiction",
+        "original_title": "Pulp Fiction",
+        "url": "https://www.imdb.com/title/tt0110912/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 9,
+        "date_rated": "2013-01-09",
+        "format": "br"
+    },
+    {
+        "id": "tt1205489",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Gran Torino",
+        "original_title": "Gran Torino",
+        "url": "https://www.imdb.com/title/tt1205489/",
+        "type": "Película",
+        "genres": [
+            "Drama"
+        ],
+        "rating": 9,
+        "date_rated": "2016-02-24",
+        "format": "br"
+    },
+    {
+        "id": "tt0373469",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Kiss Kiss, Bang Bang",
+        "original_title": "Kiss Kiss Bang Bang",
+        "url": "https://www.imdb.com/title/tt0373469/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Crimen",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2012-05-19",
+        "format": "br"
+    },
+    {
+        "id": "tt1032755",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "RocknRolla",
+        "original_title": "RocknRolla",
+        "url": "https://www.imdb.com/title/tt1032755/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0112573",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Braveheart",
+        "original_title": "Braveheart",
+        "url": "https://www.imdb.com/title/tt0112573/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama",
+            "Bélico"
+        ],
+        "rating": 7,
+        "date_rated": "2015-01-10",
+        "format": "br"
+    },
+    {
+        "id": "tt1236472",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Lemmy",
+        "original_title": "Lemmy",
+        "url": "https://www.imdb.com/title/tt1236472/",
+        "type": "Película",
+        "genres": [
+            "Documental",
+            "Biografía",
+            "Música"
+        ],
+        "rating": 8,
+        "date_rated": "2025-11-12",
+        "format": "br"
+    },
+    {
+        "id": "tt0139654",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Training Day (Día de entrenamiento)",
+        "original_title": "Training Day",
+        "url": "https://www.imdb.com/title/tt0139654/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 10,
+        "date_rated": "2024-09-13",
+        "format": "br"
+    },
+    {
+        "id": "tt0118971",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Pactar con el diablo",
+        "original_title": "The Devil's Advocate",
+        "url": "https://www.imdb.com/title/tt0118971/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Fantasía",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2012-07-17",
+        "format": "br"
+    },
+    {
+        "id": "tt0477080",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Imparable",
+        "original_title": "Unstoppable",
+        "url": "https://www.imdb.com/title/tt0477080/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2013-10-05",
+        "format": "br"
+    },
+    {
+        "id": "tt0328107",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El fuego de la venganza",
+        "original_title": "Man on Fire",
+        "url": "https://www.imdb.com/title/tt0328107/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2013-10-26",
+        "format": "br"
+    },
+    {
+        "id": "tt1535109",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Capitán Phillips",
+        "original_title": "Captain Phillips",
+        "url": "https://www.imdb.com/title/tt1535109/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Biografía",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2014-03-17",
+        "format": "br"
+    },
+    {
+        "id": "tt0087363",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Gremlins",
+        "original_title": "Gremlins",
+        "url": "https://www.imdb.com/title/tt0087363/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Fantasía",
+            "Terror"
+        ],
+        "rating": 7,
+        "date_rated": "2018-12-12",
+        "format": "br"
+    },
+    {
+        "id": "tt0099700",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Gremlins 2: La nueva generación",
+        "original_title": "Gremlins 2: The New Batch",
+        "url": "https://www.imdb.com/title/tt0099700/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Fantasía",
+            "Terror"
+        ],
+        "rating": 8,
+        "date_rated": "2018-12-12",
+        "format": "br"
+    },
+    {
+        "id": "tt1197624",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Un ciudadano ejemplar",
+        "original_title": "Law Abiding Citizen",
+        "url": "https://www.imdb.com/title/tt1197624/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1401152",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Sin identidad",
+        "original_title": "Unknown",
+        "url": "https://www.imdb.com/title/tt1401152/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1980209",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dolor y dinero",
+        "original_title": "Pain & Gain",
+        "url": "https://www.imdb.com/title/tt1980209/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Biografía",
+            "Comedia",
+            "Crimen",
+            "Drama",
+            "Misterio"
+        ],
+        "rating": 8,
+        "date_rated": "2013-10-29",
+        "format": "br"
+    },
+    {
+        "id": "tt0086250",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El precio del poder",
+        "original_title": "Scarface",
+        "url": "https://www.imdb.com/title/tt0086250/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2013-08-05",
+        "format": "br"
+    },
+    {
+        "id": "tt0078748",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Alien, el octavo pasajero",
+        "original_title": "Alien",
+        "url": "https://www.imdb.com/title/tt0078748/",
+        "type": "Película",
+        "genres": [
+            "Terror",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2012-04-18",
+        "format": "br"
+    },
+    {
+        "id": "tt0090605",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Aliens: El regreso",
+        "original_title": "Aliens",
+        "url": "https://www.imdb.com/title/tt0090605/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2012-04-19",
+        "format": "br"
+    },
+    {
+        "id": "tt0103644",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Alien³",
+        "original_title": "Alien³",
+        "url": "https://www.imdb.com/title/tt0103644/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0118583",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Alien Resurrección",
+        "original_title": "Alien: Resurrection",
+        "url": "https://www.imdb.com/title/tt0118583/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1446714",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Prometheus",
+        "original_title": "Prometheus",
+        "url": "https://www.imdb.com/title/tt1446714/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0319262",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El día de mañana",
+        "original_title": "The Day After Tomorrow",
+        "url": "https://www.imdb.com/title/tt0319262/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2014-08-27",
+        "format": "br"
+    },
+    {
+        "id": "tt0116629",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Independence Day",
+        "original_title": "Independence Day",
+        "url": "https://www.imdb.com/title/tt0116629/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2014-08-27",
+        "format": "br"
+    },
+    {
+        "id": "tt1706593",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Chronicle",
+        "original_title": "Chronicle",
+        "url": "https://www.imdb.com/title/tt1706593/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Drama",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2014-08-24",
+        "format": "br"
+    },
+    {
+        "id": "tt1616195",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "J. Edgar",
+        "original_title": "J. Edgar",
+        "url": "https://www.imdb.com/title/tt1616195/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama",
+            "Romance"
+        ],
+        "rating": 6,
+        "date_rated": "2015-01-06",
+        "format": "br"
+    },
+    {
+        "id": "tt1375666",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Origen",
+        "original_title": "Inception",
+        "url": "https://www.imdb.com/title/tt1375666/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2021-10-02",
+        "format": "br"
+    },
+    {
+        "id": "tt0450259",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Diamante de sangre",
+        "original_title": "Blood Diamond",
+        "url": "https://www.imdb.com/title/tt0450259/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 5,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0407887",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Infiltrados",
+        "original_title": "The Departed",
+        "url": "https://www.imdb.com/title/tt0407887/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2015-01-03",
+        "format": "br"
+    },
+    {
+        "id": "tt0405159",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Million Dollar Baby",
+        "original_title": "Million Dollar Baby",
+        "url": "https://www.imdb.com/title/tt0405159/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Deporte"
+        ],
+        "rating": 9,
+        "date_rated": "2013-12-30",
+        "format": "br"
+    },
+    {
+        "id": "tt1409024",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Men in Black 3",
+        "original_title": "Men in Black³",
+        "url": "https://www.imdb.com/title/tt1409024/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Comedia",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt2179136",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El francotirador",
+        "original_title": "American Sniper",
+        "url": "https://www.imdb.com/title/tt2179136/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Biografía",
+            "Drama",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2015-05-18",
+        "format": "br"
+    },
+    {
+        "id": "tt2172935",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Metallica Through the Never",
+        "original_title": "Metallica Through the Never",
+        "url": "https://www.imdb.com/title/tt2172935/",
+        "type": "Película",
+        "genres": [
+            "Música"
+        ],
+        "rating": 9,
+        "date_rated": "2013-10-11",
+        "format": "br"
+    },
+    {
+        "id": "tt2576014",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Metallica: Quebec Magnetic",
+        "original_title": "Metallica: Quebec Magnetic",
+        "url": "https://www.imdb.com/title/tt2576014/",
+        "type": "Película",
+        "genres": [
+            "Música"
+        ],
+        "rating": 8,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1542344",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "127 horas",
+        "original_title": "127 Hours",
+        "url": "https://www.imdb.com/title/tt1542344/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2013-10-19",
+        "format": "br"
+    },
+    {
+        "id": "tt0137523",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El club de la lucha",
+        "original_title": "Fight Club",
+        "url": "https://www.imdb.com/title/tt0137523/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0120660",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Enemigo público",
+        "original_title": "Enemy of the State",
+        "url": "https://www.imdb.com/title/tt0120660/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2013-05-11",
+        "format": "br"
+    },
+    {
+        "id": "tt0758774",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Red de mentiras",
+        "original_title": "Body of Lies",
+        "url": "https://www.imdb.com/title/tt0758774/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2014-09-13",
+        "format": "br"
+    },
+    {
+        "id": "tt0371724",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Guía del autoestopista galáctico",
+        "original_title": "The Hitchhiker's Guide to the Galaxy",
+        "url": "https://www.imdb.com/title/tt0371724/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Comedia",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2016-02-22",
+        "format": "br"
+    },
+    {
+        "id": "tt2306299",
+        "created": "2016-02-21",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Vikingos",
+        "original_title": "Vikings",
+        "url": "https://www.imdb.com/title/tt2306299/",
+        "type": "Serie",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Drama",
+            "Historia",
+            "Romance",
+            "Bélico"
+        ],
+        "rating": 9,
+        "date_rated": "2016-02-24",
+        "format": "br"
+    },
+    {
+        "id": "tt0416449",
+        "created": "2016-02-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "300",
+        "original_title": "300",
+        "url": "https://www.imdb.com/title/tt0416449/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2020-06-13",
+        "format": "br"
+    },
+    {
+        "id": "tt1253863",
+        "created": "2016-02-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "300: El origen de un imperio",
+        "original_title": "300: Rise of an Empire",
+        "url": "https://www.imdb.com/title/tt1253863/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama",
+            "Fantasía"
+        ],
+        "rating": 6,
+        "date_rated": "2016-08-23",
+        "format": "br"
+    },
+    {
+        "id": "tt0499549",
+        "created": "2016-04-17",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Avatar",
+        "original_title": "Avatar",
+        "url": "https://www.imdb.com/title/tt0499549/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Fantasía",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2016-08-23",
+        "format": "br"
+    },
+    {
+        "id": "tt0903747",
+        "created": "2016-04-17",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Breaking Bad",
+        "original_title": "Breaking Bad",
+        "url": "https://www.imdb.com/title/tt0903747/",
+        "type": "Serie",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 10,
+        "date_rated": "2020-06-13",
+        "format": "br"
+    },
+    {
+        "id": "tt1272878",
+        "created": "2016-05-01",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "2 Guns",
+        "original_title": "2 Guns",
+        "url": "https://www.imdb.com/title/tt1272878/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2013-11-09",
+        "format": "br"
+    },
+    {
+        "id": "tt0455944",
+        "created": "2016-05-01",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "The Equalizer. El protector",
+        "original_title": "The Equalizer",
+        "url": "https://www.imdb.com/title/tt0455944/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2020-05-23",
+        "format": "br"
+    },
+    {
+        "id": "tt0454848",
+        "created": "2016-06-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Plan oculto",
+        "original_title": "Inside Man",
+        "url": "https://www.imdb.com/title/tt0454848/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2013-08-19",
+        "format": "br"
+    },
+    {
+        "id": "tt1656190",
+        "created": "2016-06-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Safe",
+        "original_title": "Safe",
+        "url": "https://www.imdb.com/title/tt1656190/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2016-08-04",
+        "format": "br"
+    },
+    {
+        "id": "tt0472399",
+        "created": "2016-06-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "The Mechanic",
+        "original_title": "The Mechanic",
+        "url": "https://www.imdb.com/title/tt0472399/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2016-06-05",
+        "format": "br"
+    },
+    {
+        "id": "tt1156398",
+        "created": "2016-06-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Bienvenidos a Zombieland",
+        "original_title": "Zombieland",
+        "url": "https://www.imdb.com/title/tt1156398/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Terror"
+        ],
+        "rating": 8,
+        "date_rated": "2013-04-25",
+        "format": "br"
+    },
+    {
+        "id": "tt0446029",
+        "created": "2016-07-16",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Scott Pilgrim contra el mundo",
+        "original_title": "Scott Pilgrim vs. the World",
+        "url": "https://www.imdb.com/title/tt0446029/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Fantasía",
+            "Romance"
+        ],
+        "rating": 8,
+        "date_rated": "2016-08-04",
+        "format": "br"
+    },
+    {
+        "id": "tt1411250",
+        "created": "2016-08-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Riddick",
+        "original_title": "Riddick",
+        "url": "https://www.imdb.com/title/tt1411250/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2013-12-23",
+        "format": "br"
+    },
+    {
+        "id": "tt1904996",
+        "created": "2016-08-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Parker",
+        "original_title": "Parker",
+        "url": "https://www.imdb.com/title/tt1904996/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2013-05-13",
+        "format": "br"
+    },
+    {
+        "id": "tt1091191",
+        "created": "2016-08-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El único superviviente",
+        "original_title": "Lone Survivor",
+        "url": "https://www.imdb.com/title/tt1091191/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Biografía",
+            "Drama",
+            "Bélico"
+        ],
+        "rating": 7,
+        "date_rated": "2014-03-27",
+        "format": "br"
+    },
+    {
+        "id": "tt0068646",
+        "created": "2016-08-06",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El padrino",
+        "original_title": "The Godfather",
+        "url": "https://www.imdb.com/title/tt0068646/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 9,
+        "date_rated": "2016-08-23",
+        "format": "br"
+    },
+    {
+        "id": "tt0434409",
+        "created": "2016-08-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "V de vendetta",
+        "original_title": "V for Vendetta",
+        "url": "https://www.imdb.com/title/tt0434409/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2013-01-09",
+        "format": "br"
+    },
+    {
+        "id": "tt1063669",
+        "created": "2016-08-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La ola",
+        "original_title": "Die Welle",
+        "url": "https://www.imdb.com/title/tt1063669/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2016-08-19",
+        "format": "br"
+    },
+    {
+        "id": "tt0325980",
+        "created": "2016-12-02",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Piratas del Caribe: La maldición de la Perla Negra",
+        "original_title": "Pirates of the Caribbean: The Curse of the Black Pearl",
+        "url": "https://www.imdb.com/title/tt0325980/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Fantasía"
+        ],
+        "rating": 7,
+        "date_rated": "2017-01-19",
+        "format": "br"
+    },
+    {
+        "id": "tt1298650",
+        "created": "2016-12-02",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Piratas del Caribe: En mareas misteriosas",
+        "original_title": "Pirates of the Caribbean: On Stranger Tides",
+        "url": "https://www.imdb.com/title/tt1298650/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Fantasía"
+        ],
+        "rating": 7,
+        "date_rated": "2017-01-20",
+        "format": "br"
+    },
+    {
+        "id": "tt0383574",
+        "created": "2016-12-02",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Piratas del Caribe: El cofre del hombre muerto",
+        "original_title": "Pirates of the Caribbean: Dead Man's Chest",
+        "url": "https://www.imdb.com/title/tt0383574/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Fantasía"
+        ],
+        "rating": 7,
+        "date_rated": "2017-01-19",
+        "format": "br"
+    },
+    {
+        "id": "tt0449088",
+        "created": "2016-12-02",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Piratas del Caribe: En el fin del mundo",
+        "original_title": "Pirates of the Caribbean: At World's End",
+        "url": "https://www.imdb.com/title/tt0449088/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Fantasía"
+        ],
+        "rating": 6,
+        "date_rated": "2017-01-19",
+        "format": "br"
+    },
+    {
+        "id": "tt1712261",
+        "created": "2016-12-02",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Triple 9",
+        "original_title": "Triple 9",
+        "url": "https://www.imdb.com/title/tt1712261/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2016-05-23",
+        "format": "br"
+    },
+    {
+        "id": "tt0134847",
+        "created": "2016-12-02",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Pitch Black",
+        "original_title": "Pitch Black",
+        "url": "https://www.imdb.com/title/tt0134847/",
+        "type": "Película",
+        "genres": [
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2021-03-19",
+        "format": "br"
+    },
+    {
+        "id": "tt0293662",
+        "created": "2016-12-02",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Transporter",
+        "original_title": "The Transporter",
+        "url": "https://www.imdb.com/title/tt0293662/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2012-04-19",
+        "format": "br"
+    },
+    {
+        "id": "tt0388482",
+        "created": "2016-12-02",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Transporter 2",
+        "original_title": "Transporter 2",
+        "url": "https://www.imdb.com/title/tt0388482/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2017-01-09",
+        "format": "br"
+    },
+    {
+        "id": "tt0486946",
+        "created": "2017-01-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Cerdos salvajes: Con un par... de ruedas",
+        "original_title": "Wild Hogs",
+        "url": "https://www.imdb.com/title/tt0486946/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Comedia"
+        ],
+        "rating": 6,
+        "date_rated": "2017-01-19",
+        "format": "br"
+    },
+    {
+        "id": "tt0200550",
+        "created": "2017-01-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El bar Coyote",
+        "original_title": "Coyote Ugly",
+        "url": "https://www.imdb.com/title/tt0200550/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama",
+            "Música",
+            "Romance"
+        ],
+        "rating": 5,
+        "date_rated": "2017-01-09",
+        "format": "br"
+    },
+    {
+        "id": "tt0292506",
+        "created": "2017-01-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La prueba",
+        "original_title": "The Recruit",
+        "url": "https://www.imdb.com/title/tt0292506/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2017-01-09",
+        "format": "br"
+    },
+    {
+        "id": "tt0322259",
+        "created": "2017-01-15",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "2 Fast 2 Furious: A todo gas 2",
+        "original_title": "2 Fast 2 Furious",
+        "url": "https://www.imdb.com/title/tt0322259/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2017-01-19",
+        "format": "br"
+    },
+    {
+        "id": "tt0232500",
+        "created": "2017-01-19",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "The Fast and the Furious (A todo gas)",
+        "original_title": "The Fast and the Furious",
+        "url": "https://www.imdb.com/title/tt0232500/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2013-02-17",
+        "format": "br"
+    },
+    {
+        "id": "tt0463985",
+        "created": "2017-01-19",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "A todo gas: Tokyo Race",
+        "original_title": "The Fast and the Furious: Tokyo Drift",
+        "url": "https://www.imdb.com/title/tt0463985/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2017-01-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1013752",
+        "created": "2017-01-19",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Fast & Furious: Aún más rápido",
+        "original_title": "Fast & Furious",
+        "url": "https://www.imdb.com/title/tt1013752/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2014-01-03",
+        "format": "br"
+    },
+    {
+        "id": "tt1596343",
+        "created": "2017-01-19",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Fast & Furious 5",
+        "original_title": "Fast Five",
+        "url": "https://www.imdb.com/title/tt1596343/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2013-08-06",
+        "format": "br"
+    },
+    {
+        "id": "tt1905041",
+        "created": "2017-01-19",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Fast & Furious 6",
+        "original_title": "Furious 6",
+        "url": "https://www.imdb.com/title/tt1905041/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2013-08-03",
+        "format": "br"
+    },
+    {
+        "id": "tt2820852",
+        "created": "2017-01-19",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Fast & Furious 7",
+        "original_title": "Fast & Furious 7",
+        "url": "https://www.imdb.com/title/tt2820852/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2017-03-29",
+        "format": "br"
+    },
+    {
+        "id": "tt2582802",
+        "created": "2017-02-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Whiplash",
+        "original_title": "Whiplash",
+        "url": "https://www.imdb.com/title/tt2582802/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Música"
+        ],
+        "rating": 8,
+        "date_rated": "2017-03-29",
+        "format": "br"
+    },
+    {
+        "id": "tt0993846",
+        "created": "2017-02-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El lobo de Wall Street",
+        "original_title": "The Wolf of Wall Street",
+        "url": "https://www.imdb.com/title/tt0993846/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Comedia",
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2017-03-29",
+        "format": "br"
+    },
+    {
+        "id": "tt0295701",
+        "created": "2017-02-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "xXx",
+        "original_title": "xXx",
+        "url": "https://www.imdb.com/title/tt0295701/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2017-03-29",
+        "format": "br"
+    },
+    {
+        "id": "tt1242422",
+        "created": "2017-03-19",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Celda 211",
+        "original_title": "Celda 211",
+        "url": "https://www.imdb.com/title/tt1242422/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2017-03-21",
+        "format": "br"
+    },
+    {
+        "id": "tt1837703",
+        "created": "2017-03-19",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El quinto poder",
+        "original_title": "The Fifth Estate",
+        "url": "https://www.imdb.com/title/tt1837703/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2017-05-01",
+        "format": "br"
+    },
+    {
+        "id": "tt0240772",
+        "created": "2017-04-05",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ocean's Eleven: Hagan juego",
+        "original_title": "Ocean's Eleven",
+        "url": "https://www.imdb.com/title/tt0240772/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2013-08-05",
+        "format": "br"
+    },
+    {
+        "id": "tt0349903",
+        "created": "2017-04-05",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ocean's Twelve. Uno más entra en juego",
+        "original_title": "Ocean's Twelve",
+        "url": "https://www.imdb.com/title/tt0349903/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 5,
+        "date_rated": "2017-04-05",
+        "format": "br"
+    },
+    {
+        "id": "tt0496806",
+        "created": "2017-04-05",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ocean's 13",
+        "original_title": "Ocean's Thirteen",
+        "url": "https://www.imdb.com/title/tt0496806/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2017-05-01",
+        "format": "br"
+    },
+    {
+        "id": "tt0472043",
+        "created": "2017-04-07",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Apocalypto",
+        "original_title": "Apocalypto",
+        "url": "https://www.imdb.com/title/tt0472043/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2026-04-12",
+        "format": "br"
+    },
+    {
+        "id": "tt0296572",
+        "created": "2017-04-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Las crónicas de Riddick",
+        "original_title": "The Chronicles of Riddick",
+        "url": "https://www.imdb.com/title/tt0296572/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2013-12-29",
+        "format": "br"
+    },
+    {
+        "id": "tt0816692",
+        "created": "2017-04-29",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Interstellar",
+        "original_title": "Interstellar",
+        "url": "https://www.imdb.com/title/tt0816692/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Drama",
+            "Ciencia ficción"
+        ],
+        "rating": 9,
+        "date_rated": "2025-08-23",
+        "format": "br"
+    },
+    {
+        "id": "tt0361748",
+        "created": "2017-04-29",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Malditos bastardos",
+        "original_title": "Inglourious Basterds",
+        "url": "https://www.imdb.com/title/tt0361748/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Drama",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2017-05-11",
+        "format": "br"
+    },
+    {
+        "id": "tt1398426",
+        "created": "2017-05-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Straight Outta Compton",
+        "original_title": "Straight Outta Compton",
+        "url": "https://www.imdb.com/title/tt1398426/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama",
+            "Historia",
+            "Música",
+            "Musical"
+        ],
+        "rating": 8,
+        "date_rated": "2017-03-21",
+        "format": "br"
+    },
+    {
+        "id": "tt1136608",
+        "created": "2017-05-30",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Distrito 9",
+        "original_title": "District 9",
+        "url": "https://www.imdb.com/title/tt1136608/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2017-06-01",
+        "format": "br"
+    },
+    {
+        "id": "tt0365748",
+        "created": "2017-05-30",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Zombies Party (Una noche... de muerte)",
+        "original_title": "Shaun of the Dead",
+        "url": "https://www.imdb.com/title/tt0365748/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Terror"
+        ],
+        "rating": 8,
+        "date_rated": "2017-06-01",
+        "format": "br"
+    },
+    {
+        "id": "tt0116996",
+        "created": "2017-09-03",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Mars Attacks!",
+        "original_title": "Mars Attacks!",
+        "url": "https://www.imdb.com/title/tt0116996/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2017-09-03",
+        "format": "br"
+    },
+    {
+        "id": "tt2267998",
+        "created": "2017-11-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Perdida",
+        "original_title": "Gone Girl",
+        "url": "https://www.imdb.com/title/tt2267998/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2015-01-03",
+        "format": "br"
+    },
+    {
+        "id": "tt0454921",
+        "created": "2017-12-11",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "En busca de la felicidad",
+        "original_title": "The Pursuit of Happyness",
+        "url": "https://www.imdb.com/title/tt0454921/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama"
+        ],
+        "rating": 10,
+        "date_rated": "2020-06-13",
+        "format": "br"
+    },
+    {
+        "id": "tt3659388",
+        "created": "2018-01-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Marte (The Martian)",
+        "original_title": "The Martian",
+        "url": "https://www.imdb.com/title/tt3659388/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Drama",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2016-01-13",
+        "format": "br"
+    },
+    {
+        "id": "tt0765429",
+        "created": "2018-03-02",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "American Gangster",
+        "original_title": "American Gangster",
+        "url": "https://www.imdb.com/title/tt0765429/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2018-03-03",
+        "format": "br"
+    },
+    {
+        "id": "tt0109830",
+        "created": "2018-05-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Forrest Gump",
+        "original_title": "Forrest Gump",
+        "url": "https://www.imdb.com/title/tt0109830/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Romance"
+        ],
+        "rating": 9,
+        "date_rated": "2014-06-01",
+        "format": "br"
+    },
+    {
+        "id": "tt0107290",
+        "created": "2018-05-29",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Jurassic Park (Parque Jurásico)",
+        "original_title": "Jurassic Park",
+        "url": "https://www.imdb.com/title/tt0107290/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2017-08-12",
+        "format": "br"
+    },
+    {
+        "id": "tt0119567",
+        "created": "2018-05-29",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El mundo perdido: Jurassic Park",
+        "original_title": "The Lost World: Jurassic Park",
+        "url": "https://www.imdb.com/title/tt0119567/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2018-06-07",
+        "format": "br"
+    },
+    {
+        "id": "tt0163025",
+        "created": "2018-05-29",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Jurassic Park III (Parque Jurásico III)",
+        "original_title": "Jurassic Park III",
+        "url": "https://www.imdb.com/title/tt0163025/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2018-06-11",
+        "format": "br"
+    },
+    {
+        "id": "tt0369610",
+        "created": "2018-05-29",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Jurassic World",
+        "original_title": "Jurassic World",
+        "url": "https://www.imdb.com/title/tt0369610/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2015-10-15",
+        "format": "br"
+    },
+    {
+        "id": "tt1129442",
+        "created": "2018-06-09",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Transporter 3",
+        "original_title": "Transporter 3",
+        "url": "https://www.imdb.com/title/tt1129442/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2018-06-09",
+        "format": "br"
+    },
+    {
+        "id": "tt2316204",
+        "created": "2018-07-06",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Alien: Covenant",
+        "original_title": "Alien: Covenant",
+        "url": "https://www.imdb.com/title/tt2316204/",
+        "type": "Película",
+        "genres": [
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2018-07-06",
+        "format": "br"
+    },
+    {
+        "id": "tt0327056",
+        "created": "2018-09-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Mystic River",
+        "original_title": "Mystic River",
+        "url": "https://www.imdb.com/title/tt0327056/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2019-03-24",
+        "format": "br"
+    },
+    {
+        "id": "tt0498380",
+        "created": "2018-09-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Cartas desde Iwo Jima",
+        "original_title": "Letters from Iwo Jima",
+        "url": "https://www.imdb.com/title/tt0498380/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Drama",
+            "Historia",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2022-02-18",
+        "format": "br"
+    },
+    {
+        "id": "tt0418689",
+        "created": "2018-09-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Banderas de nuestros padres",
+        "original_title": "Flags of Our Fathers",
+        "url": "https://www.imdb.com/title/tt0418689/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Drama",
+            "Historia",
+            "Bélico"
+        ],
+        "rating": 7,
+        "date_rated": "2018-09-25",
+        "format": "br"
+    },
+    {
+        "id": "tt0105695",
+        "created": "2018-09-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Sin perdón",
+        "original_title": "Unforgiven",
+        "url": "https://www.imdb.com/title/tt0105695/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Del oeste"
+        ],
+        "rating": 7,
+        "date_rated": "2018-09-26",
+        "format": "br"
+    },
+    {
+        "id": "tt0112579",
+        "created": "2018-09-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Los puentes de Madison",
+        "original_title": "The Bridges of Madison County",
+        "url": "https://www.imdb.com/title/tt0112579/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Romance"
+        ],
+        "rating": 8,
+        "date_rated": "2020-03-19",
+        "format": "br"
+    },
+    {
+        "id": "tt1057500",
+        "created": "2018-09-04",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Invictus",
+        "original_title": "Invictus",
+        "url": "https://www.imdb.com/title/tt1057500/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama",
+            "Historia",
+            "Deporte"
+        ],
+        "rating": 7,
+        "date_rated": "2019-03-31",
+        "format": "br"
+    },
+    {
+        "id": "tt0113497",
+        "created": "2018-09-15",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Jumanji",
+        "original_title": "Jumanji",
+        "url": "https://www.imdb.com/title/tt0113497/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía"
+        ],
+        "rating": 8,
+        "date_rated": "2019-10-08",
+        "format": "br"
+    },
+    {
+        "id": "tt0370263",
+        "created": "2018-09-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Alien vs. Predator",
+        "original_title": "AVP: Alien vs. Predator",
+        "url": "https://www.imdb.com/title/tt0370263/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2018-09-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0095016",
+        "created": "2018-09-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Jungla de cristal",
+        "original_title": "Die Hard",
+        "url": "https://www.imdb.com/title/tt0095016/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2012-04-16",
+        "format": "br"
+    },
+    {
+        "id": "tt1285016",
+        "created": "2018-09-25",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La red social",
+        "original_title": "The Social Network",
+        "url": "https://www.imdb.com/title/tt1285016/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama"
+        ],
+        "rating": 7,
+        "date_rated": "2017-05-01",
+        "format": "br"
+    },
+    {
+        "id": "tt0343818",
+        "created": "2018-11-22",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Yo, robot",
+        "original_title": "I, Robot",
+        "url": "https://www.imdb.com/title/tt0343818/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Misterio",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2017-04-10",
+        "format": "br"
+    },
+    {
+        "id": "tt1454468",
+        "created": "2018-11-22",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Gravity",
+        "original_title": "Gravity",
+        "url": "https://www.imdb.com/title/tt1454468/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2014-02-18",
+        "format": "br"
+    },
+    {
+        "id": "tt0112442",
+        "created": "2018-11-22",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dos policías rebeldes (Bad Boys)",
+        "original_title": "Bad Boys",
+        "url": "https://www.imdb.com/title/tt0112442/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2012-04-26",
+        "format": "br"
+    },
+    {
+        "id": "tt0172156",
+        "created": "2018-11-22",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dos policías rebeldes II",
+        "original_title": "Bad Boys II",
+        "url": "https://www.imdb.com/title/tt0172156/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2017-04-10",
+        "format": "br"
+    },
+    {
+        "id": "tt1259528",
+        "created": "2018-12-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Juego de ladrones: El atraco perfecto",
+        "original_title": "Den of Thieves",
+        "url": "https://www.imdb.com/title/tt1259528/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2018-04-13",
+        "format": "br"
+    },
+    {
+        "id": "tt0289043",
+        "created": "2018-12-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "28 días después",
+        "original_title": "28 Days Later",
+        "url": "https://www.imdb.com/title/tt0289043/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2024-03-30",
+        "format": "br"
+    },
+    {
+        "id": "tt0448157",
+        "created": "2018-12-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Hancock",
+        "original_title": "Hancock",
+        "url": "https://www.imdb.com/title/tt0448157/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Drama",
+            "Fantasía"
+        ],
+        "rating": 6,
+        "date_rated": "2019-01-12",
+        "format": "br"
+    },
+    {
+        "id": "tt1250777",
+        "created": "2018-12-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Kick-Ass: Listo para machacar",
+        "original_title": "Kick-Ass",
+        "url": "https://www.imdb.com/title/tt1250777/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen"
+        ],
+        "rating": 6,
+        "date_rated": "2019-05-20",
+        "format": "br"
+    },
+    {
+        "id": "tt1650554",
+        "created": "2018-12-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Kick Ass 2: Con un par",
+        "original_title": "Kick-Ass 2",
+        "url": "https://www.imdb.com/title/tt1650554/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2013-12-01",
+        "format": "br"
+    },
+    {
+        "id": "tt2955316",
+        "created": "2019-01-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ocho apellidos vascos",
+        "original_title": "Ocho apellidos vascos",
+        "url": "https://www.imdb.com/title/tt2955316/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Romance"
+        ],
+        "rating": 8,
+        "date_rated": "2025-01-11",
+        "format": "br"
+    },
+    {
+        "id": "tt3626742",
+        "created": "2019-01-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ocho apellidos catalanes",
+        "original_title": "Ocho apellidos catalanes",
+        "url": "https://www.imdb.com/title/tt3626742/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Romance"
+        ],
+        "rating": 7,
+        "date_rated": "2020-06-04",
+        "format": "br"
+    },
+    {
+        "id": "tt2380307",
+        "created": "2019-01-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Coco",
+        "original_title": "Coco",
+        "url": "https://www.imdb.com/title/tt2380307/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Drama",
+            "Familiar",
+            "Fantasía",
+            "Música",
+            "Misterio"
+        ],
+        "rating": 8,
+        "date_rated": "2018-04-14",
+        "format": "br"
+    },
+    {
+        "id": "tt0071562",
+        "created": "2019-02-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El padrino parte II",
+        "original_title": "The Godfather Part II",
+        "url": "https://www.imdb.com/title/tt0071562/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2024-10-21",
+        "format": "br"
+    },
+    {
+        "id": "tt0099674",
+        "created": "2019-02-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El padrino parte III",
+        "original_title": "The Godfather Part III",
+        "url": "https://www.imdb.com/title/tt0099674/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt1297919",
+        "created": "2019-02-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Blitz",
+        "original_title": "Blitz",
+        "url": "https://www.imdb.com/title/tt1297919/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Crimen",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2012-05-29",
+        "format": "br"
+    },
+    {
+        "id": "tt0435761",
+        "created": "2019-03-28",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Toy Story 3",
+        "original_title": "Toy Story 3",
+        "url": "https://www.imdb.com/title/tt0435761/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía"
+        ],
+        "rating": 8,
+        "date_rated": "2020-06-13",
+        "format": "br"
+    },
+    {
+        "id": "tt1790809",
+        "created": "2019-03-28",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Piratas del Caribe: La venganza de Salazar",
+        "original_title": "Pirates of the Caribbean: Dead Men Tell No Tales",
+        "url": "https://www.imdb.com/title/tt1790809/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Fantasía"
+        ],
+        "rating": 7,
+        "date_rated": "2019-04-02",
+        "format": "br"
+    },
+    {
+        "id": "tt0099423",
+        "created": "2019-03-31",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La jungla 2 (Alerta roja)",
+        "original_title": "Die Hard 2",
+        "url": "https://www.imdb.com/title/tt0099423/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2012-04-16",
+        "format": "br"
+    },
+    {
+        "id": "tt0112864",
+        "created": "2019-03-31",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Jungla de cristal: La venganza",
+        "original_title": "Die Hard with a Vengeance",
+        "url": "https://www.imdb.com/title/tt0112864/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2012-04-16",
+        "format": "br"
+    },
+    {
+        "id": "tt0337978",
+        "created": "2019-03-31",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La jungla 4.0",
+        "original_title": "Live Free or Die Hard",
+        "url": "https://www.imdb.com/title/tt0337978/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2012-04-16",
+        "format": "br"
+    },
+    {
+        "id": "tt1606378",
+        "created": "2019-03-31",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La jungla: Un buen día para morir",
+        "original_title": "A Good Day to Die Hard",
+        "url": "https://www.imdb.com/title/tt1606378/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2018-10-15",
+        "format": "br"
+    },
+    {
+        "id": "tt1111422",
+        "created": "2019-05-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Asalto al tren Pelham 1 2 3",
+        "original_title": "The Taking of Pelham 123",
+        "url": "https://www.imdb.com/title/tt1111422/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2013-01-09",
+        "format": "br"
+    },
+    {
+        "id": "tt0970416",
+        "created": "2019-05-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ultimátum a la Tierra",
+        "original_title": "The Day the Earth Stood Still",
+        "url": "https://www.imdb.com/title/tt0970416/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Drama",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2019-05-12",
+        "format": "br"
+    },
+    {
+        "id": "tt6793580",
+        "created": "2019-05-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Campeones",
+        "original_title": "Campeones",
+        "url": "https://www.imdb.com/title/tt6793580/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama",
+            "Familiar",
+            "Deporte"
+        ],
+        "rating": 9,
+        "date_rated": "2018-10-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1462758",
+        "created": "2019-07-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Buried",
+        "original_title": "Buried",
+        "url": "https://www.imdb.com/title/tt1462758/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2023-04-03",
+        "format": "br"
+    },
+    {
+        "id": "tt0110475",
+        "created": "2019-09-25",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La máscara",
+        "original_title": "The Mask",
+        "url": "https://www.imdb.com/title/tt0110475/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Crimen",
+            "Fantasía"
+        ],
+        "rating": 8,
+        "date_rated": "2019-09-25",
+        "format": "br"
+    },
+    {
+        "id": "tt1548850",
+        "created": "2019-09-25",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Misfits",
+        "original_title": "Misfits",
+        "url": "https://www.imdb.com/title/tt1548850/",
+        "type": "Serie",
+        "genres": [
+            "Comedia",
+            "Drama",
+            "Fantasía",
+            "Romance",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2019-11-26",
+        "format": "br"
+    },
+    {
+        "id": "tt1559549",
+        "created": "2019-10-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Restrepo",
+        "original_title": "Restrepo",
+        "url": "https://www.imdb.com/title/tt1559549/",
+        "type": "Película",
+        "genres": [
+            "Documental",
+            "Biografía",
+            "Historia",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2020-07-14",
+        "format": "br"
+    },
+    {
+        "id": "tt2109059",
+        "created": "2019-10-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Vietnam. Los archivos perdidos",
+        "original_title": "Vietnam in HD",
+        "url": "https://www.imdb.com/title/tt2109059/",
+        "type": "MiniSerie",
+        "genres": [
+            "Documental",
+            "Historia",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2019-11-26",
+        "format": "br"
+    },
+    {
+        "id": "tt2861424",
+        "created": "2019-10-23",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Rick y Morty",
+        "original_title": "Rick and Morty",
+        "url": "https://www.imdb.com/title/tt2861424/",
+        "type": "Serie",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Ciencia ficción"
+        ],
+        "rating": 10,
+        "date_rated": "2021-03-03",
+        "format": "br"
+    },
+    {
+        "id": "tt0120815",
+        "created": "2019-11-13",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Salvar al soldado Ryan",
+        "original_title": "Saving Private Ryan",
+        "url": "https://www.imdb.com/title/tt0120815/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2013-04-08",
+        "format": "br"
+    },
+    {
+        "id": "tt0351977",
+        "created": "2019-11-13",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Pisando fuerte",
+        "original_title": "Walking Tall",
+        "url": "https://www.imdb.com/title/tt0351977/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen"
+        ],
+        "rating": 7,
+        "date_rated": "2013-11-08",
+        "format": "br"
+    },
+    {
+        "id": "tt0306414",
+        "created": "2019-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "The Wire (Bajo escucha)",
+        "original_title": "The Wire",
+        "url": "https://www.imdb.com/title/tt0306414/",
+        "type": "Serie",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 10,
+        "date_rated": "2020-09-19",
+        "format": "br"
+    },
+    {
+        "id": "tt3766354",
+        "created": "2019-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "The Equalizer 2",
+        "original_title": "The Equalizer 2",
+        "url": "https://www.imdb.com/title/tt3766354/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2019-12-05",
+        "format": "br"
+    },
+    {
+        "id": "tt1727824",
+        "created": "2019-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Bohemian Rhapsody",
+        "original_title": "Bohemian Rhapsody",
+        "url": "https://www.imdb.com/title/tt1727824/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama",
+            "Música"
+        ],
+        "rating": 8,
+        "date_rated": "2020-10-25",
+        "format": "br"
+    },
+    {
+        "id": "tt1431045",
+        "created": "2019-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Deadpool",
+        "original_title": "Deadpool",
+        "url": "https://www.imdb.com/title/tt1431045/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2016-04-28",
+        "format": "br"
+    },
+    {
+        "id": "tt5463162",
+        "created": "2019-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Deadpool 2",
+        "original_title": "Deadpool 2",
+        "url": "https://www.imdb.com/title/tt5463162/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Comedia",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2018-10-08",
+        "format": "br"
+    },
+    {
+        "id": "tt0120586",
+        "created": "2020-01-29",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "American History X",
+        "original_title": "American History X",
+        "url": "https://www.imdb.com/title/tt0120586/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 9,
+        "date_rated": "2013-12-30",
+        "format": "br"
+    },
+    {
+        "id": "tt5442430",
+        "created": "2020-02-10",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Life: Vida",
+        "original_title": "Life",
+        "url": "https://www.imdb.com/title/tt5442430/",
+        "type": "Película",
+        "genres": [
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2017-06-20",
+        "format": "br"
+    },
+    {
+        "id": "tt0368909",
+        "created": "2020-02-10",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ong Bak",
+        "original_title": "Ong-Bak",
+        "url": "https://www.imdb.com/title/tt0368909/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2011-03-22",
+        "format": "br"
+    },
+    {
+        "id": "tt0183649",
+        "created": "2020-02-10",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Última llamada",
+        "original_title": "Phone Booth",
+        "url": "https://www.imdb.com/title/tt0183649/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2018-10-19",
+        "format": "br"
+    },
+    {
+        "id": "tt6966692",
+        "created": "2020-06-01",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Green Book",
+        "original_title": "Green Book",
+        "url": "https://www.imdb.com/title/tt6966692/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Comedia",
+            "Drama",
+            "Música"
+        ],
+        "rating": 10,
+        "date_rated": "2020-06-13",
+        "format": "br"
+    },
+    {
+        "id": "tt4630562",
+        "created": "2020-06-01",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Fast & Furious 8",
+        "original_title": "The Fate of the Furious",
+        "url": "https://www.imdb.com/title/tt4630562/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2023-04-07",
+        "format": "br"
+    },
+    {
+        "id": "tt1068242",
+        "created": "2020-08-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Footloose",
+        "original_title": "Footloose",
+        "url": "https://www.imdb.com/title/tt1068242/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama",
+            "Música",
+            "Romance"
+        ],
+        "rating": 7,
+        "date_rated": "2013-01-15",
+        "format": "br"
+    },
+    {
+        "id": "tt1217613",
+        "created": "2020-08-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Invasión a la Tierra",
+        "original_title": "Battle: Los Angeles",
+        "url": "https://www.imdb.com/title/tt1217613/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2022-09-30",
+        "format": "br"
+    },
+    {
+        "id": "tt1355644",
+        "created": "2020-08-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Passengers",
+        "original_title": "Passengers",
+        "url": "https://www.imdb.com/title/tt1355644/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Romance",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2023-01-03",
+        "format": "br"
+    },
+    {
+        "id": "tt2883512",
+        "created": "2020-08-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Chef",
+        "original_title": "Chef",
+        "url": "https://www.imdb.com/title/tt2883512/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Comedia",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2014-09-07",
+        "format": "br"
+    },
+    {
+        "id": "tt10765852",
+        "created": "2020-08-31",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Metallica & San Francisco Symphony - S&M2",
+        "original_title": "Metallica & San Francisco Symphony - S&M2",
+        "url": "https://www.imdb.com/title/tt10765852/",
+        "type": "Película",
+        "genres": [
+            "Documental",
+            "Música"
+        ],
+        "rating": 8,
+        "date_rated": "2020-12-14",
+        "format": "br"
+    },
+    {
+        "id": "tt3774114",
+        "created": "2020-09-28",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Snowden",
+        "original_title": "Snowden",
+        "url": "https://www.imdb.com/title/tt3774114/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2016-12-26",
+        "format": "br"
+    },
+    {
+        "id": "tt4881806",
+        "created": "2020-09-29",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Jurassic World: El reino caído",
+        "original_title": "Jurassic World: Fallen Kingdom",
+        "url": "https://www.imdb.com/title/tt4881806/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2018-09-05",
+        "format": "br"
+    },
+    {
+        "id": "tt1038988",
+        "created": "2020-11-10",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "[REC]",
+        "original_title": "[Rec]",
+        "url": "https://www.imdb.com/title/tt1038988/",
+        "type": "Película",
+        "genres": [
+            "Terror",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2012-06-11",
+        "format": "br"
+    },
+    {
+        "id": "tt2294449",
+        "created": "2020-11-10",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Infiltrados en la universidad",
+        "original_title": "22 Jump Street",
+        "url": "https://www.imdb.com/title/tt2294449/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen",
+            "Misterio"
+        ],
+        "rating": 8,
+        "date_rated": "2014-10-12",
+        "format": "br"
+    },
+    {
+        "id": "tt1677720",
+        "created": "2020-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ready Player One",
+        "original_title": "Ready Player One",
+        "url": "https://www.imdb.com/title/tt1677720/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2020-12-05",
+        "format": "br"
+    },
+    {
+        "id": "tt0102926",
+        "created": "2020-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El silencio de los corderos",
+        "original_title": "The Silence of the Lambs",
+        "url": "https://www.imdb.com/title/tt0102926/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Terror",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2011-03-28",
+        "format": "br"
+    },
+    {
+        "id": "tt0107688",
+        "created": "2020-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Pesadilla antes de Navidad",
+        "original_title": "Tim Burton's the Nightmare Before Christmas",
+        "url": "https://www.imdb.com/title/tt0107688/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Familiar",
+            "Fantasía",
+            "Musical"
+        ],
+        "rating": 8,
+        "date_rated": "2022-02-10",
+        "format": "br"
+    },
+    {
+        "id": "tt0103639",
+        "created": "2020-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Aladdín",
+        "original_title": "Aladdin",
+        "url": "https://www.imdb.com/title/tt0103639/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía",
+            "Musical",
+            "Romance"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt3850214",
+        "created": "2020-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dope",
+        "original_title": "Dope",
+        "url": "https://www.imdb.com/title/tt3850214/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Comedia",
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 7,
+        "date_rated": "2015-12-13",
+        "format": "br"
+    },
+    {
+        "id": "tt4158110",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Mr. Robot",
+        "original_title": "Mr. Robot",
+        "url": "https://www.imdb.com/title/tt4158110/",
+        "type": "Serie",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2020-12-14",
+        "format": "br"
+    },
+    {
+        "id": "tt9427166",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Padre no hay más que uno",
+        "original_title": "Padre no hay más que uno",
+        "url": "https://www.imdb.com/title/tt9427166/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Familiar"
+        ],
+        "rating": 6,
+        "date_rated": "2020-02-01",
+        "format": "br"
+    },
+    {
+        "id": "tt11506284",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Padre no hay más que uno 2: La llegada de la suegra",
+        "original_title": "Padre no hay más que uno 2: La llegada de la suegra",
+        "url": "https://www.imdb.com/title/tt11506284/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Familiar"
+        ],
+        "rating": 6,
+        "date_rated": "2020-12-14",
+        "format": "br"
+    },
+    {
+        "id": "tt0246578",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Donnie Darko",
+        "original_title": "Donnie Darko",
+        "url": "https://www.imdb.com/title/tt0246578/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Misterio",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2018-04-26",
+        "format": "br"
+    },
+    {
+        "id": "tt6105098",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El rey león",
+        "original_title": "The Lion King",
+        "url": "https://www.imdb.com/title/tt6105098/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Drama",
+            "Familiar",
+            "Musical"
+        ],
+        "rating": 9,
+        "date_rated": "2019-10-13",
+        "format": "br"
+    },
+    {
+        "id": "tt3794354",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Sonic: La película",
+        "original_title": "Sonic the Hedgehog",
+        "url": "https://www.imdb.com/title/tt3794354/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2020-03-13",
+        "format": "br"
+    },
+    {
+        "id": "tt2333784",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Los mercenarios 3",
+        "original_title": "The Expendables 3",
+        "url": "https://www.imdb.com/title/tt2333784/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Comedia",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2014-10-27",
+        "format": "br"
+    },
+    {
+        "id": "tt1560220",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Zombieland: Mata y remata",
+        "original_title": "Zombieland: Double Tap",
+        "url": "https://www.imdb.com/title/tt1560220/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Terror"
+        ],
+        "rating": 7,
+        "date_rated": "2020-01-17",
+        "format": "br"
+    },
+    {
+        "id": "tt0162222",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Náufrago",
+        "original_title": "Cast Away",
+        "url": "https://www.imdb.com/title/tt0162222/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Drama",
+            "Romance"
+        ],
+        "rating": 9,
+        "date_rated": "2017-04-10",
+        "format": "br"
+    },
+    {
+        "id": "tt0120382",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El show de Truman",
+        "original_title": "The Truman Show",
+        "url": "https://www.imdb.com/title/tt0120382/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2013-04-07",
+        "format": "br"
+    },
+    {
+        "id": "tt0119528",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Mentiroso compulsivo",
+        "original_title": "Liar Liar",
+        "url": "https://www.imdb.com/title/tt0119528/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Fantasía"
+        ],
+        "rating": 7,
+        "date_rated": "2020-05-06",
+        "format": "br"
+    },
+    {
+        "id": "tt0110357",
+        "created": "2020-11-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El rey león",
+        "original_title": "The Lion King",
+        "url": "https://www.imdb.com/title/tt0110357/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Drama",
+            "Familiar",
+            "Musical"
+        ],
+        "rating": 9,
+        "date_rated": "2019-10-13",
+        "format": "br"
+    },
+    {
+        "id": "tt1323594",
+        "created": "2021-03-06",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Gru: Mi villano favorito",
+        "original_title": "Despicable Me",
+        "url": "https://www.imdb.com/title/tt1323594/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Crimen",
+            "Familiar",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2021-05-15",
+        "format": "br"
+    },
+    {
+        "id": "tt1690953",
+        "created": "2021-03-06",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Gru 2: Mi villano favorito",
+        "original_title": "Despicable Me 2",
+        "url": "https://www.imdb.com/title/tt1690953/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Crimen",
+            "Familiar",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2018-11-08",
+        "format": "br"
+    },
+    {
+        "id": "tt2293640",
+        "created": "2021-03-06",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Los minions",
+        "original_title": "Minions",
+        "url": "https://www.imdb.com/title/tt2293640/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Crimen",
+            "Familiar",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2015-11-11",
+        "format": "br"
+    },
+    {
+        "id": "tt2096673",
+        "created": "2021-03-06",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Del revés (Inside Out)",
+        "original_title": "Inside Out",
+        "url": "https://www.imdb.com/title/tt2096673/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Drama",
+            "Familiar",
+            "Fantasía"
+        ],
+        "rating": 7,
+        "date_rated": "2021-03-06",
+        "format": "br"
+    },
+    {
+        "id": "tt0078788",
+        "created": "2021-03-06",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Apocalypse Now",
+        "original_title": "Apocalypse Now",
+        "url": "https://www.imdb.com/title/tt0078788/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Misterio",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2021-04-17",
+        "format": "br"
+    },
+    {
+        "id": "tt0093058",
+        "created": "2021-03-06",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La chaqueta metálica",
+        "original_title": "Full Metal Jacket",
+        "url": "https://www.imdb.com/title/tt0093058/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Bélico"
+        ],
+        "rating": 7,
+        "date_rated": "2022-02-14",
+        "format": "br"
+    },
+    {
+        "id": "tt1210042",
+        "created": "2021-04-03",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Los amos de Brooklyn",
+        "original_title": "Brooklyn's Finest",
+        "url": "https://www.imdb.com/title/tt1210042/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2021-04-17",
+        "format": "br"
+    },
+    {
+        "id": "tt0432021",
+        "created": "2021-04-03",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Resident Evil: Extinción",
+        "original_title": "Resident Evil: Extinction",
+        "url": "https://www.imdb.com/title/tt0432021/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2021-04-04",
+        "format": "br"
+    },
+    {
+        "id": "tt0433362",
+        "created": "2021-04-03",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Daybreakers",
+        "original_title": "Daybreakers",
+        "url": "https://www.imdb.com/title/tt0433362/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2021-04-28",
+        "format": "br"
+    },
+    {
+        "id": "tt1220634",
+        "created": "2021-04-03",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Resident Evil: Ultratumba",
+        "original_title": "Resident Evil: Afterlife",
+        "url": "https://www.imdb.com/title/tt1220634/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2021-04-06",
+        "format": "br"
+    },
+    {
+        "id": "tt0117705",
+        "created": "2021-04-15",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Space Jam",
+        "original_title": "Space Jam",
+        "url": "https://www.imdb.com/title/tt0117705/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía",
+            "Ciencia ficción",
+            "Deporte"
+        ],
+        "rating": 7,
+        "date_rated": "2021-11-28",
+        "format": "br"
+    },
+    {
+        "id": "tt0099785",
+        "created": "2021-04-15",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Solo en casa",
+        "original_title": "Home Alone",
+        "url": "https://www.imdb.com/title/tt0099785/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Familiar"
+        ],
+        "rating": 8,
+        "date_rated": "2021-05-01",
+        "format": "br"
+    },
+    {
+        "id": "tt1772341",
+        "created": "2021-04-15",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "¡Rompe Ralph!",
+        "original_title": "Wreck-It Ralph",
+        "url": "https://www.imdb.com/title/tt1772341/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía",
+            "Ciencia ficción",
+            "Deporte"
+        ],
+        "rating": 8,
+        "date_rated": "2013-02-19",
+        "format": "br"
+    },
+    {
+        "id": "tt5848272",
+        "created": "2021-04-15",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ralph rompe Internet",
+        "original_title": "Ralph Breaks the Internet",
+        "url": "https://www.imdb.com/title/tt5848272/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía",
+            "Ciencia ficción",
+            "Deporte"
+        ],
+        "rating": 7,
+        "date_rated": "2021-04-15",
+        "format": "br"
+    },
+    {
+        "id": "tt1798684",
+        "created": "2021-05-17",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Redención (Southpaw)",
+        "original_title": "Southpaw",
+        "url": "https://www.imdb.com/title/tt1798684/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama",
+            "Deporte"
+        ],
+        "rating": 8,
+        "date_rated": "2017-05-23",
+        "format": "br"
+    },
+    {
+        "id": "tt2543164",
+        "created": "2021-05-17",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La llegada (Arrival)",
+        "original_title": "Arrival",
+        "url": "https://www.imdb.com/title/tt2543164/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Misterio",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2021-05-14",
+        "format": "br"
+    },
+    {
+        "id": "tt1675434",
+        "created": "2021-05-17",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Intocable",
+        "original_title": "Intouchables",
+        "url": "https://www.imdb.com/title/tt1675434/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama"
+        ],
+        "rating": 9,
+        "date_rated": "2021-05-28",
+        "format": "br"
+    },
+    {
+        "id": "tt4172430",
+        "created": "2021-05-17",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "13 horas: Los soldados secretos de Bengasi",
+        "original_title": "13 Hours: The Secret Soldiers of Benghazi",
+        "url": "https://www.imdb.com/title/tt4172430/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama",
+            "Historia",
+            "Suspense",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2020-06-13",
+        "format": "br"
+    },
+    {
+        "id": "tt0119174",
+        "created": "2021-08-10",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "The Game",
+        "original_title": "The Game",
+        "url": "https://www.imdb.com/title/tt0119174/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2013-07-02",
+        "format": "br"
+    },
+    {
+        "id": "tt2302755",
+        "created": "2021-08-12",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Objetivo: La Casa Blanca",
+        "original_title": "Olympus Has Fallen",
+        "url": "https://www.imdb.com/title/tt2302755/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2021-08-25",
+        "format": "br"
+    },
+    {
+        "id": "tt3300542",
+        "created": "2021-08-12",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Objetivo: Londres",
+        "original_title": "London Has Fallen",
+        "url": "https://www.imdb.com/title/tt3300542/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt0119116",
+        "created": "2021-08-12",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El quinto elemento",
+        "original_title": "The Fifth Element",
+        "url": "https://www.imdb.com/title/tt0119116/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2020-05-28",
+        "format": "br"
+    },
+    {
+        "id": "tt1245526",
+        "created": "2021-08-12",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "RED",
+        "original_title": "RED",
+        "url": "https://www.imdb.com/title/tt1245526/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2021-08-24",
+        "format": "br"
+    },
+    {
+        "id": "tt1821694",
+        "created": "2021-08-12",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "RED 2",
+        "original_title": "RED 2",
+        "url": "https://www.imdb.com/title/tt1821694/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2022-09-04",
+        "format": "br"
+    },
+    {
+        "id": "tt0058461",
+        "created": "2021-08-31",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Por un puñado de dólares",
+        "original_title": "Per un pugno di dollari",
+        "url": "https://www.imdb.com/title/tt0058461/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Del oeste"
+        ],
+        "rating": 7,
+        "date_rated": "2021-09-29",
+        "format": "br"
+    },
+    {
+        "id": "tt0059578",
+        "created": "2021-08-31",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La muerte tenía un precio",
+        "original_title": "Per qualche dollaro in più",
+        "url": "https://www.imdb.com/title/tt0059578/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Del oeste"
+        ],
+        "rating": 7,
+        "date_rated": "2021-09-29",
+        "format": "br"
+    },
+    {
+        "id": "tt0060196",
+        "created": "2021-08-31",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El bueno, el feo y el malo",
+        "original_title": "Il buono, il brutto, il cattivo",
+        "url": "https://www.imdb.com/title/tt0060196/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Drama",
+            "Del oeste"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt0119822",
+        "created": "2021-08-31",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Mejor... imposible",
+        "original_title": "As Good as It Gets",
+        "url": "https://www.imdb.com/title/tt0119822/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama",
+            "Romance"
+        ],
+        "rating": 8,
+        "date_rated": "2021-09-02",
+        "format": "br"
+    },
+    {
+        "id": "tt1663202",
+        "created": "2021-09-05",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El renacido (The Revenant)",
+        "original_title": "The Revenant",
+        "url": "https://www.imdb.com/title/tt1663202/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Drama",
+            "Del oeste"
+        ],
+        "rating": 8,
+        "date_rated": "2022-01-21",
+        "format": "br"
+    },
+    {
+        "id": "tt0375679",
+        "created": "2021-12-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Crash (Colisión)",
+        "original_title": "Crash",
+        "url": "https://www.imdb.com/title/tt0375679/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2013-12-28",
+        "format": "br"
+    },
+    {
+        "id": "tt5433138",
+        "created": "2022-01-25",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Fast & Furious 9",
+        "original_title": "F9",
+        "url": "https://www.imdb.com/title/tt5433138/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2021-08-10",
+        "format": "br"
+    },
+    {
+        "id": "tt0093773",
+        "created": "2022-01-25",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Depredador",
+        "original_title": "Predator",
+        "url": "https://www.imdb.com/title/tt0093773/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Terror",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2022-01-26",
+        "format": "br"
+    },
+    {
+        "id": "tt0100403",
+        "created": "2022-01-25",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Depredador 2",
+        "original_title": "Predator 2",
+        "url": "https://www.imdb.com/title/tt0100403/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2022-01-26",
+        "format": "br"
+    },
+    {
+        "id": "tt1424381",
+        "created": "2022-01-25",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Predators",
+        "original_title": "Predators",
+        "url": "https://www.imdb.com/title/tt1424381/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2017-05-12",
+        "format": "br"
+    },
+    {
+        "id": "tt3829266",
+        "created": "2022-01-25",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Predator",
+        "original_title": "The Predator",
+        "url": "https://www.imdb.com/title/tt3829266/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2018-11-28",
+        "format": "br"
+    },
+    {
+        "id": "tt0995832",
+        "created": "2022-03-11",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Generation Kill",
+        "original_title": "Generation Kill",
+        "url": "https://www.imdb.com/title/tt0995832/",
+        "type": "MiniSerie",
+        "genres": [
+            "Drama",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2022-09-04",
+        "format": "br"
+    },
+    {
+        "id": "tt1121931",
+        "created": "2022-04-09",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Crank: Alto voltaje",
+        "original_title": "Crank: High Voltage",
+        "url": "https://www.imdb.com/title/tt1121931/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2022-04-09",
+        "format": "br"
+    },
+    {
+        "id": "tt0109040",
+        "created": "2022-05-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ace Ventura: Un detective diferente",
+        "original_title": "Ace Ventura: Pet Detective",
+        "url": "https://www.imdb.com/title/tt0109040/",
+        "type": "Película",
+        "genres": [
+            "Comedia"
+        ],
+        "rating": 8,
+        "date_rated": "2013-01-09",
+        "format": "br"
+    },
+    {
+        "id": "tt0112281",
+        "created": "2022-05-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ace Ventura: Operación África",
+        "original_title": "Ace Ventura: When Nature Calls",
+        "url": "https://www.imdb.com/title/tt0112281/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Comedia",
+            "Crimen"
+        ],
+        "rating": 8,
+        "date_rated": "2020-11-16",
+        "format": "br"
+    },
+    {
+        "id": "tt0113277",
+        "created": "2022-06-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Heat",
+        "original_title": "Heat",
+        "url": "https://www.imdb.com/title/tt0113277/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2022-09-04",
+        "format": "br"
+    },
+    {
+        "id": "tt6468322",
+        "created": "2022-08-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La casa de papel",
+        "original_title": "La casa de papel",
+        "url": "https://www.imdb.com/title/tt6468322/",
+        "type": "Serie",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2025-02-13",
+        "format": "br"
+    },
+    {
+        "id": "tt1442449",
+        "created": "2022-08-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Spartacus",
+        "original_title": "Spartacus",
+        "url": "https://www.imdb.com/title/tt1442449/",
+        "type": "Serie",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Biografía",
+            "Drama",
+            "Romance"
+        ],
+        "rating": 8,
+        "date_rated": "2025-02-13",
+        "format": "br"
+    },
+    {
+        "id": "tt1025100",
+        "created": "2022-08-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Géminis",
+        "original_title": "Gemini Man",
+        "url": "https://www.imdb.com/title/tt1025100/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2019-11-24",
+        "format": "br"
+    },
+    {
+        "id": "tt0947810",
+        "created": "2022-08-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Green Zone: Distrito protegido",
+        "original_title": "Green Zone",
+        "url": "https://www.imdb.com/title/tt0947810/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama",
+            "Suspense",
+            "Bélico"
+        ],
+        "rating": 7,
+        "date_rated": "2025-02-13",
+        "format": "br"
+    },
+    {
+        "id": "tt2713180",
+        "created": "2022-08-18",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Corazones de acero",
+        "original_title": "Fury",
+        "url": "https://www.imdb.com/title/tt2713180/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2015-01-18",
+        "format": "br"
+    },
+    {
+        "id": "tt12412888",
+        "created": "2022-09-15",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Sonic 2: La película",
+        "original_title": "Sonic the Hedgehog 2",
+        "url": "https://www.imdb.com/title/tt12412888/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2022-05-17",
+        "format": "br"
+    },
+    {
+        "id": "tt0214341",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z",
+        "original_title": null,
+        "url": "https://www.imdb.com/title/tt0214341/",
+        "type": "Serie",
+        "genres": [
+            "Animación",
+            "Ciencia ficción",
+            "Fantasía",
+            "Artes Marciales",
+            "Superhéroes",
+            "Acción"
+        ],
+        "rating": 9,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142251",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball: La leyenda del dragón Xeron",
+        "original_title": "Dragon Ball: Shenron no Densetsu",
+        "url": "https://www.imdb.com/title/tt0142251/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes"
+        ],
+        "rating": 6,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142249",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball: La bella durmiente en el castillo del mal",
+        "original_title": "Doragon Bôru Majin-Jô no Nemuri Hime",
+        "url": "https://www.imdb.com/title/tt0142249/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción"
+        ],
+        "rating": 6,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142248",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball: Aventura mística",
+        "original_title": "Dragon Ball: Makafushigi Dai Bôken",
+        "url": "https://www.imdb.com/title/tt0142248/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Aventuras"
+        ],
+        "rating": 6,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142235",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: El secuestro de Gohan",
+        "original_title": "Doragon Boru Zetto: Ora no Gohan o Kaese!!",
+        "url": "https://www.imdb.com/title/tt0142235/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes",
+            "Fantasía",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142240",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: El más fuerte del mundo",
+        "original_title": "Doragon boru Z: Konoyo de ichiban tsuyoi yatsu",
+        "url": "https://www.imdb.com/title/tt0142240/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Aventuras",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142233",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: La super batalla",
+        "original_title": "Doragon boru Z: Chikyû marugoto chôkessen",
+        "url": "https://www.imdb.com/title/tt0142233/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Aventuras",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142244",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: El super guerrero Son Goku",
+        "original_title": "Dragon Ball Z: Super Saiya-jin da Son Gokû",
+        "url": "https://www.imdb.com/title/tt0142244/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Aventuras",
+            "Superhéroes",
+            "Fantasía"
+        ],
+        "rating": null,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt1125254",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: Los mejores rivales",
+        "original_title": "Doragon bôru Zetto: Tobikkiri no Saikyô tai Saikyô",
+        "url": "https://www.imdb.com/title/tt1125254/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Aventuras",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142237",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: Guerreros de fuerza ilimitada",
+        "original_title": "Dragon Ball Z: Gekitotsu!! 100-oku Power no Senshi-tachi",
+        "url": "https://www.imdb.com/title/tt0142237/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142241",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: Los 3 grandes Supersayanos",
+        "original_title": "Doragon bôru Z: Kyokugen batoru!! San dai sûpâ saiyajin",
+        "url": "https://www.imdb.com/title/tt0142241/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción"
+        ],
+        "rating": 7,
+        "date_rated": "2026-02-22",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142242",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: Estalla el Duelo",
+        "original_title": "Dragon Ball Z: Moetsukiro!! Nessen Ressen Chô-Gekisen",
+        "url": "https://www.imdb.com/title/tt0142242/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-23",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142238",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: Los guerreros de plata",
+        "original_title": "Dragon Ball Z: Ginga Giri-Giri!! Butchigiri no Sugoi Yatsu",
+        "url": "https://www.imdb.com/title/tt0142238/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-23",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142239",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: El regreso de Broly",
+        "original_title": "Dragon Ball Z: Kiken na Futari! Super Senshi wa Nemurenai",
+        "url": "https://www.imdb.com/title/tt0142239/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes"
+        ],
+        "rating": 8,
+        "date_rated": "2026-03-11",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142234",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: El combate definitivo",
+        "original_title": "Dragon Ball Z: Super Senshi Gekiha!! Katsu No wa Ore da",
+        "url": "https://www.imdb.com/title/tt0142234/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes"
+        ],
+        "rating": 7,
+        "date_rated": "2026-03-04",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142236",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: Fusión",
+        "original_title": "Dragon Ball Z: Fukkatsu no Fusion!! Gokuu to Vegeta",
+        "url": "https://www.imdb.com/title/tt0142236/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-23",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142243",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: El ataque del dragón",
+        "original_title": "Doragon Bôru Zetto Ryû-Ken Bakuhatsu!! Gokû ga Yaraneba Dare ga Yaru",
+        "url": "https://www.imdb.com/title/tt0142243/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-23",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142250",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball: El camino hacia el más fuerte",
+        "original_title": "Doragon bôru: Saikyô e no michi",
+        "url": "https://www.imdb.com/title/tt0142250/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Aventuras",
+            "Comedia",
+            "Fantasía"
+        ],
+        "rating": null,
+        "date_rated": "2026-02-23",
+        "format": "dvd"
+    },
+    {
+        "id": "tt2263944",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: La batalla de los dioses",
+        "original_title": "Doragon Bôru Zetto Kami to Kami",
+        "url": "https://www.imdb.com/title/tt2263944/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes",
+            "Aventuras",
+            "Comedia"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-23",
+        "format": "dvd"
+    },
+    {
+        "id": "tt3819668",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: La resurrección de F",
+        "original_title": "Doragon Bôru Zetto Fukkatsu no 'Efu'",
+        "url": "https://www.imdb.com/title/tt3819668/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes",
+            "Aventuras"
+        ],
+        "rating": null,
+        "date_rated": "2026-02-23",
+        "format": "dvd"
+    },
+    {
+        "id": "tt7961060",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Super: Broly",
+        "original_title": "Doragon Bôru Sûpâ Burorî",
+        "url": "https://www.imdb.com/title/tt7961060/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Aventuras",
+            "Superhéroes"
+        ],
+        "rating": 8,
+        "date_rated": "2026-02-23",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142245",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: El último combate",
+        "original_title": "Doragon Bôru Zetto Tatta Hitori no Saishû Kessen",
+        "url": "https://www.imdb.com/title/tt0142245/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Drama",
+            "Fantasía"
+        ],
+        "rating": null,
+        "date_rated": "2026-02-23",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142247",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball Z: Un futuro diferente - Gohan y Trunks",
+        "original_title": "Doragon Bôru Zetto Zetsubô e no Hankô!! Nokosareta Chô-Senshi Gohan to Torankusu",
+        "url": "https://www.imdb.com/title/tt0142247/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes",
+            "Aventuras"
+        ],
+        "rating": 6,
+        "date_rated": "2026-03-04",
+        "format": "dvd"
+    },
+    {
+        "id": "tt0142232",
+        "created": "2022-11-24",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dragon Ball GT: 100 años después",
+        "original_title": "Gokû Gaiden! Yûki no Akashi wa Sûshinchû",
+        "url": "https://www.imdb.com/title/tt0142232/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Superhéroes",
+            "Comedia",
+            "Aventuras",
+            "Drama",
+            "Familia",
+            "Fantasía"
+        ],
+        "rating": 7,
+        "date_rated": "2026-03-04",
+        "format": "dvd"
+    },
+    {
+        "id": "tt10838180",
+        "created": "2022-11-27",
+        "store": "ECI",
+        "price": 9.95,
+        "gift": false,
+        "title": "Matrix Resurrections",
+        "original_title": "The Matrix Resurrections",
+        "url": "https://www.imdb.com/title/tt10838180/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2021-12-28",
+        "format": "br"
+    },
+    {
+        "id": "tt7888964",
+        "created": "2022-11-27",
+        "store": "ECI",
+        "price": 9.95,
+        "gift": false,
+        "title": "Nadie",
+        "original_title": "Nobody",
+        "url": "https://www.imdb.com/title/tt7888964/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2022-12-03",
+        "format": "br"
+    },
+    {
+        "id": "tt6139732",
+        "created": "2022-11-27",
+        "store": "ECI",
+        "price": 6.5,
+        "gift": false,
+        "title": "Aladdín",
+        "original_title": "Aladdin",
+        "url": "https://www.imdb.com/title/tt6139732/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía",
+            "Musical",
+            "Romance"
+        ],
+        "rating": 7,
+        "date_rated": "2019-08-23",
+        "format": "br"
+    },
+    {
+        "id": "tt3554046",
+        "created": "2022-11-27",
+        "store": "ECI",
+        "price": 9.95,
+        "gift": false,
+        "title": "Space Jam: Nuevas leyendas",
+        "original_title": "Space Jam: A New Legacy",
+        "url": "https://www.imdb.com/title/tt3554046/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía",
+            "Ciencia ficción",
+            "Deporte"
+        ],
+        "rating": 7,
+        "date_rated": "2022-11-27",
+        "format": "br"
+    },
+    {
+        "id": "tt4425200",
+        "created": "2022-11-27",
+        "store": "ECI",
+        "price": 6.5,
+        "gift": false,
+        "title": "John Wick: Pacto de sangre",
+        "original_title": "John Wick: Chapter 2",
+        "url": "https://www.imdb.com/title/tt4425200/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2020-02-10",
+        "format": "br"
+    },
+    {
+        "id": "tt6146586",
+        "created": "2022-11-27",
+        "store": "ECI",
+        "price": 8.0,
+        "gift": false,
+        "title": "John Wick: Capítulo 3 - Parabellum",
+        "original_title": "John Wick: Chapter 3 - Parabellum",
+        "url": "https://www.imdb.com/title/tt6146586/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2019-09-17",
+        "format": "br"
+    },
+    {
+        "id": "tt2381941",
+        "created": "2022-12-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Focus",
+        "original_title": "Focus",
+        "url": "https://www.imdb.com/title/tt2381941/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Crimen",
+            "Drama",
+            "Romance"
+        ],
+        "rating": 7,
+        "date_rated": "2015-05-18",
+        "format": "br"
+    },
+    {
+        "id": "tt3032476",
+        "created": "2023-01-12",
+        "store": "ECI",
+        "price": 49.95,
+        "gift": false,
+        "title": "Better Call Saul",
+        "original_title": "Better Call Saul",
+        "url": "https://www.imdb.com/title/tt3032476/",
+        "type": "Serie",
+        "genres": [
+            "Crimen",
+            "Drama"
+        ],
+        "rating": 9,
+        "date_rated": "2023-01-12",
+        "format": "br"
+    },
+    {
+        "id": "tt9764386",
+        "created": "2023-01-14",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "30 Monedas",
+        "original_title": "30 Monedas",
+        "url": "https://www.imdb.com/title/tt9764386/",
+        "type": "Serie",
+        "genres": [
+            "Drama",
+            "Fantasía",
+            "Terror",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2025-02-13",
+        "format": "br"
+    },
+    {
+        "id": "tt1535108",
+        "created": "2023-01-14",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Elysium",
+        "original_title": "Elysium",
+        "url": "https://www.imdb.com/title/tt1535108/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2023-01-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1764234",
+        "created": "2023-01-27",
+        "store": "CEX",
+        "price": 4.0,
+        "gift": false,
+        "title": "Mátalos suavemente",
+        "original_title": "Killing Them Softly",
+        "url": "https://www.imdb.com/title/tt1764234/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2023-02-18",
+        "format": "br"
+    },
+    {
+        "id": "tt0840361",
+        "created": "2023-01-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "The Town: Ciudad de ladrones",
+        "original_title": "The Town",
+        "url": "https://www.imdb.com/title/tt0840361/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2023-02-26",
+        "format": "br"
+    },
+    {
+        "id": "tt7959026",
+        "created": "2023-01-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Mula",
+        "original_title": "The Mule",
+        "url": "https://www.imdb.com/title/tt7959026/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2019-03-23",
+        "format": "br"
+    },
+    {
+        "id": "tt2080374",
+        "created": "2023-01-27",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Steve Jobs",
+        "original_title": "Steve Jobs",
+        "url": "https://www.imdb.com/title/tt2080374/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama"
+        ],
+        "rating": 7,
+        "date_rated": "2023-02-23",
+        "format": "br"
+    },
+    {
+        "id": "tt10883660",
+        "created": "2023-02-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Antidisturbios",
+        "original_title": "Antidisturbios",
+        "url": "https://www.imdb.com/title/tt10883660/",
+        "type": "Serie",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2023-10-27",
+        "format": "br"
+    },
+    {
+        "id": "tt1502397",
+        "created": "2023-02-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Bad Boys for Life",
+        "original_title": "Bad Boys for Life",
+        "url": "https://www.imdb.com/title/tt1502397/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2023-04-09",
+        "format": "br"
+    },
+    {
+        "id": "tt1060277",
+        "created": "2023-02-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Monstruoso",
+        "original_title": "Cloverfield",
+        "url": "https://www.imdb.com/title/tt1060277/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2023-04-07",
+        "format": "br"
+    },
+    {
+        "id": "tt2312718",
+        "created": "2023-02-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "El protector (Homefront)",
+        "original_title": "Homefront",
+        "url": "https://www.imdb.com/title/tt2312718/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2023-04-28",
+        "format": "br"
+    },
+    {
+        "id": "tt2543472",
+        "created": "2023-03-12",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Wonder",
+        "original_title": "Wonder",
+        "url": "https://www.imdb.com/title/tt2543472/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Familiar"
+        ],
+        "rating": 8,
+        "date_rated": "2020-05-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1285482",
+        "created": "2023-03-25",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Dead set: Muerte en directo",
+        "original_title": "Dead Set",
+        "url": "https://www.imdb.com/title/tt1285482/",
+        "type": "MiniSerie",
+        "genres": [
+            "Drama",
+            "Terror",
+            "Reality",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2023-03-26",
+        "format": "br"
+    },
+    {
+        "id": "tt6133466",
+        "created": "2023-04-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "La primera purga: La noche de las bestias",
+        "original_title": "The First Purge",
+        "url": "https://www.imdb.com/title/tt6133466/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2018-10-10",
+        "format": "br"
+    },
+    {
+        "id": "tt1319743",
+        "created": "2023-04-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Ases calientes 2: Baile de asesinos",
+        "original_title": "Smokin' Aces 2: Assassins' Ball",
+        "url": "https://www.imdb.com/title/tt1319743/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2023-06-18",
+        "format": "br"
+    },
+    {
+        "id": "tt0203009",
+        "created": "2023-04-29",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Moulin Rouge",
+        "original_title": "Moulin Rouge!",
+        "url": "https://www.imdb.com/title/tt0203009/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Musical",
+            "Romance"
+        ],
+        "rating": 7,
+        "date_rated": "2023-04-30",
+        "format": "br"
+    },
+    {
+        "id": "tt2592614",
+        "created": "2023-06-19",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Resident Evil: El capítulo final",
+        "original_title": "Resident Evil: The Final Chapter",
+        "url": "https://www.imdb.com/title/tt2592614/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2017-04-14",
+        "format": "br"
+    },
+    {
+        "id": "tt2911666",
+        "created": "2023-07-02",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "John Wick (Otro día para matar)",
+        "original_title": "John Wick",
+        "url": "https://www.imdb.com/title/tt2911666/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2017-02-18",
+        "format": "br"
+    },
+    {
+        "id": "tt1598778",
+        "created": "2023-07-08",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Contagio",
+        "original_title": "Contagion",
+        "url": "https://www.imdb.com/title/tt1598778/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2020-03-30",
+        "format": "br"
+    },
+    {
+        "id": "tt1130884",
+        "created": "2023-08-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Shutter Island",
+        "original_title": "Shutter Island",
+        "url": "https://www.imdb.com/title/tt1130884/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2023-10-02",
+        "format": "br"
+    },
+    {
+        "id": "tt1437358",
+        "created": "2023-08-20",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Mientras duermes",
+        "original_title": "Mientras duermes",
+        "url": "https://www.imdb.com/title/tt1437358/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 9,
+        "date_rated": "2023-09-01",
+        "format": "br"
+    },
+    {
+        "id": "tt1630029",
+        "created": "2023-09-03",
+        "store": "ECI",
+        "price": 15.35,
+        "gift": false,
+        "title": "Avatar: El sentido del agua",
+        "original_title": "Avatar: The Way of Water",
+        "url": "https://www.imdb.com/title/tt1630029/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Aventura",
+            "Fantasía",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2024-02-18",
+        "format": "br"
+    },
+    {
+        "id": "tt1992386",
+        "created": "2023-09-07",
+        "store": "Game",
+        "price": 6.0,
+        "gift": false,
+        "title": "Black Lagoon: Roberta's Blood Trail",
+        "original_title": "Black Lagoon: Roberta's Blood Trail",
+        "url": "https://www.imdb.com/title/tt1992386/",
+        "type": "MiniSerie",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Aventura",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2024-02-18",
+        "format": "br"
+    },
+    {
+        "id": "tt3263904",
+        "created": "2023-10-20",
+        "store": "Cex",
+        "price": 6.0,
+        "gift": false,
+        "title": "Sully",
+        "original_title": "Sully",
+        "url": "https://www.imdb.com/title/tt3263904/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2016-12-26",
+        "format": "br"
+    },
+    {
+        "id": "tt1403177",
+        "created": "2023-10-27",
+        "store": "Amazon",
+        "price": 10.0,
+        "gift": false,
+        "title": "Hesher",
+        "original_title": "Hesher",
+        "url": "https://www.imdb.com/title/tt1403177/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama"
+        ],
+        "rating": 8,
+        "date_rated": "2025-11-12",
+        "format": "br"
+    },
+    {
+        "id": "tt0332379",
+        "created": "2023-11-26",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Escuela de rock",
+        "original_title": "School of Rock",
+        "url": "https://www.imdb.com/title/tt0332379/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Música"
+        ],
+        "rating": 8,
+        "date_rated": "2019-05-13",
+        "format": "br"
+    },
+    {
+        "id": "tt6264654",
+        "created": "2023-11-27",
+        "store": "ECI",
+        "price": 8.99,
+        "gift": false,
+        "title": "Free Guy",
+        "original_title": "Free Guy",
+        "url": "https://www.imdb.com/title/tt6264654/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Comedia",
+            "Fantasía",
+            "Romance",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2021-09-30",
+        "format": "br"
+    },
+    {
+        "id": "tt0369702",
+        "created": "2023-11-28",
+        "store": "ECI",
+        "price": 9.99,
+        "gift": false,
+        "title": "Mar adentro",
+        "original_title": "Mar adentro",
+        "url": "https://www.imdb.com/title/tt0369702/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama"
+        ],
+        "rating": 7,
+        "date_rated": "2024-10-21",
+        "format": "br"
+    },
+    {
+        "id": "tt0477348",
+        "created": "2023-11-28",
+        "store": "ECI",
+        "price": 7.79,
+        "gift": false,
+        "title": "No es país para viejos",
+        "original_title": "No Country for Old Men",
+        "url": "https://www.imdb.com/title/tt0477348/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2023-12-25",
+        "format": "br"
+    },
+    {
+        "id": "tt3833480",
+        "created": "2023-11-28",
+        "store": "ECI",
+        "price": 8.99,
+        "gift": false,
+        "title": "The Outpost",
+        "original_title": "The Outpost",
+        "url": "https://www.imdb.com/title/tt3833480/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama",
+            "Historia",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2020-07-12",
+        "format": "br"
+    },
+    {
+        "id": "tt0120863",
+        "created": "2023-11-28",
+        "store": "ECI",
+        "price": 7.79,
+        "gift": false,
+        "title": "La delgada línea roja",
+        "original_title": "The Thin Red Line",
+        "url": "https://www.imdb.com/title/tt0120863/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Historia",
+            "Bélico"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt5433140",
+        "created": "2023-11-28",
+        "store": "ECI",
+        "price": 9.97,
+        "gift": false,
+        "title": "Fast & Furious X",
+        "original_title": "Fast X",
+        "url": "https://www.imdb.com/title/tt5433140/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Crimen",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2023-06-17",
+        "format": "br"
+    },
+    {
+        "id": "tt0265086",
+        "created": "2023-11-28",
+        "store": "ECI",
+        "price": 4.99,
+        "gift": false,
+        "title": "Black Hawk derribado",
+        "original_title": "Black Hawk Down",
+        "url": "https://www.imdb.com/title/tt0265086/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Drama",
+            "Historia",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2022-02-15",
+        "format": "br"
+    },
+    {
+        "id": "tt0363547",
+        "created": "2023-12-03",
+        "store": "ECI",
+        "price": 5.97,
+        "gift": false,
+        "title": "Amanecer de los muertos",
+        "original_title": "Dawn of the Dead",
+        "url": "https://www.imdb.com/title/tt0363547/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror"
+        ],
+        "rating": 8,
+        "date_rated": "2021-06-17",
+        "format": "br"
+    },
+    {
+        "id": "tt0094737",
+        "created": "2023-12-07",
+        "store": "Fnac",
+        "price": 12.95,
+        "gift": false,
+        "title": "Big",
+        "original_title": "Big",
+        "url": "https://www.imdb.com/title/tt0094737/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama",
+            "Fantasía",
+            "Romance"
+        ],
+        "rating": 8,
+        "date_rated": "2021-03-30",
+        "format": "br"
+    },
+    {
+        "id": "tt0319061",
+        "created": "2023-12-17",
+        "store": "Cex",
+        "price": 5.0,
+        "gift": false,
+        "title": "Big Fish",
+        "original_title": "Big Fish",
+        "url": "https://www.imdb.com/title/tt0319061/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Drama",
+            "Fantasía",
+            "Romance"
+        ],
+        "rating": 7,
+        "date_rated": "2025-02-13",
+        "format": "br"
+    },
+    {
+        "id": "tt2229499",
+        "created": "2024-01-27",
+        "store": "CEX",
+        "price": 4.0,
+        "gift": false,
+        "title": "Don Jon",
+        "original_title": "Don Jon",
+        "url": "https://www.imdb.com/title/tt2229499/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama",
+            "Romance"
+        ],
+        "rating": 7,
+        "date_rated": "2021-10-02",
+        "format": "br"
+    },
+    {
+        "id": "tt1591479",
+        "created": "2024-03-14",
+        "store": "Cex",
+        "price": 6.0,
+        "gift": false,
+        "title": "Acto de valor",
+        "original_title": "Act of Valor",
+        "url": "https://www.imdb.com/title/tt1591479/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Suspense",
+            "Bélico"
+        ],
+        "rating": 7,
+        "date_rated": "2024-03-30",
+        "format": "br"
+    },
+    {
+        "id": "tt1823672",
+        "created": "2024-04-05",
+        "store": "Cex",
+        "price": 12.0,
+        "gift": false,
+        "title": "Chappie",
+        "original_title": "Chappie",
+        "url": "https://www.imdb.com/title/tt1823672/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2024-01-12",
+        "format": "br"
+    },
+    {
+        "id": "tt0120804",
+        "created": "2024-04-20",
+        "store": "Cex",
+        "price": 8.0,
+        "gift": false,
+        "title": "Resident Evil",
+        "original_title": "Resident Evil",
+        "url": "https://www.imdb.com/title/tt0120804/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción"
+        ],
+        "rating": 6,
+        "date_rated": "2012-04-04",
+        "format": "br"
+    },
+    {
+        "id": "tt21881982",
+        "created": "2024-04-21",
+        "store": "ECI",
+        "price": 13.3,
+        "gift": false,
+        "title": "Campeonex",
+        "original_title": "Campeonex",
+        "url": "https://www.imdb.com/title/tt21881982/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Deporte"
+        ],
+        "rating": 6,
+        "date_rated": "2024-07-28",
+        "format": "br"
+    },
+    {
+        "id": "tt9484998",
+        "created": "2024-04-24",
+        "store": "Amazon",
+        "price": 12.0,
+        "gift": false,
+        "title": "Palm Springs",
+        "original_title": "Palm Springs",
+        "url": "https://www.imdb.com/title/tt9484998/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Fantasía",
+            "Misterio",
+            "Romance",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2020-07-22",
+        "format": "br"
+    },
+    {
+        "id": "tt1853728",
+        "created": "2024-06-08",
+        "store": "Cex",
+        "price": 6.0,
+        "gift": false,
+        "title": "Django desencadenado",
+        "original_title": "Django Unchained",
+        "url": "https://www.imdb.com/title/tt1853728/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Del oeste"
+        ],
+        "rating": 8,
+        "date_rated": "2013-04-07",
+        "format": "br"
+    },
+    {
+        "id": "tt0332452",
+        "created": "2024-09-01",
+        "store": null,
+        "price": null,
+        "gift": true,
+        "title": "Troya",
+        "original_title": "Troy",
+        "url": "https://www.imdb.com/title/tt0332452/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Drama"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt5052474",
+        "created": "2024-09-01",
+        "store": null,
+        "price": null,
+        "gift": true,
+        "title": "Sicario: El día del soldado",
+        "original_title": "Sicario: Day of the Soldado",
+        "url": "https://www.imdb.com/title/tt5052474/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen",
+            "Drama",
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2024-09-24",
+        "format": "br"
+    },
+    {
+        "id": "tt0887912",
+        "created": "2024-09-04",
+        "store": "Cex",
+        "price": 3.0,
+        "gift": false,
+        "title": "En tierra hostil",
+        "original_title": "The Hurt Locker",
+        "url": "https://www.imdb.com/title/tt0887912/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Suspense",
+            "Bélico"
+        ],
+        "rating": 7,
+        "date_rated": "2022-09-23",
+        "format": "br"
+    },
+    {
+        "id": "tt4866712",
+        "created": "2024-09-18",
+        "store": "Cex",
+        "price": 5.0,
+        "gift": false,
+        "title": "El pregón",
+        "original_title": "El pregón",
+        "url": "https://www.imdb.com/title/tt4866712/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Musical"
+        ],
+        "rating": 6,
+        "date_rated": "2025-02-13",
+        "format": "br"
+    },
+    {
+        "id": "tt1636826",
+        "created": "2024-11-30",
+        "store": "Cex",
+        "price": 6.0,
+        "gift": false,
+        "title": "Project X",
+        "original_title": "Project X",
+        "url": "https://www.imdb.com/title/tt1636826/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2012-07-08",
+        "format": "br"
+    },
+    {
+        "id": "tt5390504",
+        "created": "2024-12-23",
+        "store": "Cex",
+        "price": 8.0,
+        "gift": false,
+        "title": "Detroit",
+        "original_title": "Detroit",
+        "url": "https://www.imdb.com/title/tt5390504/",
+        "type": "Película",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Historia",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2025-10-27",
+        "format": "br"
+    },
+    {
+        "id": "tt18412256",
+        "created": "2025-01-06",
+        "store": "Regalo",
+        "price": null,
+        "gift": false,
+        "title": "Alien: Romulus",
+        "original_title": "Alien: Romulus",
+        "url": "https://www.imdb.com/title/tt18412256/",
+        "type": "Película",
+        "genres": [
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 8,
+        "date_rated": "2024-10-28",
+        "format": "br"
+    },
+    {
+        "id": "tt0418763",
+        "created": "2025-01-18",
+        "store": "Cex",
+        "price": 6.0,
+        "gift": false,
+        "title": "Jarhead - El infierno espera",
+        "original_title": "Jarhead",
+        "url": "https://www.imdb.com/title/tt0418763/",
+        "type": "Película",
+        "genres": [
+            "Biografía",
+            "Drama",
+            "Bélico"
+        ],
+        "rating": 8,
+        "date_rated": "2013-04-28",
+        "format": "br"
+    },
+    {
+        "id": "tt0382625",
+        "created": "2025-01-18",
+        "store": "Cex",
+        "price": 5.0,
+        "gift": false,
+        "title": "El código Da Vinci",
+        "original_title": "The Da Vinci Code",
+        "url": "https://www.imdb.com/title/tt0382625/",
+        "type": "Película",
+        "genres": [
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 6,
+        "date_rated": "2023-01-06",
+        "format": "br"
+    },
+    {
+        "id": "tt0808151",
+        "created": "2025-01-18",
+        "store": "Cex",
+        "price": 5.0,
+        "gift": false,
+        "title": "Ángeles y demonios",
+        "original_title": "Angels & Demons",
+        "url": "https://www.imdb.com/title/tt0808151/",
+        "type": "Película",
+        "genres": [
+            "Misterio",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2025-02-13",
+        "format": "br"
+    },
+    {
+        "id": "tt0421715",
+        "created": "2025-02-08",
+        "store": "Cex",
+        "price": 4.0,
+        "gift": false,
+        "title": "El curioso caso de Benjamin Button",
+        "original_title": "The Curious Case of Benjamin Button",
+        "url": "https://www.imdb.com/title/tt0421715/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Fantasía",
+            "Romance"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt18259086",
+        "created": "2025-05-30",
+        "store": "Cex",
+        "price": 15.0,
+        "gift": false,
+        "title": "Sonic 3: La película",
+        "original_title": "Sonic the Hedgehog 3",
+        "url": "https://www.imdb.com/title/tt18259086/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Fantasía",
+            "Ciencia ficción"
+        ],
+        "rating": 8,
+        "date_rated": "2025-02-03",
+        "format": "br"
+    },
+    {
+        "id": "tt0475394",
+        "created": "2025-05-30",
+        "store": "Cex",
+        "price": 5.0,
+        "gift": false,
+        "title": "Ases calientes",
+        "original_title": "Smokin' Aces",
+        "url": "https://www.imdb.com/title/tt0475394/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia",
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt0360486",
+        "created": "2025-07-18",
+        "store": "Amazon",
+        "price": 12.93,
+        "gift": false,
+        "title": "Constantine",
+        "original_title": "Constantine",
+        "url": "https://www.imdb.com/title/tt0360486/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Fantasía",
+            "Terror",
+            "Misterio"
+        ],
+        "rating": 7,
+        "date_rated": "2018-10-02",
+        "format": "br"
+    },
+    {
+        "id": "tt1855325",
+        "created": "2025-07-26",
+        "store": null,
+        "price": null,
+        "gift": false,
+        "title": "Resident Evil: Venganza",
+        "original_title": "Resident Evil: Retribution",
+        "url": "https://www.imdb.com/title/tt1855325/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Terror",
+            "Ciencia ficción",
+            "Suspense"
+        ],
+        "rating": 7,
+        "date_rated": "2013-01-26",
+        "format": "br"
+    },
+    {
+        "id": "tt16021642",
+        "created": "2025-12-02",
+        "store": "ECI",
+        "price": 14.0,
+        "gift": false,
+        "title": "Apagón",
+        "original_title": "Apagón",
+        "url": "https://www.imdb.com/title/tt16021642/",
+        "type": "Serie",
+        "genres": [
+            "Drama"
+        ],
+        "rating": 7,
+        "date_rated": "2025-12-20",
+        "format": "br"
+    },
+    {
+        "id": "tt4524056",
+        "created": "2025-12-02",
+        "store": "ECI",
+        "price": 30.0,
+        "gift": false,
+        "title": "Vis a vis",
+        "original_title": "Vis a vis",
+        "url": "https://www.imdb.com/title/tt4524056/",
+        "type": "Serie",
+        "genres": [
+            "Crimen",
+            "Drama",
+            "Suspense"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt0362227",
+        "created": "2025-12-02",
+        "store": "ECI",
+        "price": 7.75,
+        "gift": false,
+        "title": "La terminal",
+        "original_title": "The Terminal",
+        "url": "https://www.imdb.com/title/tt0362227/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama",
+            "Romance"
+        ],
+        "rating": 7,
+        "date_rated": "2026-01-28",
+        "format": "br"
+    },
+    {
+        "id": "tt0120910",
+        "created": "2025-12-02",
+        "store": "ECI",
+        "price": 7.75,
+        "gift": false,
+        "title": "Fantasía 2000",
+        "original_title": "Fantasia 2000",
+        "url": "https://www.imdb.com/title/tt0120910/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Familiar",
+            "Fantasía",
+            "Música"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt14614892",
+        "created": "2026-01-18",
+        "store": "ECI",
+        "price": 11.85,
+        "gift": false,
+        "title": "Dragon Ball Super: Super Hero",
+        "original_title": "Doragon boru supa: Supa hiro",
+        "url": "https://www.imdb.com/title/tt14614892/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Acción",
+            "Aventura",
+            "Fantasía"
+        ],
+        "rating": 8,
+        "date_rated": "2023-01-07",
+        "format": "br"
+    },
+    {
+        "id": "tt3720724",
+        "created": "2026-01-22",
+        "store": "ECI",
+        "price": 8.0,
+        "gift": false,
+        "title": "Requisitos para ser una persona normal",
+        "original_title": "Requisitos para ser una persona normal",
+        "url": "https://www.imdb.com/title/tt3720724/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Romance"
+        ],
+        "rating": 7,
+        "date_rated": "2018-07-17",
+        "format": "br"
+    },
+    {
+        "id": "tt3553976",
+        "created": "2026-02-02",
+        "store": "ECI",
+        "price": 9.75,
+        "gift": false,
+        "title": "Captain Fantastic",
+        "original_title": "Captain Fantastic",
+        "url": "https://www.imdb.com/title/tt3553976/",
+        "type": "Película",
+        "genres": [
+            "Comedia",
+            "Drama",
+            "Aventuras"
+        ],
+        "rating": 7,
+        "date_rated": "2026-02-21",
+        "format": "br"
+    },
+    {
+        "id": "tt0120611",
+        "created": "2026-04-18",
+        "store": "CEX",
+        "price": 8.0,
+        "gift": false,
+        "title": "Blade",
+        "original_title": "Blade",
+        "url": "https://www.imdb.com/title/tt0120611/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Artes marciales",
+            "Vampiros",
+            "Ciencia ficción"
+        ],
+        "rating": 7,
+        "date_rated": "2026-04-20",
+        "format": "br"
+    },
+    {
+        "id": "tt7286456",
+        "created": "2026-04-18",
+        "store": "CEX",
+        "price": 7.5,
+        "gift": false,
+        "title": "Joker",
+        "original_title": "Joker",
+        "url": "https://www.imdb.com/title/tt7286456/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Crimen",
+            "Thriller"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt11315808",
+        "created": "2026-04-18",
+        "store": "CEX",
+        "price": 7.5,
+        "gift": false,
+        "title": "Joker: Folie à Deux",
+        "original_title": "Joker: Folie à Deux",
+        "url": "https://www.imdb.com/title/tt11315808/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Musical",
+            "Thriller"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt3622120",
+        "created": "2026-07-20",
+        "store": "CEX",
+        "price": 8,
+        "gift": false,
+        "title": "Kilo Two Bravo",
+        "original_title": "Kajaki",
+        "url": "https://www.imdb.com/title/tt3622120/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Guerra",
+            "Thriller",
+            "Biografía"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    },
+    {
+        "id": "tt1790885",
+        "created": "2026-07-20",
+        "store": "CEX",
+        "price": 5,
+        "gift": false,
+        "title": "La noche más oscura",
+        "original_title": "Zero Dark Thirty",
+        "url": "https://www.imdb.com/title/tt1790885/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Guerra",
+            "Político",
+            "Thriller",
+            "Historia"
+        ],
+        "rating": null,
+        "date_rated": null,
+        "format": "br"
+    }
+]

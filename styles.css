@@ -93,15 +93,18 @@ span.genre-tag[data-genre] {
   cursor: pointer;
 }
 
-/* small badge indicating movie/series type shown next to the title */
-span.type {
-  font-size: 11px;
-  margin-right: .8em;
-  color: var(--text-secondary);
-  background: var(--bg-secondary);
-  padding: 1px 4px;
-  border-radius: 3px;
-  border: 1px solid var(--text-secondary);
+.type {
+    display: inline-block;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    font-size: 11px;
+    margin-right: .8em;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    padding: 1px 4px;
+    border-radius: 3px;
+    border: 1px solid var(--text-secondary);
 }
 
 /* secondary original title under main title */
@@ -143,53 +146,117 @@ span.type {
 }
 
 #list {
-  display: table;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .row {
-  display: table-row;
-  background-color: var(--row-bg);
+    display: grid;
+    grid-template-columns:
+        165px
+        minmax(320px, 2.5fr)
+        110px
+        220px
+        minmax(0, 2fr);
+    align-items: center;
+    gap: 12px;
+    padding: 6px 8px;
 }
 
-.col-imdb, .col-title, .col-added, .col-notes, .col-genres {
-  display: table-cell;
-  padding: 5px;
+.row:hover {
+  background: var(--hover-bg);
+}
+
+.col-imdb {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+img.format {
+    height: 24px;
+    width: auto;
+    flex-shrink: 0;
+}
+
+.col-imdb,
+.col-title,
+.col-added,
+.col-notes,
+.col-genres {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.genres-scroll {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+}
+
+.genre-pill {
+    flex: 0 0 auto;
+}
+
+
+.col-genres::-webkit-scrollbar {
+    height: 6px;
+}
+
+.col-genres::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 3px;
+}
+
+.col-notes {
+    white-space: nowrap;
+    min-width: 200px;
+}
+
+.col-title,
+.col-notes,
+.col-genres {
+  overflow: hidden;
+  text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-.col-title, .col-notes, .col-genres {
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
 @media (max-width: 900px) {
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
     max-width: 100vw;
   }
+
   #list {
-    display: block;
-    max-width: 100%;
+    display: flex;
+    flex-direction: column;
   }
+
   .row {
-    display: block;
-    padding: 5px;
-    margin-bottom: 10px;
-    max-width: 100%;
-    box-sizing: border-box;
-    background-color: var(--bg-secondary);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 10px;
+    background: var(--bg-secondary);
+    border-radius: 6px;
   }
-  .col-imdb, .col-title, .col-added, .col-notes, .col-genres {
-    display: block;
-    margin-bottom: 8px;
+
+  .col-imdb,
+  .col-title,
+  .col-added,
+  .col-notes,
+  .col-genres {
     white-space: normal;
     overflow: visible;
     word-break: break-word;
-    max-width: 100%;
-    box-sizing: border-box;
   }
 }
-
 input#title-filter {
   margin: .5em 0;
   width: 99%;
