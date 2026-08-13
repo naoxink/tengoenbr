@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,51 +7,220 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">🌙 Tema claro</button>
-  <button id="suggest-toggle" class="suggest-toggle" title="Sugerir película">🎲 Sugerir</button>
-  <div id="suggestion-box" class="suggestion-box hidden" aria-live="polite"></div>
-  <div class="filter">
-    <button id="filters-toggle" class="filters-toggle" onclick="toggleFilters()">Filtros ▾</button>
-    <div id="filters-panel" class="filters-panel hidden">
-      <label>
-        Buscar por título:
-        <input type="text" id="title-filter" placeholder="Ej: Matrix">
-      </label>
-      <label>
-        Tipo:
-        <select id="type-filter">
-          <option value="">Todos</option>
-        </select>
-      </label>
-      <label class="inline-label">
-        <input type="checkbox" id="unrated-filter" title="Mostrar sólo registros sin nota personal">
-        Sólo sin nota
-      </label>
-      <div>
-        <label class="inline-label">
-          Ordenar por:
-          <select id="sort-key">
-            <option value="csv">Orden CSV</option>
-          <option value="id">ID IMDb</option>
-            <option value="dateAdded">Fecha de adición</option>
-            <option value="title">Título</option>
-            <option value="myRating">Mi nota</option>
-          </select>
-        </label><br>
-        <label class="inline-label">
-          Dirección:
-          <select id="sort-dir">
-            <option value="desc">Descendente</option>
-            <option value="asc">Ascendente</option>
+  <div id="app" v-cloak>
+
+    <div class="topbar">
+      <button class="theme-toggle" @click="toggleTheme" :title="theme==='light' ? 'Cambiar a tema oscuro' : 'Cambiar a tema claro'">
+        {{ theme==='light' ? '☀️ Tema oscuro' : '🌙 Tema claro' }}
+      </button>
+      <button class="stats-toggle" @click="showStats = !showStats" title="Estadísticas">📊 Stats</button>
+      <button class="suggest-toggle" @click="toggleSuggestion" title="Sugerir película">🎲 Sugerir</button>
+    </div>
+
+    <transition name="fade">
+      <div v-if="suggestion.visible" class="suggestion-box" aria-live="polite">
+        <div style="margin-bottom:.5em">
+          <label>Género:
+            <select v-model="suggestion.genre" @change="suggestion.current = pickSuggestion()">
+              <option value="any">Cualquier género</option>
+              <option v-for="g in allGenres" :key="g" :value="g">{{ g }}</option>
+            </select>
+          </label>
+          <label style="margin-left:.5em">
+            <input type="checkbox" v-model="suggestion.onlyUnrated" @change="suggestion.current = pickSuggestion()">
+            Sólo sin nota
+          </label>
+        </div>
+        <template v-if="suggestion.current">
+          <div class="title">
+            {{ suggestion.current.title }}
+            <small v-if="suggestion.current.original_title && suggestion.current.original_title !== suggestion.current.title">
+              ({{ suggestion.current.original_title }})
+            </small>
+          </div>
+          <div class="meta">{{ (suggestion.current.genres || []).join(', ') }} · Mi nota: {{ suggestion.current.rating ?? '—' }}</div>
+          <div class="actions">
+            <button class="btn-ghost" @click="nextSuggestion">Siguiente</button>
+            <button class="btn-ghost" @click="suggestion.visible = false">Cerrar</button>
+            <button class="btn-primary" @click="openSuggestion">Ver</button>
+          </div>
+        </template>
+        <div v-else class="title">Sin sugerencias con estos filtros</div>
+      </div>
+    </transition>
+
+    <transition name="fade">
+      <div v-if="showStats" class="stats-panel">
+        <div class="stats-grid">
+          <div class="stat-card"><div class="stat-value">{{ stats.total }}</div><div class="stat-label">Total</div></div>
+          <div class="stat-card"><div class="stat-value">{{ stats.movies }}</div><div class="stat-label">Películas</div></div>
+          <div class="stat-card"><div class="stat-value">{{ stats.series }}</div><div class="stat-label">Series</div></div>
+          <div class="stat-card"><div class="stat-value">{{ stats.avg }}</div><div class="stat-label">Nota media</div></div>
+          <div class="stat-card"><div class="stat-value">{{ stats.spent }}€</div><div class="stat-label">Gastado</div></div>
+          <div class="stat-card"><div class="stat-value">{{ stats.favCount }}</div><div class="stat-label">Favoritos</div></div>
+        </div>
+        <div class="genre-bars">
+          <div class="genre-bar-row" v-for="g in stats.topGenres" :key="g.genre">
+            <span class="genre-bar-label">{{ g.genre }}</span>
+            <div class="genre-bar-track"><div class="genre-bar-fill" :style="{ width: g.pct + '%' }"></div></div>
+            <span class="genre-bar-count">{{ g.count }}</span>
+          </div>
+        </div>
+      </div>
+    </transition>
+
+    <div class="filter">
+      <button class="filters-toggle" @click="showFilters = !showFilters">
+        Filtros {{ showFilters ? '▴' : '▾' }}
+        <span v-if="activeFilterCount" class="filter-badge">{{ activeFilterCount }}</span>
+      </button>
+      <span class="results-info">{{ sortedList.length }} resultado(s)</span>
+
+      <div v-show="showFilters" class="filters-panel">
+        <label>
+          Buscar por título:
+          <input type="text" v-model="filters.title" placeholder="Ej: Matrix">
+        </label>
+        <label>
+          Tipo:
+          <select v-model="filters.type">
+            <option value="">Todos</option>
+            <option v-for="t in allTypes" :key="t" :value="t">{{ t }}</option>
           </select>
         </label>
+        <label class="inline-label">
+          <input type="checkbox" v-model="filters.onlyUnrated">
+          Sólo sin nota
+        </label>
+        <label class="inline-label">
+          <input type="checkbox" v-model="filters.onlyFavorites">
+          Sólo favoritos ⭐
+        </label>
+        <div>
+          <label class="inline-label">
+            Ordenar por:
+            <select v-model="sort.key">
+              <option value="csv">Orden CSV</option>
+              <option value="id">ID IMDb</option>
+              <option value="dateAdded">Fecha de adición</option>
+              <option value="title">Título</option>
+              <option value="myRating">Mi nota</option>
+            </select>
+          </label><br>
+          <label class="inline-label">
+            Dirección:
+            <select v-model="sort.dir">
+              <option value="desc">Descendente</option>
+              <option value="asc">Ascendente</option>
+            </select>
+          </label>
+        </div>
+        <div class="all-genres-in-panel">
+          <span
+            v-for="g in allGenres" :key="g"
+            class="genre-pill" :class="{ active: filters.genres.has(g.toLowerCase()) }"
+            @click="toggleGenreFilter(g)"
+          >{{ g }}</span>
+        </div>
+        <button class="apply-sort" v-if="activeFilterCount" @click="clearFilters">Limpiar filtros ✕</button>
       </div>
-      <button id="apply-sort" class="apply-sort">Aplicar</button>
     </div>
+
+    <div id="list">
+      <p v-if="!pagedList.length" class="empty-state">No se encontraron películas con estos filtros.</p>
+
+      <div
+        v-for="item in pagedList" :key="item.id"
+        :id="'movie-' + item.id"
+        class="row-wrapper" :class="{ highlight: highlightedId === item.id }"
+      >
+        <div
+          class="row-header" role="button" tabindex="0"
+          :aria-expanded="expandedIds.has(item.id)"
+          @click="toggleExpand(item.id)"
+          @keydown.enter="toggleExpand(item.id)"
+          @keydown.space.prevent="toggleExpand(item.id)"
+        >
+          <button
+            class="fav-btn" @click.stop="toggleFavorite(item.id)"
+            :title="favorites.has(item.id) ? 'Quitar de favoritos' : 'Añadir a favoritos'"
+          >{{ favorites.has(item.id) ? '⭐' : '☆' }}</button>
+
+          <span class="csv-rank">#{{ item._csvLine }}</span>
+          <img v-if="item.format" class="format" :src="'assets/' + item.format + '.png'" :alt="item.format">
+
+          <span class="col-title">
+            <span v-if="item.type" class="type">{{ item.type }}</span>
+            <strong>{{ item.title }}</strong>
+          </span>
+
+          <span
+            class="col-added"
+            :title="item.created ? 'Añadida el ' + formatDate(item.created) : 'Fecha de inclusión desconocida'"
+          >{{ formatDate(item.created) }}</span>
+
+          <span
+            class="rating" :class="ratingClass(item.rating)"
+            :title="item.date_rated ? 'Valorada el ' + formatDate(item.date_rated) : ''"
+          >{{ item.rating ?? '?' }}</span>
+
+          <a class="imdb" target="_blank" :href="item.url" @click.stop>IMDb</a>
+          <span class="chevron" :class="{ open: expandedIds.has(item.id) }">▾</span>
+        </div>
+
+        <div class="accordion" v-show="expandedIds.has(item.id)">
+          <div class="accordion-row" v-if="item.original_title && item.original_title !== item.title">
+            <span class="accordion-label">Título original</span><span>{{ item.original_title }}</span>
+          </div>
+          <div class="accordion-row">
+            <span class="accordion-label">Añadida</span><span>{{ formatDate(item.created) }}</span>
+          </div>
+          <div class="accordion-row" v-if="item.gift">
+            <span class="accordion-label">Origen</span><span>🎁 Regalo</span>
+          </div>
+          <div class="accordion-row" v-else-if="item.store">
+            <span class="accordion-label">Comprada en</span>
+            <span>{{ item.store }}<template v-if="item.price != null"> ({{ item.price }}€)</template></span>
+          </div>
+          <div class="accordion-row" v-if="item.date_rated">
+            <span class="accordion-label">Valorada el</span><span>{{ formatDate(item.date_rated) }}</span>
+          </div>
+          <div class="accordion-genres" v-if="(item.genres || []).length">
+            <span
+              v-for="g in item.genres" :key="g"
+              class="genre-pill" :class="{ active: filters.genres.has(g.toLowerCase()) }"
+              @click.stop="toggleGenreFilter(g); showFilters = true"
+            >{{ g }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pagination" v-if="totalPages > 1">
+      <div class="pagination-controls">
+        <button v-if="currentPage > 1" class="pagination-btn" @click="goToPage(1)">«</button>
+        <button v-if="currentPage > 1" class="pagination-btn" @click="goToPage(currentPage - 1)">‹</button>
+        <span v-if="paginationWindow.start > 1" class="pagination-ellipsis">...</span>
+        <button
+          v-for="p in paginationWindow.pages" :key="p"
+          class="pagination-btn" :class="{ active: p === currentPage }"
+          @click="goToPage(p)"
+        >{{ p }}</button>
+        <span v-if="paginationWindow.end < totalPages" class="pagination-ellipsis">...</span>
+        <button v-if="currentPage < totalPages" class="pagination-btn" @click="goToPage(currentPage + 1)">›</button>
+        <button v-if="currentPage < totalPages" class="pagination-btn" @click="goToPage(totalPages)">»</button>
+        <span class="pagination-info">
+          {{ (currentPage - 1) * itemsPerPage + 1 }}-{{ Math.min(currentPage * itemsPerPage, sortedList.length) }} de {{ sortedList.length }}
+        </span>
+      </div>
+    </div>
+
+    <button v-if="showScrollTop" class="scroll-top" @click="scrollTop" title="Volver arriba">↑</button>
+
+    <div class="fecha-actualizado">Actualizado a día <span>{{ lastUpdated }}</span></div>
   </div>
-  <div id="list"></div>
-  <div id="pagination" class="pagination"></div>
-  <div class="fecha-actualizado">Actualizado a día <span class="fecha"></span></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.prod.js"></script>
+  <script src="app.js"></script>
 </body>
-<script src="script.js"></script>
 </html>
