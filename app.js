@@ -1,10 +1,20 @@
 const { createApp } = Vue
 
+const TABS = {
+  coleccion: { file: './data.json', label: 'Colección' },
+  comprar:   { file: './paracomprar.json', label: 'Para comprar' },
+  vistas:    { file: './misnotas.json', label: 'Vistas (sin comprar)' }
+}
+
 createApp({
   data() {
     return {
       theme: localStorage.getItem('theme') || 'dark',
-      fullList: [],
+
+      activeTab: 'coleccion',
+      fullList: [],      // data.json -> colección (propias)
+      wishlist: [],       // paracomprar.json -> quiero comprar
+      watchedList: [],    // misnotas.json -> vistas, no compradas, con mi nota
 
       filters: {
         title: '',
@@ -23,7 +33,7 @@ createApp({
       showStats: false,
       showMoreFilters: false,
       showScrollTop: false,
-      lastUpdated: '',
+      lastUpdated: {},
       linkCopied: false,
 
       suggestion: {
@@ -39,14 +49,22 @@ createApp({
   },
 
   computed: {
+    tabLabel() { return TABS[this.activeTab].label },
+
+    sourceList() {
+      if (this.activeTab === 'comprar') return this.wishlist
+      if (this.activeTab === 'vistas') return this.watchedList
+      return this.fullList
+    },
+
     allGenres() {
       const set = new Set()
-      this.fullList.forEach(m => (m.genres || []).forEach(g => { if (g && g.trim()) set.add(g.trim()) }))
+      this.sourceList.forEach(m => (m.genres || []).forEach(g => { if (g && g.trim()) set.add(g.trim()) }))
       return Array.from(set).sort((a, b) => a.localeCompare(b))
     },
     allTypes() {
       const set = new Set()
-      this.fullList.forEach(m => { if (m.type) set.add(m.type) })
+      this.sourceList.forEach(m => { if (m.type) set.add(m.type) })
       return Array.from(set).sort((a, b) => a.localeCompare(b))
     },
     activeFilterCount() {
@@ -54,14 +72,14 @@ createApp({
       if (this.filters.title.trim()) n++
       if (this.filters.type) n++
       if (this.filters.genres.size) n++
-      if (this.filters.onlyUnrated) n++
+      if (this.filters.onlyUnrated && this.activeTab !== 'comprar') n++
       return n
     },
     moreFiltersCount() {
-      return this.filters.genres.size + (this.filters.onlyUnrated ? 1 : 0)
+      return this.filters.genres.size + (this.filters.onlyUnrated && this.activeTab !== 'comprar' ? 1 : 0)
     },
     filteredList() {
-      let list = this.fullList
+      let list = this.sourceList
       const text = this.filters.title.trim().toLowerCase()
       if (text) {
         list = list.filter(m =>
@@ -77,7 +95,7 @@ createApp({
           return sel.every(s => genres.includes(s))
         })
       }
-      if (this.filters.onlyUnrated) {
+      if (this.filters.onlyUnrated && this.activeTab !== 'comprar') {
         list = list.filter(m => m.rating === null || m.rating === '' || m.rating === undefined)
       }
       return list
@@ -150,6 +168,8 @@ createApp({
         avg,
         spent: spent.toFixed(2),
         lastAdded,
+        wishlistTotal: this.wishlist.length,
+        watchedTotal: this.watchedList.length,
         topGenres: topGenres.map(([genre, count]) => ({ genre, count, pct: Math.round(count / maxGenre * 100) }))
       }
     }
@@ -179,16 +199,38 @@ createApp({
     currentPage() {
       if (this._hydrating) return
       this.syncUrl()
+    },
+    activeTab() {
+      if (this._hydrating) return
+      this.currentPage = 1
+      this.expandedIds.clear()
+      this.highlightedId = null
+      if (this.activeTab === 'comprar') {
+        this.filters.onlyUnrated = false
+        if (this.sort.key === 'myRating') this.sort.key = 'dateAdded'
+      }
+      this.syncUrl()
     }
   },
 
   methods: {
+    setTab(tab) {
+      if (this.activeTab === tab) return
+      this.activeTab = tab
+    },
     ratingClass(v) {
       const n = parseFloat(v)
       if (isNaN(n)) return 'muted'
       if (n >= 7) return 'good'
       if (n >= 5) return 'mid'
       return 'bad'
+    },
+    priorityClass(p) {
+      const v = (p || '').toLowerCase()
+      if (v === 'alta') return 'bad'
+      if (v === 'media') return 'mid'
+      if (v === 'baja') return 'good'
+      return 'muted'
     },
     formatDate(d) {
       return d ? d.split('-').reverse().join('.') : '?'
@@ -229,6 +271,7 @@ createApp({
     hydrateFromUrl() {
       this._hydrating = true
       const params = new URLSearchParams(window.location.search)
+      if (params.has('tab') && TABS[params.get('tab')]) this.activeTab = params.get('tab')
       if (params.has('q')) this.filters.title = params.get('q')
       if (params.has('type')) this.filters.type = params.get('type')
       if (params.has('genres')) {
@@ -242,6 +285,7 @@ createApp({
     },
     syncUrl() {
       const params = new URLSearchParams()
+      if (this.activeTab !== 'coleccion') params.set('tab', this.activeTab)
       if (this.filters.title.trim()) params.set('q', this.filters.title.trim())
       if (this.filters.type) params.set('type', this.filters.type)
       if (this.filters.genres.size) params.set('genres', Array.from(this.filters.genres).join(','))
@@ -267,7 +311,7 @@ createApp({
       return !!item.created && this.daysSince(item.created) <= 30
     },
 
-    // --- Sugerencias ---
+    // --- Sugerencias (sólo colección) ---
     daysSince(dateStr) {
       if (!dateStr) return 0
       const d = new Date(dateStr)
@@ -317,7 +361,8 @@ createApp({
       const id = this.suggestion.current.id
       this.suggestion.history.push(id)
       this.suggestion.visible = false
-      this.highlightAndShow(id)
+      this.activeTab = 'coleccion'
+      this.$nextTick(() => this.highlightAndShow(id))
     },
     highlightAndShow(id) {
       const idx = this.sortedList.findIndex(r => r.id === id)
@@ -332,13 +377,24 @@ createApp({
       })
     },
 
-    async loadLastUpdated() {
+    async loadLastUpdated(tab, file) {
       try {
-        const res = await fetch('data.json', { method: 'HEAD' })
+        const res = await fetch(file, { method: 'HEAD' })
         const lm = res.headers.get('Last-Modified')
-        this.lastUpdated = lm ? new Date(lm).toLocaleDateString('es-ES') : 'desconocida'
+        this.lastUpdated[tab] = lm ? new Date(lm).toLocaleDateString('es-ES') : 'desconocida'
       } catch (e) {
-        this.lastUpdated = 'desconocida'
+        this.lastUpdated[tab] = 'desconocida'
+      }
+    },
+
+    async loadJson(file) {
+      try {
+        const res = await fetch(file)
+        if (!res.ok) return []
+        return await res.json()
+      } catch (e) {
+        console.warn('No se pudo cargar ' + file, e)
+        return []
       }
     }
   },
@@ -347,17 +403,20 @@ createApp({
     this.applyTheme()
     window.addEventListener('scroll', this.onScroll)
 
-    try {
-      const res = await fetch('./data.json')
-      const data = await res.json()
-      data.forEach((r, i) => { r._csvLine = i + 1 })
-      data.reverse() // últimas incorporaciones primero
-      this.fullList = data
-    } catch (e) {
-      console.error('Error cargando data.json', e)
-    }
+    const [coleccion, comprar, vistas] = await Promise.all([
+      this.loadJson(TABS.coleccion.file),
+      this.loadJson(TABS.comprar.file),
+      this.loadJson(TABS.vistas.file)
+    ])
+
+    coleccion.forEach((r, i) => { r._csvLine = i + 1 })
+    coleccion.reverse() // últimas incorporaciones primero
+    this.fullList = coleccion
+    this.wishlist = comprar
+    this.watchedList = vistas
 
     this.hydrateFromUrl()
-    this.loadLastUpdated()
+
+    Object.entries(TABS).forEach(([tab, cfg]) => this.loadLastUpdated(tab, cfg.file))
   }
 }).mount('#app')
