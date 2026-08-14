@@ -5,16 +5,14 @@ createApp({
     return {
       theme: localStorage.getItem('theme') || 'dark',
       fullList: [],
-      favorites: new Set(JSON.parse(localStorage.getItem('favorites') || '[]')),
 
       filters: {
         title: '',
         type: '',
         genres: new Set(),
-        onlyUnrated: false,
-        onlyFavorites: false
+        onlyUnrated: false
       },
-      sort: { key: 'csv', dir: 'desc' },
+      sort: { key: 'dateAdded', dir: 'desc' },
 
       currentPage: 1,
       itemsPerPage: 50,
@@ -22,10 +20,11 @@ createApp({
       expandedIds: new Set(),
       highlightedId: null,
 
-      showFilters: false,
       showStats: false,
+      showMoreFilters: false,
       showScrollTop: false,
       lastUpdated: '',
+      linkCopied: false,
 
       suggestion: {
         visible: false,
@@ -33,7 +32,9 @@ createApp({
         onlyUnrated: false,
         current: null,
         history: []
-      }
+      },
+
+      _hydrating: false
     }
   },
 
@@ -54,8 +55,10 @@ createApp({
       if (this.filters.type) n++
       if (this.filters.genres.size) n++
       if (this.filters.onlyUnrated) n++
-      if (this.filters.onlyFavorites) n++
       return n
+    },
+    moreFiltersCount() {
+      return this.filters.genres.size + (this.filters.onlyUnrated ? 1 : 0)
     },
     filteredList() {
       let list = this.fullList
@@ -77,14 +80,12 @@ createApp({
       if (this.filters.onlyUnrated) {
         list = list.filter(m => m.rating === null || m.rating === '' || m.rating === undefined)
       }
-      if (this.filters.onlyFavorites) list = list.filter(m => this.favorites.has(m.id))
       return list
     },
     sortedList() {
       const key = this.sort.key
       const dir = this.sort.dir === 'asc' ? 1 : -1
       const getVal = (item) => {
-        if (key === 'csv') return item._csvLine || 0
         if (key === 'id') return (item.id || '').toLowerCase()
         if (key === 'title') return (item.title || '').toLowerCase()
         if (key === 'dateAdded') return item.created || ''
@@ -130,6 +131,7 @@ createApp({
         ? (rated.reduce((s, m) => s + parseFloat(m.rating), 0) / rated.length).toFixed(2)
         : '—'
       const spent = list.reduce((s, m) => s + (m.price ? parseFloat(m.price) : 0), 0)
+
       const genreCounts = {}
       list.forEach(m => (m.genres || []).forEach(g => {
         g = (g || '').trim()
@@ -137,13 +139,17 @@ createApp({
       }))
       const topGenres = Object.entries(genreCounts).sort((a, b) => b[1] - a[1]).slice(0, 8)
       const maxGenre = topGenres.length ? topGenres[0][1] : 1
+
+      const withDates = list.filter(m => m.created).sort((a, b) => b.created.localeCompare(a.created))
+      const lastAdded = withDates.length ? withDates[0].title : '—'
+
       return {
         total: list.length,
         movies,
         series,
         avg,
         spent: spent.toFixed(2),
-        favCount: this.favorites.size,
+        lastAdded,
         topGenres: topGenres.map(([genre, count]) => ({ genre, count, pct: Math.round(count / maxGenre * 100) }))
       }
     }
@@ -154,8 +160,26 @@ createApp({
       this.applyTheme()
       localStorage.setItem('theme', this.theme)
     },
-    filters: { deep: true, handler() { this.currentPage = 1 } },
-    sort: { deep: true, handler() { this.currentPage = 1 } }
+    filters: {
+      deep: true,
+      handler() {
+        if (this._hydrating) return
+        this.currentPage = 1
+        this.syncUrl()
+      }
+    },
+    sort: {
+      deep: true,
+      handler() {
+        if (this._hydrating) return
+        this.currentPage = 1
+        this.syncUrl()
+      }
+    },
+    currentPage() {
+      if (this._hydrating) return
+      this.syncUrl()
+    }
   },
 
   methods: {
@@ -175,11 +199,6 @@ createApp({
     applyTheme() {
       document.body.classList.toggle('light-theme', this.theme === 'light')
     },
-    toggleFavorite(id) {
-      if (this.favorites.has(id)) this.favorites.delete(id)
-      else this.favorites.add(id)
-      localStorage.setItem('favorites', JSON.stringify(Array.from(this.favorites)))
-    },
     toggleGenreFilter(g) {
       const key = g.toLowerCase()
       if (this.filters.genres.has(key)) this.filters.genres.delete(key)
@@ -190,7 +209,6 @@ createApp({
       this.filters.type = ''
       this.filters.genres.clear()
       this.filters.onlyUnrated = false
-      this.filters.onlyFavorites = false
     },
     toggleExpand(id) {
       if (this.expandedIds.has(id)) this.expandedIds.delete(id)
@@ -205,6 +223,48 @@ createApp({
     },
     onScroll() {
       this.showScrollTop = window.scrollY > 400
+    },
+
+    // --- Compartir vista filtrada ---
+    hydrateFromUrl() {
+      this._hydrating = true
+      const params = new URLSearchParams(window.location.search)
+      if (params.has('q')) this.filters.title = params.get('q')
+      if (params.has('type')) this.filters.type = params.get('type')
+      if (params.has('genres')) {
+        params.get('genres').split(',').filter(Boolean).forEach(g => this.filters.genres.add(g.toLowerCase()))
+      }
+      if (params.get('unrated') === '1') this.filters.onlyUnrated = true
+      if (params.has('sort')) this.sort.key = params.get('sort')
+      if (params.has('dir')) this.sort.dir = params.get('dir')
+      if (params.has('page')) this.currentPage = parseInt(params.get('page'), 10) || 1
+      this._hydrating = false
+    },
+    syncUrl() {
+      const params = new URLSearchParams()
+      if (this.filters.title.trim()) params.set('q', this.filters.title.trim())
+      if (this.filters.type) params.set('type', this.filters.type)
+      if (this.filters.genres.size) params.set('genres', Array.from(this.filters.genres).join(','))
+      if (this.filters.onlyUnrated) params.set('unrated', '1')
+      if (this.sort.key !== 'dateAdded') params.set('sort', this.sort.key)
+      if (this.sort.dir !== 'desc') params.set('dir', this.sort.dir)
+      if (this.currentPage > 1) params.set('page', this.currentPage)
+      const qs = params.toString()
+      const newUrl = window.location.pathname + (qs ? '?' + qs : '')
+      window.history.replaceState({}, '', newUrl)
+    },
+    async copyShareLink() {
+      try {
+        await navigator.clipboard.writeText(window.location.href)
+      } catch (e) {
+        // clipboard no disponible; el enlace ya está en la URL del navegador
+      }
+      this.linkCopied = true
+      setTimeout(() => { this.linkCopied = false }, 1500)
+    },
+
+    isRecent(item) {
+      return !!item.created && this.daysSince(item.created) <= 30
     },
 
     // --- Sugerencias ---
@@ -297,6 +357,7 @@ createApp({
       console.error('Error cargando data.json', e)
     }
 
+    this.hydrateFromUrl()
     this.loadLastUpdated()
   }
 }).mount('#app')
