@@ -172,6 +172,16 @@
               <span class="accordion-label">Comprada en</span>
               <span>{{ item.store }}<template v-if="item.price != null"> ({{ item.price }}€)</template></span>
             </div>
+            <details v-if="activeTab === 'comprar'" class="accordion-row store-details">
+              <summary class="accordion-label">Buscar en tienda ▾</summary>
+              <div class="store-row">
+                <button
+                  v-for="s in stores" :key="s.name"
+                  class="genre-pill"
+                  @click="searchInStore(s, item)"
+                >{{ s.name }}</button>
+              </div>
+            </details>
             <div class="accordion-row" v-if="activeTab !== 'comprar' && item.date_rated">
               <span class="accordion-label">Valorada el</span><span>{{ formatDate(item.date_rated) }}</span>
             </div>

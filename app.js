@@ -44,6 +44,21 @@ createApp({
         history: []
       },
 
+      // Encoders reutilizables. Puedes referenciarlos por nombre en cada tienda,
+      // o pasar una función propia directamente en `encode`.
+      storeEncoders: {
+        uri: (title) => encodeURIComponent(title),
+        plus: (title) => encodeURIComponent(title).replace(/%20/g, '+'),
+        plusRaw: (title) => title.trim().replace(/\s+/g, '+'),
+      },
+
+      stores: [
+        { name: 'El Corte Inglés', url: 'https://www.elcorteingles.es/search-nwx/?s={q}', encode: 'plus' },
+        { name: 'Amazon',          url: 'https://www.amazon.es/s?k={q}', encode: 'plus' },
+        { name: 'Fnac',            url: 'https://www.fnac.es/SearchResult/ResultList.aspx?Search={q}', encode: 'plus' },
+        { name: 'CEX',             url: 'https://es.webuy.com/search?stext={q}', encode: 'uri' }
+      ],
+
       _hydrating: false
     }
   },
@@ -396,7 +411,23 @@ createApp({
         console.warn('No se pudo cargar ' + file, e)
         return []
       }
+    },
+
+    buildStoreUrl(store, title) {
+      let encoder = store.encode
+      if (typeof encoder === 'string') {
+        encoder = this.storeEncoders[encoder]
+      }
+      if (typeof encoder !== 'function') {
+        encoder = this.storeEncoders.uri // fallback por defecto
+      }
+      return store.url.replace('{q}', encoder(title))
+    },
+    searchInStore(store, item) {
+      const url = this.buildStoreUrl(store, item.title)
+      window.open(url, '_blank', 'noopener')
     }
+
   },
 
   async mounted() {

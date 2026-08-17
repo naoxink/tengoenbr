@@ -457,3 +457,19 @@ img.format { height: 22px; width: auto; vertical-align: middle; flex-shrink: 0; 
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
   z-index: 1000;
 }
+
+.store-details { display: block; }
+.store-details summary {
+  cursor: pointer;
+  list-style: none;
+  color: var(--text-secondary);
+}
+.store-details summary::-webkit-details-marker { display: none; }
+.store-details[open] summary { color: var(--text-primary); }
+
+.store-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 6px;
+}
