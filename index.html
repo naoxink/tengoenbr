@@ -135,6 +135,11 @@
               <span v-if="item.type" class="type">{{ item.type }}</span>
               <strong>{{ item.title }}</strong>
               <span v-if="isRecent(item)" class="badge-new" title="Añadida en los últimos 30 días">NUEVO</span>
+              <span
+                v-if="warranty(item)"
+                class="badge-warranty" :class="warranty(item).level"
+                :title="'Garantía CEX hasta el ' + warrantyEndDate(warranty(item))"
+              >🛡️ {{ warranty(item).expired ? 'Caducada' : warranty(item).label }}</span>
             </span>
 
             <span
@@ -171,6 +176,14 @@
             <div class="accordion-row" v-else-if="activeTab === 'coleccion' && item.store">
               <span class="accordion-label">Comprada en</span>
               <span>{{ item.store }}<template v-if="item.price != null"> ({{ item.price }}€)</template></span>
+            </div>
+            <div class="accordion-row" v-if="warranty(item)">
+              <span class="accordion-label">Garantía CEX</span>
+              <span>
+                <template v-if="warranty(item).expired">Caducó el {{ warrantyEndDate(warranty(item)) }}</template>
+                <template v-else>Caduca el {{ warrantyEndDate(warranty(item)) }} (quedan {{ warranty(item).label }})</template>
+                · sin estrenar
+              </span>
             </div>
             <details v-if="activeTab === 'comprar'" class="accordion-row store-details">
               <summary class="accordion-label">Buscar en tienda ▾</summary>

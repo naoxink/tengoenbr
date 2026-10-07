@@ -59,6 +59,8 @@ createApp({
         { name: 'CEX',             url: 'https://es.webuy.com/search?stext={q}', encode: 'uri' }
       ],
 
+      WARRANTY_YEARS: 5,
+
       _hydrating: false
     }
   },
@@ -320,6 +322,43 @@ createApp({
       }
       this.linkCopied = true
       setTimeout(() => { this.linkCopied = false }, 1500)
+    },
+
+    // --- Garantía CEX (5 años desde la fecha de adición) ---
+    // Sólo aplica a la colección, comprada en CEX (no regalo) y aún sin valorar
+    // (= sin estrenar). Se usa `created` como fecha de compra.
+    warranty(item) {
+      if (this.activeTab !== 'coleccion') return null
+      if (item.gift || String(item.store || '').trim().toLowerCase() !== 'cex') return null
+      if (item.rating !== null && item.rating !== '' && item.rating !== undefined) return null
+      if (!item.created) return null
+      const start = new Date(item.created + 'T00:00:00')
+      if (isNaN(start)) return null
+
+      const end = new Date(start)
+      end.setFullYear(end.getFullYear() + this.WARRANTY_YEARS)
+      const today = new Date()
+      today.setHours(0, 0, 0, 0)
+
+      const days = Math.round((end - today) / 86400000)
+      if (days <= 0) return { expired: true, days, end, label: 'Garantía caducada', level: 'bad' }
+
+      // Desglose calendario: años, meses y días restantes
+      let y = end.getFullYear() - today.getFullYear()
+      let m = end.getMonth() - today.getMonth()
+      let d = end.getDate() - today.getDate()
+      if (d < 0) { m--; d += new Date(end.getFullYear(), end.getMonth(), 0).getDate() }
+      if (m < 0) { y--; m += 12 }
+
+      const parts = []
+      if (y) parts.push(y + (y === 1 ? ' año' : ' años'))
+      if (m) parts.push(m + (m === 1 ? ' mes' : ' meses'))
+      if (!y && !m) parts.push(d + (d === 1 ? ' día' : ' días'))
+      const level = days <= 90 ? 'bad' : days <= 365 ? 'mid' : 'good'
+      return { expired: false, days, end, label: parts.join(' y '), level }
+    },
+    warrantyEndDate(w) {
+      return w.end.toLocaleDateString('es-ES')
     },
 
     isRecent(item) {
