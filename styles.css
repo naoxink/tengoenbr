@@ -266,6 +266,7 @@ body {
   border-radius: 3px;
   white-space: nowrap;
   color: var(--rating-text-dark);
+  margin-left: 5px;
 }
 .badge-warranty.good { background: var(--rating-good); }
 .badge-warranty.mid  { background: var(--rating-mid); }
