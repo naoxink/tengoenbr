@@ -1,0 +1,221 @@
+[
+    {
+        "id": "tt0462200",
+        "title": "Black Snake Moan",
+        "original_title": "Black Snake Moan",
+        "url": "https://www.imdb.com/es-es/title/tt0462200/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Música",
+            "Comedia negra"
+        ],
+        "created": "2026-08-14",
+        "priority": "alta",
+        "notes": ""
+    },
+    {
+        "id": "tt0277027",
+        "title": "Yo soy Sam",
+        "original_title": "I am Sam",
+        "url": "https://www.imdb.com/es-es/title/tt0277027/",
+        "type": "Película",
+        "genres": [
+            "Drama"
+        ],
+        "created": "2026-08-14",
+        "priority": "alta",
+        "notes": ""
+    },
+    {
+        "id": "tt11866324",
+        "title": "Predator: La presa",
+        "original_title": "Prey",
+        "url": "https://www.imdb.com/es-es/title/tt11866324/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Épica",
+            "Aliens",
+            "Sci-fi"
+        ],
+        "created": "2026-08-14",
+        "priority": "media",
+        "notes": null
+    },
+    {
+        "id": "tt4873118",
+        "title": "Guy Ritchie: El pacto",
+        "original_title": "The Covenant",
+        "url": "https://www.imdb.com/es-es/title/tt4873118/",
+        "type": "Película",
+        "genres": [
+            "Guerra",
+            "Drama",
+            "Thriller",
+            "Bélica"
+        ],
+        "created": "2026-08-14",
+        "priority": "alta",
+        "notes": null
+    },
+    {
+        "id": "tt10366206",
+        "title": "John Wick 4",
+        "original_title": "John Wick: Chapter 4",
+        "url": "https://www.imdb.com/es-es/title/tt10366206/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Thriller"
+        ],
+        "created": "2026-08-14",
+        "priority": "alta",
+        "notes": null
+    },
+    {
+        "id": "tt1488606",
+        "title": "Triple frontera",
+        "original_title": "Triple Frontier",
+        "url": "https://www.imdb.com/es-es/title/tt1488606/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Guerra",
+            "Bélica"
+        ],
+        "created": "2026-08-14",
+        "priority": "media",
+        "notes": null
+    },
+    {
+        "id": "tt19864802",
+        "title": "Misión hostil",
+        "original_title": "Land of Bad",
+        "url": "https://www.imdb.com/es-es/title/tt19864802/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Guerra",
+            "Bélica"
+        ],
+        "created": "2026-08-14",
+        "priority": "media",
+        "notes": null
+    },
+    {
+        "id": "tt1700841",
+        "title": "La fiesta de las salchichas",
+        "original_title": "Sausage Party",
+        "url": "https://www.imdb.com/es-es/title/tt1700841/",
+        "type": "Película",
+        "genres": [
+            "Animación",
+            "Comedia"
+        ],
+        "created": "2026-08-14",
+        "priority": "media",
+        "notes": null
+    },
+    {
+        "id": "tt31434639",
+        "title": "Warfare: Tiempo de guerra",
+        "original_title": "Warfare",
+        "url": "https://www.imdb.com/es-es/title/tt31434639/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Guerra",
+            "Bélica"
+        ],
+        "created": "2026-08-14",
+        "priority": "alta",
+        "notes": null
+    },
+    {
+        "id": "tt28996126",
+        "title": "Nadie 2",
+        "original_title": "Nobody 2",
+        "url": "https://www.imdb.com/es-es/title/tt28996126/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Comedia"
+        ],
+        "created": "2026-08-14",
+        "priority": "media",
+        "notes": null
+    },
+    {
+        "id": "tt7181546",
+        "title": "Ballerina",
+        "original_title": null,
+        "url": "https://www.imdb.com/es-es/title/tt7181546/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Crimen"
+        ],
+        "created": "2026-08-14",
+        "priority": "media",
+        "notes": null
+    },
+    {
+        "id": "tt34190272",
+        "title": "Enemigos",
+        "original_title": null,
+        "url": "https://www.imdb.com/es-es/title/tt34190272/",
+        "type": "Película",
+        "genres": [
+            "Drama"
+        ],
+        "created": "2026-08-14",
+        "priority": "media",
+        "notes": null
+    },
+    {
+        "id": "tt31227572",
+        "title": "Predator: Badlands",
+        "original_title": null,
+        "url": "https://www.imdb.com/es-es/title/tt31227572/",
+        "type": "Película",
+        "genres": [
+            "Acción",
+            "Aliens",
+            "Sci-fi"
+        ],
+        "created": "2026-08-14",
+        "priority": "media",
+        "notes": null
+    },
+    {
+        "id": "tt15006566",
+        "title": "As bestas",
+        "original_title": null,
+        "url": "https://www.imdb.com/es-es/title/tt15006566/",
+        "type": "Película",
+        "genres": [
+            "Drama",
+            "Thriller"
+        ],
+        "created": "2026-08-14",
+        "priority": "media",
+        "notes": null
+    },
+    {
+        "id": "tt12042730",
+        "title": "Proyecto Salvación",
+        "original_title": "Project Hail Mary",
+        "url": "https://www.imdb.com/es-es/title/tt12042730/",
+        "type": "Película",
+        "genres": [
+            "Sci-fi",
+            "Comedia",
+            "Drama",
+            "Espacio"
+        ],
+        "created": "2026-08-14",
+        "priority": "alta",
+        "notes": null
+    }
+]

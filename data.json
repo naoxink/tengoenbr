@@ -6024,7 +6024,7 @@
     {
         "id": "tt3263904",
         "created": "2023-10-20",
-        "store": "Cex",
+        "store": "CEX",
         "price": 6.0,
         "gift": false,
         "title": "Sully",
@@ -6255,7 +6255,7 @@
     {
         "id": "tt0319061",
         "created": "2023-12-17",
-        "store": "Cex",
+        "store": "CEX",
         "price": 5.0,
         "gift": false,
         "title": "Big Fish",
@@ -6294,7 +6294,7 @@
     {
         "id": "tt1591479",
         "created": "2024-03-14",
-        "store": "Cex",
+        "store": "CEX",
         "price": 6.0,
         "gift": false,
         "title": "Acto de valor",
@@ -6314,7 +6314,7 @@
     {
         "id": "tt1823672",
         "created": "2024-04-05",
-        "store": "Cex",
+        "store": "CEX",
         "price": 12.0,
         "gift": false,
         "title": "Chappie",
@@ -6335,7 +6335,7 @@
     {
         "id": "tt0120804",
         "created": "2024-04-20",
-        "store": "Cex",
+        "store": "CEX",
         "price": 8.0,
         "gift": false,
         "title": "Resident Evil",
@@ -6393,7 +6393,7 @@
     {
         "id": "tt1853728",
         "created": "2024-06-08",
-        "store": "Cex",
+        "store": "CEX",
         "price": 6.0,
         "gift": false,
         "title": "Django desencadenado",
@@ -6451,7 +6451,7 @@
     {
         "id": "tt0887912",
         "created": "2024-09-04",
-        "store": "Cex",
+        "store": "CEX",
         "price": 3.0,
         "gift": false,
         "title": "En tierra hostil",
@@ -6470,7 +6470,7 @@
     {
         "id": "tt4866712",
         "created": "2024-09-18",
-        "store": "Cex",
+        "store": "CEX",
         "price": 5.0,
         "gift": false,
         "title": "El pregón",
@@ -6488,7 +6488,7 @@
     {
         "id": "tt1636826",
         "created": "2024-11-30",
-        "store": "Cex",
+        "store": "CEX",
         "price": 6.0,
         "gift": false,
         "title": "Project X",
@@ -6506,7 +6506,7 @@
     {
         "id": "tt5390504",
         "created": "2024-12-23",
-        "store": "Cex",
+        "store": "CEX",
         "price": 8.0,
         "gift": false,
         "title": "Detroit",
@@ -6526,9 +6526,9 @@
     {
         "id": "tt18412256",
         "created": "2025-01-06",
-        "store": "Regalo",
+        "store": null,
         "price": null,
-        "gift": false,
+        "gift": true,
         "title": "Alien: Romulus",
         "original_title": "Alien: Romulus",
         "url": "https://www.imdb.com/title/tt18412256/",
@@ -6545,7 +6545,7 @@
     {
         "id": "tt0418763",
         "created": "2025-01-18",
-        "store": "Cex",
+        "store": "CEX",
         "price": 6.0,
         "gift": false,
         "title": "Jarhead - El infierno espera",
@@ -6564,7 +6564,7 @@
     {
         "id": "tt0382625",
         "created": "2025-01-18",
-        "store": "Cex",
+        "store": "CEX",
         "price": 5.0,
         "gift": false,
         "title": "El código Da Vinci",
@@ -6582,7 +6582,7 @@
     {
         "id": "tt0808151",
         "created": "2025-01-18",
-        "store": "Cex",
+        "store": "CEX",
         "price": 5.0,
         "gift": false,
         "title": "Ángeles y demonios",
@@ -6600,7 +6600,7 @@
     {
         "id": "tt0421715",
         "created": "2025-02-08",
-        "store": "Cex",
+        "store": "CEX",
         "price": 4.0,
         "gift": false,
         "title": "El curioso caso de Benjamin Button",
@@ -6619,7 +6619,7 @@
     {
         "id": "tt18259086",
         "created": "2025-05-30",
-        "store": "Cex",
+        "store": "CEX",
         "price": 15.0,
         "gift": false,
         "title": "Sonic 3: La película",
@@ -6641,7 +6641,7 @@
     {
         "id": "tt0475394",
         "created": "2025-05-30",
-        "store": "Cex",
+        "store": "CEX",
         "price": 5.0,
         "gift": false,
         "title": "Ases calientes",

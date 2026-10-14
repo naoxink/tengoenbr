@@ -217,5 +217,19 @@
         "created": "2026-08-14",
         "priority": "alta",
         "notes": null
+    },
+    {
+        "id": "tt2866360",
+        "title": "Coherence",
+        "original_title": null,
+        "url": "https://www.imdb.com/title/tt2866360/",
+        "type": "Película",
+        "genres": [
+            "Suspense",
+            "Ciencia ficción"
+        ],
+        "created": "2026-10-14",
+        "priority": "alta",
+        "notes": null
     }
 ]

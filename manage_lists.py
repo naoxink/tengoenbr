@@ -22,6 +22,7 @@ import shutil
 import sys
 import difflib
 from datetime import datetime
+import tmdb_lookup
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 BACKUPS_DIR = os.path.join(BASE_DIR, "backups")
@@ -155,7 +156,48 @@ def list_backups(ds_key):
 # Entrada de datos por consola
 # ---------------------------------------------------------------------------
 
-def prompt_value(field, current=None, editing=False):
+STORES = ["ECI", "CEX", "Fnac", "Amazon", "Game", "MediaMarkt"]
+
+
+def today():
+    return datetime.now().strftime("%Y-%m-%d")
+
+
+def field_defaults(ds_key, item):
+    """Valores por defecto (Enter = aceptar) según el dataset y lo ya rellenado."""
+    d = {"created": today()}
+    if ds_key == "coleccion":
+        d["format"] = "br"
+    elif ds_key == "comprar":
+        d["priority"] = "media"
+    if item.get("rating") is not None:
+        d["date_rated"] = today()
+    return d
+
+
+def prompt_store():
+    """Devuelve (store, gift)."""
+    print("  Tienda:")
+    for i, s in enumerate(STORES, 1):
+        print(f"    {i}. {s}")
+    print("    0. Otra (escribir)   r. Regalo   Enter. Sin dato")
+    while True:
+        ch = input("  > ").strip().lower()
+        if ch == "":
+            return None, False
+        if ch == "r":
+            return None, True
+        if ch == "0":
+            name = input("  Nombre de la tienda: ").strip()
+            return (name or None), False
+        if ch.isdigit() and 1 <= int(ch) <= len(STORES):
+            return STORES[int(ch) - 1], False
+        match = next((s for s in STORES if s.lower() == ch), None)
+        if match:
+            return match, False
+        print("    ⚠️  Opción no válida.")
+
+def prompt_value(field, current=None, editing=False, default=None):
     label = field["label"]
     ftype = field["type"]
     hint = FIELD_TYPES_HELP[ftype]
@@ -165,6 +207,8 @@ def prompt_value(field, current=None, editing=False):
         if ftype == "list" and isinstance(current, list):
             shown = ", ".join(current)
         prompt = f"  {label} [{hint}] (actual: {shown!r}, Enter=mantener, '{CLEAR_KEYWORD}'=vaciar): "
+    elif default is not None:
+        prompt = f"  {label} [{hint}] (Enter={default}, '{CLEAR_KEYWORD}'=vacío): "
     else:
         req = " (obligatorio)" if field.get("required") else " (Enter=vacío)"
         prompt = f"  {label} [{hint}]{req}: "
@@ -172,21 +216,23 @@ def prompt_value(field, current=None, editing=False):
     raw = input(prompt).strip()
 
     if editing and raw == "":
-        return current, False  # sin cambios
+        return current, False
     if raw == CLEAR_KEYWORD:
         return (None if ftype != "list" else []), True
 
     if raw == "" and not editing:
+        if default is not None:
+            return default, True
         if field.get("required"):
             print("    ⚠️  Este campo es obligatorio.")
-            return prompt_value(field, current, editing)
+            return prompt_value(field, current, editing, default)
         return (None if ftype != "list" else []), True
 
     try:
         value = cast_value(raw, ftype)
     except ValueError:
         print(f"    ⚠️  Valor no válido para tipo {ftype}. Inténtalo de nuevo.")
-        return prompt_value(field, current, editing)
+        return prompt_value(field, current, editing, default)
 
     return value, True
 
@@ -260,26 +306,78 @@ def cmd_search(ds_key):
     return matches
 
 
+def tmdb_autofill():
+    """Pide título/URL/ID, consulta TMDB y devuelve una ficha parcial (o None)."""
+    if not tmdb_lookup.get_key():
+        print(f"ℹ️  Sin API key de TMDB (busco TMDB_API_KEY o el fichero {tmdb_lookup.KEY_FILE}). Modo manual.")
+        return None
+    q = input("Título, URL o ID de IMDb (Enter = rellenar a mano): ").strip()
+    if not q:
+        return None
+    try:
+        imdb_id = tmdb_lookup.extract_imdb_id(q)
+        cands = tmdb_lookup.find_by_imdb(imdb_id) if imdb_id else tmdb_lookup.search_candidates(q)
+        if not cands:
+            print("Sin resultados en TMDB. Se rellena a mano.")
+            return None
+        if len(cands) == 1:
+            cand = cands[0]
+        else:
+            for i, c in enumerate(cands, 1):
+                print(f"  {i}. {c['label']}")
+            ch = input("Número (Enter = rellenar a mano): ").strip()
+            if not ch.isdigit() or not (1 <= int(ch) <= len(cands)):
+                return None
+            cand = cands[int(ch) - 1]
+        item = tmdb_lookup.fetch_item(cand)
+    except tmdb_lookup.TmdbError as e:
+        print(f"⚠️  {e} Se rellena a mano.")
+        return None
+
+    print(f"\n  ✔ {item['title']} ({item['type']}) · {item['id']}")
+    print(f"    Original: {item['original_title'] or '—'}")
+    print(f"    Géneros:  {', '.join(item['genres']) or '—'}")
+    if input("¿Es correcto? (S/n): ").strip().lower() == "n":
+        return None
+    return item
+
+
 def cmd_add(ds_key):
     data = load_data(ds_key)
     fields = DATASETS[ds_key]["fields"]
     print(f"\nAñadir a «{DATASETS[ds_key]['label']}» (Ctrl+C para cancelar)\n")
 
-    new_id = None
     item = {}
     try:
+        prefill = tmdb_autofill() or {}
+        if prefill.get("id") and any(e.get("id") == prefill["id"] for e in data):
+            if input(f"⚠️  Ya existe {prefill['id']!r} en esta lista. ¿Seguir? (s/N): ").strip().lower() != "s":
+                print("Cancelado.")
+                return
+        item = {}
         for field in fields:
-            value, _ = prompt_value(field, editing=False)
-            item[field["key"]] = value
-            if field["key"] == "id":
-                new_id = value
+            key = field["key"]
+            if key in prefill:
+                item[key] = prefill[key]
+                continue
+            if ds_key == "coleccion" and key == "store":
+                item["store"], item["gift"] = prompt_store()
+                continue
+            if ds_key == "coleccion" and key == "gift":
+                continue  # ya resuelto al elegir la tienda
+            if ds_key == "coleccion" and key == "price" and item.get("gift"):
+                item["price"] = None
+                continue
+            value, _ = prompt_value(field, default=field_defaults(ds_key, item).get(key))
+            item[key] = value
+        item = {f["key"]: item.get(f["key"]) for f in fields}  # mantiene el orden de campos
     except KeyboardInterrupt:
         print("\nCancelado.")
         return
 
-    if new_id and any((existing.get("id") == new_id) for existing in data):
-        confirm = input(f"⚠️  Ya existe un elemento con id {new_id!r}. ¿Añadir de todos modos? (s/N): ").strip().lower()
-        if confirm != "s":
+    new_id = item.get("id")
+    if not prefill and new_id and any(e.get("id") == new_id for e in data):
+        if input(f"⚠️  Ya existe un elemento con id {new_id!r}. ¿Añadir de todos modos? (s/N): ").strip().lower() != "s":
             print("Cancelado.")
             return
 
