@@ -56,8 +56,18 @@ createApp({
         { name: 'El Corte Inglés', url: 'https://www.elcorteingles.es/search-nwx/?s={q}', encode: 'plus' },
         { name: 'Amazon',          url: 'https://www.amazon.es/s?k={q}', encode: 'plus' },
         { name: 'Fnac',            url: 'https://www.fnac.es/SearchResult/ResultList.aspx?Search={q}', encode: 'plus' },
-        { name: 'CEX',             url: 'https://es.webuy.com/search?stext={q}', encode: 'uri' }
+        { name: 'CEX',             url: 'https://es.webuy.com/search?stext={q}', encode: 'uri' },
+        { name: 'MediaMarkt',      url: 'https://www.mediamarkt.es/es/search.html?query={q}', encode: 'uri' },
+        { name: 'Game',            url: 'https://www.game.es/buscar/{q}', encode: 'uri' }
       ],
+
+      bulk: {
+        store: 'El Corte Inglés',
+        priority: '',
+        addBluray: true,
+        showLinks: false,
+        message: ''
+      },
 
       WARRANTY_YEARS: 5,
 
@@ -66,6 +76,16 @@ createApp({
   },
 
   computed: {
+    bulkItems() {
+      // sortedList ya respeta los filtros y el orden activos
+      return this.sortedList.filter(m =>
+        !this.bulk.priority || (m.priority || '').toLowerCase() === this.bulk.priority
+      )
+    },
+    bulkStore() {
+      return this.stores.find(s => s.name === this.bulk.store) || this.stores[0]
+    },
+
     tabLabel() { return TABS[this.activeTab].label },
 
     sourceList() {
@@ -231,6 +251,31 @@ createApp({
   },
 
   methods: {
+    bulkUrl(item) {
+      const q = this.bulk.addBluray ? item.title + ' blu-ray' : item.title
+      return this.buildStoreUrl(this.bulkStore, q)
+    },
+    openAllInStore() {
+      const items = this.bulkItems
+      if (!items.length) return
+      if (items.length > 10 &&
+          !confirm(`Se van a abrir ${items.length} pestañas en ${this.bulkStore.name}. ¿Continuar?`)) return
+
+      let blocked = 0
+      items.forEach(item => {
+        const w = window.open(this.bulkUrl(item), '_blank')
+        if (w) w.opener = null
+        else blocked++
+      })
+
+      if (blocked) {
+        this.bulk.showLinks = true
+        this.bulk.message = `⚠️ El navegador bloqueó ${blocked} de ${items.length} pestañas. ` +
+          `Permite las ventanas emergentes para esta web y repite, o usa la lista de enlaces.`
+      } else {
+        this.bulk.message = `✅ Abiertas ${items.length} pestañas en ${this.bulkStore.name}.`
+      }
+    },
     setTab(tab) {
       if (this.activeTab === tab) return
       this.activeTab = tab

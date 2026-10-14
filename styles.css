@@ -487,3 +487,31 @@ img.format { height: 22px; width: auto; vertical-align: middle; flex-shrink: 0; 
   gap: 6px;
   margin-top: 6px;
 }
+
+.bulk-panel {
+  margin-bottom: 14px;
+  padding: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.bulk-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.bulk-row select {
+  padding: .35em .5em;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 12px;
+}
+.bulk-btn { padding: .5em 1em; border-radius: 6px; font-family: monospace; font-size: 13px; cursor: pointer; }
+.bulk-btn:disabled { opacity: .5; cursor: not-allowed; }
+.bulk-msg { margin: 0; font-size: 12px; color: var(--text-secondary); }
+.bulk-links { margin: 0; padding-left: 18px; font-size: 13px; columns: 2; }
+.bulk-links a { color: var(--accent-color); }
+.bulk-links a:visited { color: var(--text-muted); text-decoration: line-through; }
+@media (max-width: 640px) { .bulk-links { columns: 1; } }

@@ -112,6 +112,38 @@
         </div>
       </section>
 
+      <section v-if="activeTab === 'comprar'" class="bulk-panel">
+        <div class="bulk-row">
+          <strong>🛍️ Black Friday</strong>
+          <select v-model="bulk.store">
+            <option v-for="s in stores" :key="s.name" :value="s.name">{{ s.name }}</option>
+          </select>
+          <select v-model="bulk.priority">
+            <option value="">Todas las prioridades</option>
+            <option value="alta">Sólo alta</option>
+            <option value="media">Sólo media</option>
+            <option value="baja">Sólo baja</option>
+          </select>
+          <label class="inline-label">
+            <input type="checkbox" v-model="bulk.addBluray"> añadir "blu-ray"
+          </label>
+        </div>
+        <div class="bulk-row">
+          <button class="btn-primary bulk-btn" :disabled="!bulkItems.length" @click="openAllInStore">
+            Abrir {{ bulkItems.length }} en {{ bulkStore.name }}
+          </button>
+          <button class="btn-ghost bulk-btn" @click="bulk.showLinks = !bulk.showLinks">
+            {{ bulk.showLinks ? 'Ocultar enlaces ▴' : 'Ver enlaces ▾' }}
+          </button>
+        </div>
+        <p v-if="bulk.message" class="bulk-msg">{{ bulk.message }}</p>
+        <ul v-if="bulk.showLinks" class="bulk-links">
+          <li v-for="item in bulkItems" :key="item.id">
+            <a :href="bulkUrl(item)" target="_blank" rel="noopener">{{ item.title }}</a>
+          </li>
+        </ul>
+      </section>
+
       <div id="list">
         <p v-if="!pagedList.length" class="empty-state">
           {{ activeTab === 'coleccion' ? 'No se encontraron películas con estos filtros.' : (sourceList.length ? 'No hay resultados con estos filtros.' : 'Todavía no hay nada en esta lista.') }}
