@@ -28,7 +28,6 @@
     <div class="type-chips" style="padding: 10px 14px 0;">
       <button class="chip" :class="{ active: activeTab === 'coleccion' }" @click="setTab('coleccion')">🎬 Colección</button>
       <button class="chip" :class="{ active: activeTab === 'comprar' }" @click="setTab('comprar')">🛒 Para comprar</button>
-      <button class="chip" :class="{ active: activeTab === 'vistas' }" @click="setTab('vistas')">✅ Vistas (sin comprar)</button>
     </div>
 
     <main class="content">
@@ -42,7 +41,6 @@
             <div class="stat-card"><div class="stat-value">{{ stats.avg }}</div><div class="stat-label">Nota media</div></div>
             <div class="stat-card"><div class="stat-value">{{ stats.spent }}€</div><div class="stat-label">Gastado</div></div>
             <div class="stat-card"><div class="stat-value">{{ stats.wishlistTotal }}</div><div class="stat-label">Por comprar</div></div>
-            <div class="stat-card"><div class="stat-value">{{ stats.watchedTotal }}</div><div class="stat-label">Vistas sin comprar</div></div>
             <div class="stat-card stat-card--wide">
               <div class="stat-value stat-value--text">{{ stats.lastAdded }}</div>
               <div class="stat-label">Última añadida</div>

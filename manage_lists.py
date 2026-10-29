@@ -7,9 +7,8 @@ Gestión por menú (terminal) de los listados de tengoenbr:
 
   - data.json         -> Colección (películas/series que ya tienes)
   - paracomprar.json  -> Para comprar (las quieres en bluray, no las tienes)
-  - misnotas.json     -> Vistas sin comprar (las has visto, apuntas tu nota)
 
-Antes de escribir en cualquiera de los tres ficheros se crea automáticamente
+Antes de escribir en cualquiera de los dos ficheros se crea automáticamente
 un backup en backups/<dataset>/<fichero>_<timestamp>.json.
 
 Uso:
@@ -60,7 +59,7 @@ DATASETS = {
             {"key": "gift", "label": "¿Es un regalo?", "type": "bool", "required": False},
             {"key": "rating", "label": "Tu nota", "type": "float", "required": False},
             {"key": "date_rated", "label": "Fecha en que valoraste", "type": "date", "required": False},
-            {"key": "format", "label": "Formato (bluray/dvd/br)", "type": "str", "required": False},
+            {"key": "format", "label": "Formato (dvd/br)", "type": "str", "required": False},
         ],
     },
     "comprar": {
@@ -76,21 +75,6 @@ DATASETS = {
             {"key": "created", "label": "Fecha en que la añadiste a la lista", "type": "date", "required": False},
             {"key": "priority", "label": "Prioridad (alta/media/baja)", "type": "str", "required": False},
             {"key": "notes", "label": "Notas", "type": "str", "required": False},
-        ],
-    },
-    "vistas": {
-        "label": "Vistas sin comprar",
-        "file": "misnotas.json",
-        "fields": [
-            {"key": "id", "label": "ID IMDb (const)", "type": "str", "required": True},
-            {"key": "title", "label": "Título", "type": "str", "required": True},
-            {"key": "original_title", "label": "Título original", "type": "str", "required": False},
-            {"key": "url", "label": "URL IMDb", "type": "str", "required": False},
-            {"key": "type", "label": "Tipo (Película/Serie/MiniSerie)", "type": "str", "required": False},
-            {"key": "genres", "label": "Géneros", "type": "list", "required": False},
-            {"key": "created", "label": "Fecha en que la añadiste a la lista", "type": "date", "required": False},
-            {"key": "rating", "label": "Tu nota", "type": "float", "required": False},
-            {"key": "date_rated", "label": "Fecha en que valoraste", "type": "date", "required": False},
         ],
     },
 }
@@ -615,8 +599,7 @@ def main_menu():
         print("\n================ tengoenbr — gestión de listados ================")
         print("  1) Colección          (data.json)")
         print("  2) Para comprar        (paracomprar.json)")
-        print("  3) Vistas sin comprar  (misnotas.json)")
-        print("  4) Gestionar backups")
+        print("  3) Gestionar backups")
         print("  0) Salir")
         choice = input("> ").strip()
 
@@ -628,8 +611,6 @@ def main_menu():
         elif choice == "2":
             dataset_menu("comprar")
         elif choice == "3":
-            dataset_menu("vistas")
-        elif choice == "4":
             backups_menu()
         else:
             print("Opción no reconocida.")

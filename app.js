@@ -2,8 +2,7 @@ const { createApp } = Vue
 
 const TABS = {
   coleccion: { file: './data.json', label: 'Colección' },
-  comprar:   { file: './paracomprar.json', label: 'Para comprar' },
-  vistas:    { file: './misnotas.json', label: 'Vistas (sin comprar)' }
+  comprar:   { file: './paracomprar.json', label: 'Para comprar' }
 }
 
 createApp({
@@ -13,8 +12,7 @@ createApp({
 
       activeTab: 'coleccion',
       fullList: [],      // data.json -> colección (propias)
-      wishlist: [],       // paracomprar.json -> quiero comprar
-      watchedList: [],    // misnotas.json -> vistas, no compradas, con mi nota
+      wishlist: [],      // paracomprar.json -> quiero comprar
 
       filters: {
         title: '',
@@ -90,7 +88,6 @@ createApp({
 
     sourceList() {
       if (this.activeTab === 'comprar') return this.wishlist
-      if (this.activeTab === 'vistas') return this.watchedList
       return this.fullList
     },
 
@@ -206,7 +203,6 @@ createApp({
         spent: spent.toFixed(2),
         lastAdded,
         wishlistTotal: this.wishlist.length,
-        watchedTotal: this.watchedList.length,
         topGenres: topGenres.map(([genre, count]) => ({ genre, count, pct: Math.round(count / maxGenre * 100) }))
       }
     }
@@ -518,17 +514,15 @@ createApp({
     this.applyTheme()
     window.addEventListener('scroll', this.onScroll)
 
-    const [coleccion, comprar, vistas] = await Promise.all([
+    const [coleccion, comprar] = await Promise.all([
       this.loadJson(TABS.coleccion.file),
-      this.loadJson(TABS.comprar.file),
-      this.loadJson(TABS.vistas.file)
+      this.loadJson(TABS.comprar.file)
     ])
 
     coleccion.forEach((r, i) => { r._csvLine = i + 1 })
     coleccion.reverse() // últimas incorporaciones primero
     this.fullList = coleccion
     this.wishlist = comprar
-    this.watchedList = vistas
 
     this.hydrateFromUrl()
 

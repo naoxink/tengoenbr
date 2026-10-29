@@ -6929,5 +6929,61 @@
         "rating": null,
         "date_rated": null,
         "format": "br"
+    },
+    {
+        "id": "tt1757678",
+        "title": "Avatar: Fuego y ceniza",
+        "original_title": "Avatar: Fire and Ash",
+        "url": "https://www.imdb.com/title/tt1757678/",
+        "type": "Película",
+        "genres": [
+            "Ciencia ficción",
+            "Aventura",
+            "Fantasía"
+        ],
+        "created": "2026-10-28",
+        "store": "ECI",
+        "price": 21.99,
+        "gift": false,
+        "rating": 8.0,
+        "date_rated": "2026-10-29",
+        "format": "br"
+    },
+    {
+        "id": "tt5456104",
+        "title": "Zona hostil",
+        "original_title": null,
+        "url": "https://www.imdb.com/title/tt5456104/",
+        "type": "Película",
+        "genres": [
+            "Bélico"
+        ],
+        "created": "2026-10-28",
+        "store": "CEX",
+        "price": 4.0,
+        "gift": false,
+        "rating": 8.0,
+        "date_rated": "2026-10-29",
+        "format": "br"
+    },
+    {
+        "id": "tt3521164",
+        "title": "Vaiana",
+        "original_title": "Moana",
+        "url": "https://www.imdb.com/title/tt3521164/",
+        "type": "Película",
+        "genres": [
+            "Aventura",
+            "Comedia",
+            "Familiar",
+            "Animación"
+        ],
+        "created": "2026-10-28",
+        "store": "CEX",
+        "price": 5.0,
+        "gift": false,
+        "rating": 7.0,
+        "date_rated": "2026-10-29",
+        "format": "br"
     }
 ]
