@@ -6945,8 +6945,8 @@
         "store": "ECI",
         "price": 21.99,
         "gift": false,
-        "rating": 8.0,
-        "date_rated": "2026-10-29",
+        "rating": null,
+        "date_rated": null,
         "format": "br"
     },
     {
@@ -6962,8 +6962,8 @@
         "store": "CEX",
         "price": 4.0,
         "gift": false,
-        "rating": 8.0,
-        "date_rated": "2026-10-29",
+        "rating": null,
+        "date_rated": null,
         "format": "br"
     },
     {
@@ -6982,8 +6982,8 @@
         "store": "CEX",
         "price": 5.0,
         "gift": false,
-        "rating": 7.0,
-        "date_rated": "2026-10-29",
+        "rating": null,
+        "date_rated": null,
         "format": "br"
     }
 ]
